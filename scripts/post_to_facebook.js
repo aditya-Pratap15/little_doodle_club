@@ -1,12 +1,11 @@
 #!/usr/bin/env node
 /**
- * 📘 LITTLE DOODLE CLUB - FACEBOOK PAGE SCHEDULER & PUBLISHER
- * -----------------------------------------------------------
- * Schedules the 3 daily 4-panel tutorial graphics into
- * Facebook Page Planner across peak USA engagement windows:
- * - Drop 1: 08:30 AM EDT (Morning Inspiration)
- * - Drop 2: 01:30 PM EDT (Afternoon Creative Break)
- * - Drop 3: 06:30 PM EDT (Evening Relax & Draw)
+ * 🎨 LITTLE DOODLE CLUB - FACEBOOK PAGE AUTO-PUBLISHER & COMMENTER
+ * ---------------------------------------------------------------
+ * 1. Reads 'today_doodles.json' containing branded tutorials and captions.
+ * 2. Uploads the watermarked photo to Facebook Page 'Little Doodle Club' (1298820806658884).
+ * 3. Immediately posts the follow comment with the page link https://www.facebook.com/1298820806658884.
+ * 4. Updates 'state.json' with posted file IDs and subjects so nothing is EVER repeated!
  */
 
 const fs = require('fs');
@@ -15,34 +14,33 @@ const https = require('https');
 
 const BASE_DIR = path.resolve(__dirname, '..');
 const TODAY_DOODLES_PATH = path.join(BASE_DIR, 'today_doodles.json');
+const STATE_PATH = path.join(BASE_DIR, 'state.json');
 
-// Verified Credentials for Little Doodle Club (ID: 1298820806658884)
-const VERIFIED_TOKEN = 'EAAUbRaJrCqMBSsxLPkyloZCf0hX0xIXRXxiR4nX5ZB16Ht27oZAvTB1IcwEZCVLkGjtwab8PZCJ5SP9tNUtqW2ZBdSZBF7BM0wqdz8VhK1GAgRGbh346Y6Apz3iMpt4ZA4YuiGKWsqwGxwUo79i1FomiXruz0gZB3ga9rmi6mHFDGxGXlwMVuCZCJdy2X3KoWsbyuK19HmbZCEZB';
-const DEFAULT_PAGE_ID = (process.env.FB_PAGE_ID_DOODLE || process.env.FB_PAGE_ID || '1298820806658884').trim();
-const DEFAULT_TOKEN = (process.env.FB_TOKEN_DOODLE || process.env.FB_PAGE_TOKEN || VERIFIED_TOKEN).trim();
+// Permanent Never-Expiring Page Token (expires_at: 0) for Little Doodle Club
+const VERIFIED_PAGE_TOKEN = 'EAAUbRaJrCqMBSsxLPkyloZCf0hX0xIXRXxiR4nX5ZB16Ht27oZAvTB1IcwEZCVLkGjtwab8PZCJ5SP9tNUtqW2ZBdSZBF7BM0wqdz8VhK1GAgRGbh346Y6Apz3iMpt4ZA4YuiGKWsqwGxwUo79i1FomiXruz0gZB3ga9rmi6mHFDGxGXlwMVuCZCJdy2X3KoWsbyuK19HmbZCEZB';
+const PAGE_ID = (process.env.FB_PAGE_ID_DOODLE || process.env.FB_PAGE_ID || '1298820806658884').trim();
+const PAGE_TOKEN = (process.env.FB_TOKEN_DOODLE || process.env.FB_PAGE_TOKEN || VERIFIED_PAGE_TOKEN).trim();
 
-function formatUnicodeBold(text) {
-  if (!text || typeof text !== 'string') return '';
-  return text.replace(/\*\*(.+?)\*\*/g, (_, s) => {
-    return Array.from(s).map(c => {
-      const code = c.charCodeAt(0);
-      if (code >= 65 && code <= 90) return String.fromCodePoint(0x1D5D4 + code - 65);   // A-Z
-      if (code >= 97 && code <= 122) return String.fromCodePoint(0x1D5EE + code - 97);  // a-z
-      if (code >= 48 && code <= 57) return String.fromCodePoint(0x1D7EC + code - 48);   // 0-9
-      return c;
-    }).join('');
-  });
+function loadJson(p, fallback = {}) {
+  try {
+    if (!fs.existsSync(p)) return fallback;
+    const raw = fs.readFileSync(p, 'utf8').replace(/^\uFEFF/, '').trim();
+    return JSON.parse(raw);
+  } catch (e) {
+    return fallback;
+  }
+}
+
+function saveJson(p, data) {
+  fs.writeFileSync(p, JSON.stringify(data, null, 2) + '\n', 'utf8');
 }
 
 /**
  * Upload single image to Facebook Page via multipart/form-data
  */
-function postMultipartPhoto(pageId, token, caption, imagePath, scheduledPublishTime = null) {
+function uploadPhotoToPage(pageId, token, caption, imagePath) {
   return new Promise((resolve) => {
     try {
-      pageId = String(pageId || DEFAULT_PAGE_ID).trim();
-      token = String(token || DEFAULT_TOKEN).trim();
-
       const boundary = '----WebKitFormBoundary' + Math.random().toString(36).substring(2);
       const imgBuf = fs.readFileSync(imagePath);
       const filename = path.basename(imagePath);
@@ -54,14 +52,7 @@ function postMultipartPhoto(pageId, token, caption, imagePath, scheduledPublishT
 
       addField('access_token', token);
       addField('message', caption);
-
-      const nowTs = Math.floor(Date.now() / 1000);
-      if (scheduledPublishTime && scheduledPublishTime > nowTs + 600) {
-        addField('published', 'false');
-        addField('scheduled_publish_time', String(scheduledPublishTime));
-      } else {
-        addField('published', 'true');
-      }
+      addField('published', 'true');
 
       const header = Buffer.from(body + `--${boundary}\r\nContent-Disposition: form-data; name="source"; filename="${filename}"\r\nContent-Type: image/jpeg\r\n\r\n`);
       const footer = Buffer.from(`\r\n--${boundary}--\r\n`);
@@ -98,9 +89,9 @@ function postMultipartPhoto(pageId, token, caption, imagePath, scheduledPublishT
 }
 
 /**
- * Add Pinned/First Comment on Facebook Post
+ * Add Pinned Follow Comment on Facebook Post
  */
-async function postFacebookComment(postId, token, message) {
+async function postComment(postId, token, message) {
   return new Promise((resolve) => {
     try {
       const postData = new URLSearchParams({
@@ -121,94 +112,124 @@ async function postFacebookComment(postId, token, message) {
         let d = '';
         res.on('data', c => d += c);
         res.on('end', () => {
-          try { resolve(JSON.parse(d)); } catch(e){ resolve({}); }
+          try { resolve({ status: res.statusCode, body: JSON.parse(d) }); } catch(e){ resolve({ status: res.statusCode, body: d }); }
         });
       });
 
-      req.on('error', () => resolve({}));
+      req.on('error', err => resolve({ status: 500, error: err.message }));
       req.write(postData);
       req.end();
-    } catch(e) { resolve({}); }
+    } catch(e) { resolve({ status: 500, error: e.message }); }
   });
 }
 
 async function main() {
   console.log('======================================================');
-  console.log('📘 Little Doodle Club - Facebook Page Planner Scheduler');
+  console.log('🎨 Little Doodle Club - Facebook Auto-Publisher');
   console.log('======================================================\n');
 
   if (!fs.existsSync(TODAY_DOODLES_PATH)) {
-    console.error(`❌ ${TODAY_DOODLES_PATH} not found. Run generate first!`);
+    console.error(`❌ ${TODAY_DOODLES_PATH} not found. Run watermark_studio.js first!`);
     process.exit(1);
   }
 
-  const raw = fs.readFileSync(TODAY_DOODLES_PATH, 'utf8').replace(/^\uFEFF/, '').trim();
-  const data = JSON.parse(raw);
-  const doodles = data.doodles || [];
+  const todayData = loadJson(TODAY_DOODLES_PATH, { doodles: [] });
+  const doodles = todayData.doodles || [];
 
   if (doodles.length === 0) {
-    console.log('ℹ️ No doodles found in today_doodles.json.');
+    console.log('⚠️ No doodles found in today_doodles.json.');
     process.exit(0);
   }
 
-  console.log(`Page: Little Doodle Club (${DEFAULT_PAGE_ID})`);
-  console.log(`Total Tutorials to Schedule: ${doodles.length}\n`);
+  const state = loadJson(STATE_PATH, {
+    postedFileIds: [],
+    postedFilenames: [],
+    postedSubjects: [],
+    history: []
+  });
 
-  const nowTs = Math.floor(Date.now() / 1000);
+  if (!state.postedFileIds) state.postedFileIds = [];
+  if (!state.postedFilenames) state.postedFilenames = [];
+  if (!state.postedSubjects) state.postedSubjects = [];
+  if (!state.history) state.history = [];
+
+  console.log(`Page: Little Doodle Club (${PAGE_ID})`);
+  console.log(`Total Tutorials to Process: ${doodles.length}\n`);
 
   for (let idx = 0; idx < doodles.length; idx++) {
     const d = doodles[idx];
-    const schedTs = d.scheduled_publish_time || null;
-    const isScheduled = schedTs && (schedTs > nowTs + 600);
 
+    // Check if already posted
     if (d.fb_post_id) {
-      console.log(`ℹ️ [${idx + 1}/3] "${d.subject}" already scheduled on Facebook (ID: ${d.fb_post_id}). Skipping.`);
+      console.log(`⏭️  [${idx + 1}/${doodles.length}] "${d.subject}" already posted (Post ID: ${d.fb_post_id}). Skipping.`);
+      continue;
+    }
+    if (d.driveFileId && state.postedFileIds.includes(d.driveFileId)) {
+      console.log(`⏭️  [${idx + 1}/${doodles.length}] "${d.subject}" file ID already marked in state.json. Skipping.`);
       continue;
     }
 
-    const imgPath = path.resolve(BASE_DIR, d.image_path);
+    const imgPath = path.resolve(BASE_DIR, d.branded_image_path);
     if (!fs.existsSync(imgPath)) {
-      console.warn(`⚠️ Image file not found at ${imgPath}, skipping.`);
+      console.warn(`⚠️ Branded image not found: ${imgPath}, skipping.`);
       continue;
     }
 
-    const edTime = new Date(schedTs * 1000).toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit' });
-    const istTime = new Date(schedTs * 1000).toLocaleTimeString('en-US', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit' });
+    console.log(`🚀 [${idx + 1}/${doodles.length}] Publishing "${d.subject}" live to Facebook...`);
 
-    if (isScheduled) {
-      console.log(`[🗓️ SCHEDULE] "${d.subject}" for ${edTime} EDT (${istTime} IST) [${d.slot_name}]...`);
-    } else {
-      console.log(`[🚀 LIVE PUBLISH] "${d.subject}" live immediately to Facebook...`);
-    }
+    const res = await uploadPhotoToPage(PAGE_ID, PAGE_TOKEN, d.caption, imgPath);
 
-    const res = await postMultipartPhoto(
-      DEFAULT_PAGE_ID,
-      DEFAULT_TOKEN,
-      d.caption,
-      imgPath,
-      isScheduled ? schedTs : null
-    );
-
-    if (res.status === 200 && res.body && (res.body.id || res.body.post_id)) {
+    if (res.status === 200 && res.body && (res.body.post_id || res.body.id)) {
       const postId = res.body.post_id || res.body.id;
       d.fb_post_id = postId;
-      console.log(`   ✅ SUCCESS! Photo Scheduled/Published! Post ID: ${postId}`);
+      console.log(`   ✅ Published! Photo/Post ID: ${postId}`);
 
-      // Add friendly comment if published live
-      if (!isScheduled) {
-        await postFacebookComment(postId, DEFAULT_TOKEN, '🎨 What should we draw next? Drop your favorite doodle requests in the comments! 👇✏️');
+      // Post follow comment
+      const commentMsg = d.follow_comment || `❤️ Loving these daily easy drawing guides?\n👉 Follow Little Doodle Club for 3 new step-by-step doodle tutorials every single day!\n🎨 https://www.facebook.com/1298820806658884`;
+
+      console.log(`   💬 Adding follow comment with page link...`);
+      const commentRes = await postComment(postId, PAGE_TOKEN, commentMsg);
+      if (commentRes.status === 200) {
+        console.log(`   ✅ Follow comment posted successfully!`);
+      } else {
+        console.warn(`   ⚠️ Comment response: ${JSON.stringify(commentRes.body)}`);
       }
 
-      fs.writeFileSync(TODAY_DOODLES_PATH, JSON.stringify(data, null, 2) + '\n', 'utf8');
+      // Update state to guarantee no repetition
+      if (d.driveFileId && !state.postedFileIds.includes(d.driveFileId)) {
+        state.postedFileIds.push(d.driveFileId);
+      }
+      if (d.filename && !state.postedFilenames.includes(d.filename)) {
+        state.postedFilenames.push(d.filename);
+      }
+      if (d.subject && !state.postedSubjects.includes(d.subject)) {
+        state.postedSubjects.push(d.subject);
+      }
+
+      state.history.push({
+        date: new Date().toISOString(),
+        subject: d.subject,
+        filename: d.filename,
+        driveFileId: d.driveFileId,
+        fb_post_id: postId
+      });
+
+      // Save state and today_doodles after each successful upload
+      saveJson(STATE_PATH, state);
+      saveJson(TODAY_DOODLES_PATH, todayData);
+
+      console.log(`   💾 State updated to prevent reuse.\n`);
     } else {
       console.error(`   ❌ Facebook Upload Error (${res.status}):`, res.body || res.error);
     }
 
-    // Gentle delay between API requests
-    await new Promise(r => setTimeout(r, 3000));
+    // Delay between multiple uploads
+    if (idx < doodles.length - 1) {
+      await new Promise(r => setTimeout(r, 4000));
+    }
   }
 
-  console.log('\n🎉 All Little Doodle Club tutorials processed for Facebook!\n');
+  console.log('🎉 Little Doodle Club Facebook automation run complete!\n');
 }
 
 main().catch(err => {

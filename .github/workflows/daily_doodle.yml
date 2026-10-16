@@ -1,24 +1,22 @@
-name: Little Doodle Club - Daily 4-Panel Tutorial Engine
+name: Little Doodle Club - Daily Tutorial Automation
 
 on:
   schedule:
-    # 10:00 AM UTC = 06:00 AM EDT (US Morning) / 03:30 PM IST
-    # Generates 3 tutorials and schedules them to Facebook Page Planner for 08:30 AM, 01:30 PM, 06:30 PM EDT
-    - cron: '0 10 * * *'
-  repository_dispatch:
-    types: [doodle_drop, generate_doodle, custom_doodle]
+    # Runs daily at 12:30 PM UTC (08:30 AM EDT / 06:00 PM IST)
+    # Fetches the 3 daily tutorials from Drive, watermarks center logo, and publishes to Facebook
+    - cron: '30 12 * * *'
   workflow_dispatch:
     inputs:
-      force:
-        description: 'Force regeneration even if already completed today'
+      post_count:
+        description: 'Number of unposted images to fetch and post (default: 3)'
         required: false
-        default: 'false'
+        default: '3'
 
 permissions:
   contents: write
 
 jobs:
-  daily-doodle-pipeline:
+  doodle-pipeline:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -31,37 +29,32 @@ jobs:
         with:
           node-version: 20
 
-      - name: Generate 3 Daily 4-Panel Sketching Tutorials
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: node scripts/generate_doodles.js
+      - name: Verify FFmpeg
+        run: ffmpeg -version
 
-      - name: Archive Tutorials to Google Drive
+      - name: Fetch 3 Daily Images from Google Drive
         env:
-          APPS_SCRIPT_URL: ${{ secrets.APPS_SCRIPT_URL || secrets.GDRIVE_WEBHOOK_URL }}
-        run: node scripts/upload_to_drive.js
+          APPS_SCRIPT_URL: ${{ secrets.APPS_SCRIPT_URL }}
+          POST_COUNT: ${{ github.event.inputs.post_count || '3' }}
+        run: node scripts/fetch_from_drive.js
 
-      - name: Schedule to Facebook Page Planner (USA Timing)
+      - name: Apply Centered Watermark & Generate Captions
+        run: node scripts/watermark_studio.js
+
+      - name: Publish to Facebook Page & Add Follow Comment
         env:
-          FB_PAGE_ID_DOODLE: ${{ secrets.FB_PAGE_ID_DOODLE || secrets.FB_PAGE_ID || '1298820806658884' }}
-          FB_TOKEN_DOODLE: ${{ secrets.FB_TOKEN_DOODLE || secrets.FB_PAGE_TOKEN || 'EAAUbRaJrCqMBSsxLPkyloZCf0hX0xIXRXxiR4nX5ZB16Ht27oZAvTB1IcwEZCVLkGjtwab8PZCJ5SP9tNUtqW2ZBdSZBF7BM0wqdz8VhK1GAgRGbh346Y6Apz3iMpt4ZA4YuiGKWsqwGxwUo79i1FomiXruz0gZB3ga9rmi6mHFDGxGXlwMVuCZCJdy2X3KoWsbyuK19HmbZCEZB' }}
+          FB_PAGE_ID_DOODLE: ${{ secrets.FB_PAGE_ID_DOODLE || '1298820806658884' }}
+          FB_TOKEN_DOODLE: ${{ secrets.FB_TOKEN_DOODLE || 'EAAUbRaJrCqMBSsxLPkyloZCf0hX0xIXRXxiR4nX5ZB16Ht27oZAvTB1IcwEZCVLkGjtwab8PZCJ5SP9tNUtqW2ZBdSZBF7BM0wqdz8VhK1GAgRGbh346Y6Apz3iMpt4ZA4YuiGKWsqwGxwUo79i1FomiXruz0gZB3ga9rmi6mHFDGxGXlwMVuCZCJdy2X3KoWsbyuK19HmbZCEZB' }}
         run: node scripts/post_to_facebook.js
 
-      - name: Sync to Instagram (When Connected)
-        env:
-          FB_PAGE_ID_DOODLE: ${{ secrets.FB_PAGE_ID_DOODLE || secrets.FB_PAGE_ID || '1298820806658884' }}
-          FB_TOKEN_DOODLE: ${{ secrets.FB_TOKEN_DOODLE || secrets.FB_PAGE_TOKEN || 'EAAUbRaJrCqMBSsxLPkyloZCf0hX0xIXRXxiR4nX5ZB16Ht27oZAvTB1IcwEZCVLkGjtwab8PZCJ5SP9tNUtqW2ZBdSZBF7BM0wqdz8VhK1GAgRGbh346Y6Apz3iMpt4ZA4YuiGKWsqwGxwUo79i1FomiXruz0gZB3ga9rmi6mHFDGxGXlwMVuCZCJdy2X3KoWsbyuK19HmbZCEZB' }}
-          IG_ACCOUNT_ID_DOODLE: ${{ secrets.IG_ACCOUNT_ID_DOODLE }}
-        run: node scripts/post_to_instagram.js
-
-      - name: Commit State & Media to Git
+      - name: Commit State & History to Git
         if: always()
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
-          git add today_doodles.json state.json daily_doodles/
+          git add state.json today_doodles.json fetched_doodles.json branded_doodles/ incoming_doodles/
           if ! git diff --staged --quiet; then
-            git commit -m "Auto-progress: 3 daily tutorials generated and scheduled [skip ci]"
+            git commit -m "Auto-progress: tutorials published and state updated [skip ci]"
             for i in 1 2 3; do
               git pull --rebase origin main || true
               git push origin main && break || sleep 2
