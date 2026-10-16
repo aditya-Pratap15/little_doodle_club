@@ -1,0 +1,108 @@
+
+appscript =
+    https://script.google.com/home/projects/14XxkZqrqAKsyQkoGsfn31c7EJ2oHcDKnJjRsErhJvNxjIU5-vONrE_We/edit
+
+
+github -
+    https://github.com/aditya-Pratap15/little_doodle_club.git
+
+drive -
+    https://drive.google.com/drive/u/0/folders/1fIKXiOzUu_hEDjG-CIHY-p_roflZT5n5
+
+script code -
+
+    function autoMoveDailyArt() {
+        var folderId = "1fIKXiOzUu_hEDjG-CIHY-p_roflZT5n5";
+        var targetFolder = DriveApp.getFolderById(folderId);
+
+        // Search for JPEG images in Drive that follow the artname_YYYY-MM-DD.jpg format
+        var files = DriveApp.searchFiles("mimeType = 'image/jpeg' and trashed = false and not '" + folderId + "' in parents");
+
+        while (files.hasNext()) {
+            var file = files.next();
+            var name = file.getName();
+
+            // Checks if the file name ends with _YYYY-MM-DD.jpg
+            if (name.match(/_\d{4}-\d{2}-\d{2}\.jpg$/i)) {
+                file.moveTo(targetFolder);
+                Logger.log("Moved to daily arts: " + name);
+            }
+        }
+    }
+
+
+
+    graph api permissions added -
+    Permissions -
+    pages_show_list
+pages_read_user_content
+pages_read_engagement
+pages_messaging
+publish_video
+threads_business_basic
+read_insights
+instagram_manage_messages
+instagram_manage_contents
+instagram_manage_engagement
+instagram_manage_comments
+instagram_content_publish
+instagram_basic
+instagram_branded_content_creator
+facebook_creator_marketplace_discovery
+pages_manage_posts
+pages_manage_metadata
+pages_manage_engagement
+pages_manage_ads
+business_management
+
+Access Token Info
+App ID	1437360775170723 : Little Doodle Club
+Type	User
+App - Scoped User ID
+Learn More
+4355300808116074 : Aditya Pratap Äädï
+User last installed this app via API N / A
+Issued	Unknown
+Expires	1792170000(in about an hour)
+Data Access Expires	1799942113(in about 3 months)
+Valid	True
+Origin	Web
+Scopes	read_insights, publish_video, threads_business_basic, pages_show_list, business_management, pages_messaging, instagram_basic, instagram_manage_comments, instagram_content_publish, instagram_manage_messages, pages_read_engagement, pages_manage_metadata, pages_read_user_content, pages_manage_ads, pages_manage_posts, pages_manage_engagement, instagram_branded_content_creator, facebook_creator_marketplace_discovery, instagram_manage_contents, instagram_manage_engagement, public_profile
+Granular Scopes
+pages_show_list
+1298820806658884 : Little Doodle Club
+business_management	
+Applies to all objects
+pages_messaging
+1298820806658884 : Little Doodle Club
+instagram_basic	
+Applies to all objects
+instagram_manage_comments	
+Applies to all objects
+instagram_content_publish	
+Applies to all objects
+instagram_manage_messages	
+Applies to all objects
+pages_read_engagement
+1298820806658884 : Little Doodle Club
+pages_manage_metadata
+1298820806658884 : Little Doodle Club
+pages_read_user_content
+1298820806658884 : Little Doodle Club
+pages_manage_ads
+1298820806658884 : Little Doodle Club
+pages_manage_posts
+1298820806658884 : Little Doodle Club
+pages_manage_engagement
+1298820806658884 : Little Doodle Club
+instagram_branded_content_creator	
+Applies to all objects
+facebook_creator_marketplace_discovery
+1298820806658884 : Little Doodle Club
+instagram_manage_contents	
+Applies to all objects
+instagram_manage_engagement	
+Applies to all objects
+Extend Access Token
+This new long - lived access token will expire on December 15, 2026:
+EAAUbRaJrCqMBSmrByXmofOs4T35cdQaWgLP7hNNdFDvVkqtF1ZAvKCK3JHVGGolAU2v0xn5xbJhDme8EWpHEZCZAjJhLyObZA4QSzxB15HZBaRABWJtF9mvSqgzy1Ik0DoZBwYm0CJ3TVPKy8qMbXPGb2IlGqtFukutLPibhdZA5YXxTZA7r0MMfF99ssYeN

@@ -1,0 +1,22 @@
+{
+  "name": "little-doodle-club",
+  "version": "1.0.0",
+  "description": "Daily automated step-by-step 4-panel sketching tutorial generation, Google Drive archival, and Facebook/Instagram scheduling engine for Little Doodle Club.",
+  "main": "scripts/generate_doodles.js",
+  "scripts": {
+    "generate": "node scripts/generate_doodles.js",
+    "publish:fb": "node scripts/post_to_facebook.js",
+    "publish:ig": "node scripts/post_to_instagram.js",
+    "backup:drive": "node scripts/upload_to_drive.js",
+    "daily": "node scripts/generate_doodles.js && node scripts/upload_to_drive.js && node scripts/post_to_facebook.js"
+  },
+  "keywords": [
+    "sketching",
+    "drawing-tutorials",
+    "facebook-automation",
+    "instagram-automation",
+    "little-doodle-club"
+  ],
+  "author": "Aditya Pratap",
+  "license": "ISC"
+}

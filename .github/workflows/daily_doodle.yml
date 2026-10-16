@@ -1,0 +1,71 @@
+name: Little Doodle Club - Daily 4-Panel Tutorial Engine
+
+on:
+  schedule:
+    # 10:00 AM UTC = 06:00 AM EDT (US Morning) / 03:30 PM IST
+    # Generates 3 tutorials and schedules them to Facebook Page Planner for 08:30 AM, 01:30 PM, 06:30 PM EDT
+    - cron: '0 10 * * *'
+  repository_dispatch:
+    types: [doodle_drop, generate_doodle, custom_doodle]
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force regeneration even if already completed today'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+
+jobs:
+  daily-doodle-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate 3 Daily 4-Panel Sketching Tutorials
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/generate_doodles.js
+
+      - name: Archive Tutorials to Google Drive
+        env:
+          APPS_SCRIPT_URL: ${{ secrets.APPS_SCRIPT_URL || secrets.GDRIVE_WEBHOOK_URL }}
+        run: node scripts/upload_to_drive.js
+
+      - name: Schedule to Facebook Page Planner (USA Timing)
+        env:
+          FB_PAGE_ID_DOODLE: ${{ secrets.FB_PAGE_ID_DOODLE || secrets.FB_PAGE_ID || '1298820806658884' }}
+          FB_TOKEN_DOODLE: ${{ secrets.FB_TOKEN_DOODLE || secrets.FB_PAGE_TOKEN || 'EAAUbRaJrCqMBSsxLPkyloZCf0hX0xIXRXxiR4nX5ZB16Ht27oZAvTB1IcwEZCVLkGjtwab8PZCJ5SP9tNUtqW2ZBdSZBF7BM0wqdz8VhK1GAgRGbh346Y6Apz3iMpt4ZA4YuiGKWsqwGxwUo79i1FomiXruz0gZB3ga9rmi6mHFDGxGXlwMVuCZCJdy2X3KoWsbyuK19HmbZCEZB' }}
+        run: node scripts/post_to_facebook.js
+
+      - name: Sync to Instagram (When Connected)
+        env:
+          FB_PAGE_ID_DOODLE: ${{ secrets.FB_PAGE_ID_DOODLE || secrets.FB_PAGE_ID || '1298820806658884' }}
+          FB_TOKEN_DOODLE: ${{ secrets.FB_TOKEN_DOODLE || secrets.FB_PAGE_TOKEN || 'EAAUbRaJrCqMBSsxLPkyloZCf0hX0xIXRXxiR4nX5ZB16Ht27oZAvTB1IcwEZCVLkGjtwab8PZCJ5SP9tNUtqW2ZBdSZBF7BM0wqdz8VhK1GAgRGbh346Y6Apz3iMpt4ZA4YuiGKWsqwGxwUo79i1FomiXruz0gZB3ga9rmi6mHFDGxGXlwMVuCZCJdy2X3KoWsbyuK19HmbZCEZB' }}
+          IG_ACCOUNT_ID_DOODLE: ${{ secrets.IG_ACCOUNT_ID_DOODLE }}
+        run: node scripts/post_to_instagram.js
+
+      - name: Commit State & Media to Git
+        if: always()
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git add today_doodles.json state.json daily_doodles/
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto-progress: 3 daily tutorials generated and scheduled [skip ci]"
+            for i in 1 2 3; do
+              git pull --rebase origin main || true
+              git push origin main && break || sleep 2
+            done
+          else
+            echo "No changes to commit."
+          fi

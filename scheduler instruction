@@ -1,0 +1,41 @@
+Create THREE (3) daily step-by-step sketching tutorial images formatted in a 4-panel progressive grid on a plain paper background, following the day's rotating theme based on the current day of the week:
+
+RATE-LIMIT PACING & ARTIFICIAL DELAY:
+- Execute image generation requests sequentially rather than in parallel bursts.
+- Insert an intentional artificial delay of 10 to 15 seconds between each individual image request to respect per-minute burst rate limits and prevent throttling.
+
+GLOBAL UNIVERSAL RULES (MANDATORY FOR EVERY SINGLE IMAGE ON EVERY DAY WITHOUT EXCEPTION):
+1. STRICT NEGATIVE CONSTRAINT (CLEAN CANVAS ONLY):
+   - Absolutely NO human hands, NO fingers, NO arms, NO holding pencils or pens, NO erasers, and NO artist tools anywhere on the canvas.
+   - The image must strictly be a flat 2D drawing tutorial sheet on textured paper, NEVER a photo of someone drawing.
+2. STRICT NEGATIVE CONSTRAINT (ZERO TEXT / LABELS):
+   - Absolutely NO text, NO numbers, NO letters, NO labels, NO titles, and NO instructional words anywhere on the image.
+3. STRICT PERSPECTIVE & CAMERA LOCK:
+   - The camera angle and perspective (e.g., 3/4 view, side profile, or front view) established in Panel 1 must remain 100% identical across all 4 panels.
+   - Never switch viewpoints (e.g., from top-down to side-view, or rotating the object) between panels.
+4. STRICT SILHOUETTE, POSTURE & ACCESSORY CONTINUITY:
+   - The proportions, pose, stance, and silhouette established in Step 1 must remain identical throughout Steps 2, 3, and 4 without leaning, splaying, tilting, morphing, or flipping direction.
+   - Limb & Wing State Continuity: Dynamic features (such as wings raised/open vs. folded, or paws placed) must remain in the exact same state across every step.
+   - No disappearing elements: Never draw an accessory, prop, or lid in one step that vanishes in subsequent steps. Every structural element must remain consistent from start to finish.
+5. STEP PROGRESSION:
+   - Panel 1: basic construction shapes & guidelines.
+   - Panel 2: contours & primary anatomy/structure.
+   - Panel 3: clean refined line art & texture details.
+   - Panel 4: finished drawing cleanly colored with colored pencils.
+
+Weekly Themed Rotation:
+- Monday: Animals & Wildlife (e.g., woodland critters, safari wildlife, domestic pets, capybaras, highland calves)
+- Tuesday: Botanicals & Nature (e.g., blooming flowers, succulents, mushrooms, water lilies, cherry blossoms)
+- Wednesday: Cozy Food & Cafe Art (e.g., desserts, cupcakes, cinnamon rolls, ramen bowls, coffee/tea cups)
+- Thursday: Cozy Mini-Scenes in Objects & Origami Art (e.g., waves in teacups, campfires in mason jars, landscapes in hourglasses, folded origami papercraft animals)
+- Friday: Ocean & Marine Life (e.g., sea turtles, dolphins, manta rays, seahorses, coral reef creatures)
+- Saturday: Everyday Objects, Still Life & Vehicles (e.g., vintage cameras, lanterns, hot air balloons, retro camper vans, clocks)
+- Sunday: Chibi & Fantasy Creatures (e.g., baby dragons, pegasus, phoenix chicks, celestial kitsune spirits)
+
+Long-Term Anti-Repetition Rules (3-Year Longevity):
+- Action & Prop Pairing: Combine the subject with a distinct pose or mini-accessory (e.g., holding an acorn, wearing a leaf, swimming with a pebble).
+- Seasonality: Naturally incorporate seasonal elements based on the current month.
+
+Output & Storage:
+- For each tutorial, save directly into the 'daily arts' Google Drive folder (ID: 1fIKXiOzUu_hEDjG-CIHY-p_roflZT5n5) named in the format {artname}_YYYY-MM-DD.jpg with MIME type image/jpeg.
+- Provide the generated tutorial images and their Google Drive file links in the update.
