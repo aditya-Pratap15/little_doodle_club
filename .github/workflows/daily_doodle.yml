@@ -2,15 +2,17 @@ name: Little Doodle Club - Daily Tutorial Automation
 
 on:
   schedule:
-    # Runs daily at 12:30 PM UTC (08:30 AM EDT / 06:00 PM IST)
-    # Fetches the 3 daily tutorials from Drive, watermarks center logo, and publishes to Facebook
-    - cron: '30 12 * * *'
+    # 3 Peak USA Hours (EDT / UTC-4):
+    # - 12:30 UTC = 08:30 AM EDT (Peak 1 - Morning Inspiration) / 06:00 PM IST
+    # - 17:30 UTC = 01:30 PM EDT (Peak 2 - Afternoon Creative Break) / 11:00 PM IST
+    # - 22:30 UTC = 06:30 PM EDT (Peak 3 - Evening Relax & Draw) / 04:00 AM IST (+1)
+    - cron: '30 12,17,22 * * *'
   workflow_dispatch:
     inputs:
       post_count:
-        description: 'Number of unposted images to fetch and post (default: 3)'
+        description: 'Number of unposted images to fetch and post (default: 1 for spaced drops, or 3 for batch)'
         required: false
-        default: '3'
+        default: '1'
 
 permissions:
   contents: write
@@ -32,10 +34,10 @@ jobs:
       - name: Verify FFmpeg
         run: ffmpeg -version
 
-      - name: Fetch 3 Daily Images from Google Drive
+      - name: Fetch Random Diverse Tutorial from Google Drive
         env:
           APPS_SCRIPT_URL: ${{ secrets.APPS_SCRIPT_URL }}
-          POST_COUNT: ${{ github.event.inputs.post_count || '3' }}
+          POST_COUNT: ${{ github.event.inputs.post_count || '1' }}
         run: node scripts/fetch_from_drive.js
 
       - name: Apply Centered Watermark & Generate Captions
@@ -54,7 +56,7 @@ jobs:
           git config --local user.name "GitHub Action Bot"
           git add state.json today_doodles.json fetched_doodles.json branded_doodles/ incoming_doodles/
           if ! git diff --staged --quiet; then
-            git commit -m "Auto-progress: tutorials published and state updated [skip ci]"
+            git commit -m "Auto-progress: tutorial published and state updated [skip ci]"
             for i in 1 2 3; do
               git pull --rebase origin main || true
               git push origin main && break || sleep 2
