@@ -83,9 +83,21 @@ function getSeasonalContext(dateObj) {
 function downloadFile(url, destPath) {
   return new Promise((resolve, reject) => {
     const file = fs.createWriteStream(destPath);
-    const client = url.startsWith('https') ? https : require('http');
+    const parsedUrl = new URL(url);
 
-    client.get(url, (res) => {
+    const options = {
+      hostname: parsedUrl.hostname,
+      port: 443,
+      path: parsedUrl.pathname + parsedUrl.search,
+      method: 'GET',
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+        'Referer': 'https://pollinations.ai/',
+        'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+      }
+    };
+
+    https.get(options, (res) => {
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
         return downloadFile(res.headers.location, destPath).then(resolve).catch(reject);
       }
@@ -175,12 +187,21 @@ async function generateWithGeminiImagen(prompt, apiKey) {
 /**
  * Engine 2: High-Resolution Pollinations Flux Drawing Generator (Free, High Precision)
  */
-async function generateWithPollinations(prompt, destPath) {
+async function generateWithPollinations(prompt, destPath, retries = 2) {
   const encodedPrompt = encodeURIComponent(prompt);
-  // Flux high quality 1024x1024 sketch format with negative prompt embeddings
   const seed = Math.floor(Math.random() * 9999999);
-  const pollinationsUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=1024&height=1024&seed=${seed}&model=flux&nologo=true`;
-  return await downloadFile(pollinationsUrl, destPath);
+  const pollinationsUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=1024&height=1024&seed=${seed}&nologo=true`;
+
+  try {
+    return await downloadFile(pollinationsUrl, destPath);
+  } catch (err) {
+    if (err.message && err.message.includes('402') && retries > 0) {
+      console.log('   ⏳ Free rate limit reached (1 img / 45s). Waiting 48 seconds before automatic retry...');
+      await sleep(48000);
+      return await generateWithPollinations(prompt, destPath, retries - 1);
+    }
+    throw err;
+  }
 }
 
 /**
@@ -324,8 +345,8 @@ async function main() {
 
     // RATE-LIMIT PACING: 10-15s delay between generations
     if (i < selectedSubjects.length - 1) {
-      const delaySec = 12;
-      console.log(`   ⏳ Pacing delay: Waiting ${delaySec} seconds before next request (respecting burst limits)...\n`);
+      const delaySec = GEMINI_API_KEY ? 10 : 48;
+      console.log(`   ⏳ Pacing delay: Waiting ${delaySec} seconds before next tutorial generation (respecting API limits)...\n`);
       await sleep(delaySec * 1000);
     }
   }
