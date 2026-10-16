@@ -68,7 +68,7 @@ function doGet(e) {
       success: true,
       folderId: TARGET_FOLDER_ID,
       count: fileList.length,
-      files: fileList.slice(0, 15) // Return up to 15 newest files
+      files: fileList // Return up to 15 newest files
     })).setMimeType(ContentService.MimeType.JSON);
 
   } catch (err) {

@@ -4,10 +4,11 @@
  * ---------------------------------------------------------
  * 1. Takes daily tutorial images (fetched from Drive).
  * 2. Overlays the page logo at the EXACT CENTER of the 4-panel grid ((W-w)/2 : (H-h)/2).
- * 3. Inspects filename to identify the subject (e.g., 'chubby_capybara_2026-10-17.jpg' -> 'Chubby Capybara').
- * 4. Generates rich captions with Unicode bold, tutorial steps, and tailored hashtags.
- * 5. Prepares the pinned follow comment with page link https://www.facebook.com/1298820806658884.
- * 6. Outputs ready-to-post payload to 'today_doodles.json'.
+ * 3. Watermark specs: Exactly 40px size with 30% transparency (0.7 alpha) for a subtle watermark.
+ * 4. Inspects filename to identify the subject (e.g., 'chubby_capybara_2026-10-17.jpg' -> 'Chubby Capybara').
+ * 5. Generates rich captions with Unicode bold, tutorial steps, and tailored hashtags.
+ * 6. Prepares the pinned follow comment with page link https://www.facebook.com/1298820806658884.
+ * 7. Outputs ready-to-post payload to 'today_doodles.json'.
  */
 
 const fs = require('fs');
@@ -73,27 +74,12 @@ function extractSubject(filename) {
 }
 
 /**
- * Get Image Width & Height via ffprobe
- */
-function getImageDimensions(imagePath) {
-  try {
-    const cmd = `ffprobe -v error -show_entries stream=width,height -of csv=s=x:p=0 "${imagePath}"`;
-    const out = execSync(cmd, { encoding: 'utf8' }).trim();
-    const [w, h] = out.split('x').map(Number);
-    if (w && h) return { width: w, height: h };
-  } catch (e) {}
-  return { width: 768, height: 768 };
-}
-
-/**
  * Watermark image at exact center: (W-w)/2 : (H-h)/2
+ * Logo is scaled to 40px with 30% transparency (0.7 opacity)
  */
 function applyCenteredWatermark(inputPath, logoPath, outputPath) {
-  const { width } = getImageDimensions(inputPath);
-  // Scale badge to ~20% of image width (e.g. 150px for 768, 216px for 1080)
-  const badgeSize = Math.max(120, Math.min(240, Math.round(width * 0.20)));
-
-  const cmd = `ffmpeg -y -i "${inputPath}" -i "${logoPath}" -filter_complex "[1:v]scale=${badgeSize}:${badgeSize}[logo];[0:v][logo]overlay=(W-w)/2:(H-h)/2" -update 1 -frames:v 1 "${outputPath}"`;
+  const filter = '[1:v]scale=40:40,format=rgba,colorchannelmixer=aa=0.7[logo];[0:v][logo]overlay=(W-w)/2:(H-h)/2';
+  const cmd = `ffmpeg -y -i "${inputPath}" -i "${logoPath}" -filter_complex "${filter}" -update 1 -frames:v 1 "${outputPath}"`;
   execSync(cmd, { stdio: 'pipe' });
 }
 
@@ -130,7 +116,7 @@ function generateFollowComment() {
 
 async function main() {
   console.log('======================================================');
-  console.log('🎨 Little Doodle Club - Watermark Studio & Captions');
+  console.log('🎨 Little Doodle Club - Watermark Studio (40px Emblem)');
   console.log('======================================================\n');
 
   ensureDir(BRANDED_DIR);
@@ -158,23 +144,12 @@ async function main() {
     }));
   }
 
-  // Also check daily_doodles fallback
-  if (items.length === 0 && fs.existsSync(path.join(BASE_DIR, 'daily_doodles'))) {
-    const dailyFiles = fs.readdirSync(path.join(BASE_DIR, 'daily_doodles')).filter(f => f.match(/\.(jpg|jpeg|png)$/i));
-    items = dailyFiles.map(f => ({
-      driveFileId: f,
-      filename: f,
-      subject: extractSubject(f),
-      rawImagePath: path.relative(BASE_DIR, path.join(BASE_DIR, 'daily_doodles', f)).replace(/\\/g, '/')
-    }));
-  }
-
   if (items.length === 0) {
     console.log('⚠️ No images found to watermark. Run fetch_from_drive.js first.');
     process.exit(0);
   }
 
-  console.log(`\n🖼️  Processing ${items.length} images for branding...\n`);
+  console.log(`\n🖼️  Processing ${items.length} images for 40px branding (70% opacity)...\n`);
 
   const readyDoodles = [];
 
@@ -189,7 +164,7 @@ async function main() {
     const outFilename = `watermarked_${path.basename(item.filename)}`;
     const outPath = path.join(BRANDED_DIR, outFilename);
 
-    console.log(`   [${i + 1}/${items.length}] Watermarking center badge: ${item.subject}...`);
+    console.log(`   [${i + 1}/${items.length}] Watermarking 40px center badge: ${item.subject}...`);
     applyCenteredWatermark(rawPath, logoPath, outPath);
 
     const caption = generateCaption(item.subject);
@@ -204,7 +179,7 @@ async function main() {
       follow_comment: comment
     });
 
-    console.log(`      ✅ Watermarked -> ${outFilename}`);
+    console.log(`      ✅ Watermarked (40px, 70% opacity) -> ${outFilename}`);
   }
 
   saveJson(TODAY_DOODLES_PATH, {

@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 /**
- * 🎨 LITTLE DOODLE CLUB - GOOGLE DRIVE DAILY INGESTION (Never-Expiring)
- * -------------------------------------------------------------------
- * 1. Queries the Google Apps Script Web App for newly generated images in Drive folder:
+ * 🎨 LITTLE DOODLE CLUB - GOOGLE DRIVE RANDOM INGESTION (Never-Expiring)
+ * ---------------------------------------------------------------------
+ * 1. Queries the Google Apps Script Web App for all images in Drive folder:
  *    1fIKXiOzUu_hEDjG-CIHY-p_roflZT5n5
  * 2. Cross-references against 'state.json' so NO image or subject is EVER repeated.
- * 3. Fetches up to targetCount unposted images into 'incoming_doodles/'.
- * 4. Outputs metadata to 'fetched_doodles.json'.
+ * 3. Shuffles all unposted images randomly to pick a rich mix of different themes every day!
+ * 4. Downloads up to targetCount (3) unposted images into 'incoming_doodles/'.
+ * 5. Outputs metadata to 'fetched_doodles.json'.
  */
 
 const fs = require('fs');
@@ -38,6 +39,17 @@ function loadJson(p, fallback = {}) {
 
 function saveJson(p, data) {
   fs.writeFileSync(p, JSON.stringify(data, null, 2) + '\n', 'utf8');
+}
+
+/**
+ * Fisher-Yates array shuffle for true random distribution
+ */
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
 }
 
 /**
@@ -125,7 +137,7 @@ async function queryAppsScriptFiles(webAppUrl) {
 
 async function main() {
   console.log('======================================================');
-  console.log('🎨 Little Doodle Club - Google Drive Daily Ingestion');
+  console.log('🎲 Little Doodle Club - Random Diverse Theme Ingestion');
   console.log('======================================================\n');
 
   ensureDir(INCOMING_DIR);
@@ -146,7 +158,7 @@ async function main() {
 
   // METHOD 1: Fetch via Google Apps Script Web App
   if (APPS_SCRIPT_URL) {
-    console.log('📡 Querying Google Drive via Apps Script Web App...');
+    console.log('📡 Querying Google Drive library via Apps Script Web App...');
     const result = await queryAppsScriptFiles(APPS_SCRIPT_URL);
 
     if (result && result.success && Array.isArray(result.files)) {
@@ -160,7 +172,10 @@ async function main() {
                !state.postedSubjects.includes(subj);
       });
 
-      console.log(`🎯 Unposted files available: ${unpostedFiles.length}`);
+      console.log(`🎯 Unposted files available across all themes: ${unpostedFiles.length}`);
+
+      // Shuffle randomly across all unposted files to pick an exciting variety
+      shuffleArray(unpostedFiles);
 
       const candidates = unpostedFiles.slice(0, targetCount);
 
@@ -169,15 +184,14 @@ async function main() {
         const destPath = path.join(INCOMING_DIR, item.name);
         const subject = extractSubjectFromFilename(item.name);
 
-        console.log(`   [${i + 1}/${candidates.length}] Downloading: ${item.name} (${subject})...`);
+        console.log(`   [${i + 1}/${candidates.length}] Downloading (Random Pick): ${item.name} (${subject})...`);
 
-        // Attempt base64 direct fetch from Apps Script
+        // Fetch binary base64 directly from Apps Script
         const base64Res = await fetchBase64FromAppsScript(APPS_SCRIPT_URL, item.id);
         if (base64Res && base64Res.base64) {
           fs.writeFileSync(destPath, Buffer.from(base64Res.base64, 'base64'));
           console.log(`      ✅ Downloaded ${(fs.statSync(destPath).size / 1024).toFixed(1)} KB via Apps Script Blob`);
         } else if (item.downloadUrl) {
-          // Fallback to direct URL download
           try {
             await downloadFile(item.downloadUrl, destPath);
             console.log(`      ✅ Downloaded via Direct Drive Stream`);
@@ -204,17 +218,17 @@ async function main() {
     console.log('ℹ️ APPS_SCRIPT_URL not set in environment.');
   }
 
-  // METHOD 2: Fallback to existing files in daily_doodles or incoming_doodles (for local/manual runs)
+  // METHOD 2: Fallback to existing files in local storage (shuffled randomly)
   if (fetchedDoodles.length < targetCount) {
-    console.log(`\n🔍 Checking local storage for any unprocessed daily tutorials...`);
+    console.log(`\n🔍 Checking local storage for unprocessed tutorials...`);
     const searchDirs = [INCOMING_DIR, path.join(BASE_DIR, 'daily_doodles')];
+    let localCandidates = [];
 
     for (const sDir of searchDirs) {
       if (!fs.existsSync(sDir)) continue;
       const localFiles = fs.readdirSync(sDir).filter(f => f.match(/\.(jpg|jpeg|png)$/i));
 
       for (const f of localFiles) {
-        if (fetchedDoodles.length >= targetCount) break;
         const subject = extractSubjectFromFilename(f);
         const fullP = path.join(sDir, f);
 
@@ -224,16 +238,23 @@ async function main() {
                               state.postedSubjects.includes(subject);
 
         if (!alreadyFetched && !alreadyPosted) {
-          fetchedDoodles.push({
-            driveFileId: f,
-            filename: f,
-            subject: subject,
-            rawImagePath: path.relative(BASE_DIR, fullP).replace(/\\/g, '/'),
-            createdTime: fs.statSync(fullP).mtime.toISOString()
-          });
-          console.log(`   ✅ Found local tutorial: ${f} (${subject})`);
+          localCandidates.push({ f, subject, fullP });
         }
       }
+    }
+
+    shuffleArray(localCandidates);
+
+    for (const cand of localCandidates) {
+      if (fetchedDoodles.length >= targetCount) break;
+      fetchedDoodles.push({
+        driveFileId: cand.f,
+        filename: cand.f,
+        subject: cand.subject,
+        rawImagePath: path.relative(BASE_DIR, cand.fullP).replace(/\\/g, '/'),
+        createdTime: fs.statSync(cand.fullP).mtime.toISOString()
+      });
+      console.log(`   ✅ Found local tutorial: ${cand.f} (${cand.subject})`);
     }
   }
 
@@ -242,7 +263,7 @@ async function main() {
     process.exit(0);
   }
 
-  console.log(`\n🎉 Successfully prepared ${fetchedDoodles.length} unposted tutorial images!`);
+  console.log(`\n🎉 Successfully prepared ${fetchedDoodles.length} unposted random tutorials!`);
   saveJson(FETCHED_METADATA_PATH, {
     fetchedAt: new Date().toISOString(),
     doodles: fetchedDoodles
