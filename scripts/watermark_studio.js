@@ -4,7 +4,7 @@
  * ---------------------------------------------------------
  * 1. Takes daily tutorial images (fetched from Drive).
  * 2. Overlays the page logo at the EXACT CENTER of the 4-panel grid ((W-w)/2 : (H-h)/2).
- * 3. Watermark specs: Exactly 40px size with 30% transparency (0.7 alpha) for a subtle watermark.
+ * 3. Watermark specs: Exactly 43px size with 30% transparency (0.7 alpha) for a subtle watermark.
  * 4. Inspects filename to identify the subject (e.g., 'chubby_capybara_2026-10-17.jpg' -> 'Chubby Capybara').
  * 5. Generates rich captions with Unicode bold, tutorial steps, and tailored hashtags.
  * 6. Prepares the pinned follow comment with page link https://www.facebook.com/1298820806658884.
@@ -75,10 +75,10 @@ function extractSubject(filename) {
 
 /**
  * Watermark image at exact center: (W-w)/2 : (H-h)/2
- * Logo is scaled to 40px with 30% transparency (0.7 opacity)
+ * Logo is scaled to 43px with 30% transparency (0.7 opacity)
  */
 function applyCenteredWatermark(inputPath, logoPath, outputPath) {
-  const filter = '[1:v]scale=40:40,format=rgba,colorchannelmixer=aa=0.7[logo];[0:v][logo]overlay=(W-w)/2:(H-h)/2';
+  const filter = '[1:v]scale=43:43,format=rgba,colorchannelmixer=aa=0.5[logo];[0:v][logo]overlay=(W-w)/2:(H-h)/2';
   const cmd = `ffmpeg -y -i "${inputPath}" -i "${logoPath}" -filter_complex "${filter}" -update 1 -frames:v 1 "${outputPath}"`;
   execSync(cmd, { stdio: 'pipe' });
 }
@@ -116,7 +116,7 @@ function generateFollowComment() {
 
 async function main() {
   console.log('======================================================');
-  console.log('🎨 Little Doodle Club - Watermark Studio (40px Emblem)');
+  console.log('🎨 Little Doodle Club - Watermark Studio (43px Emblem)');
   console.log('======================================================\n');
 
   ensureDir(BRANDED_DIR);
@@ -149,7 +149,7 @@ async function main() {
     process.exit(0);
   }
 
-  console.log(`\n🖼️  Processing ${items.length} images for 40px branding (70% opacity)...\n`);
+  console.log(`\n🖼️  Processing ${items.length} images for 43px branding (50% opacity)...\n`);
 
   const readyDoodles = [];
 
@@ -164,7 +164,7 @@ async function main() {
     const outFilename = `watermarked_${path.basename(item.filename)}`;
     const outPath = path.join(BRANDED_DIR, outFilename);
 
-    console.log(`   [${i + 1}/${items.length}] Watermarking 40px center badge: ${item.subject}...`);
+    console.log(`   [${i + 1}/${items.length}] Watermarking 43px center badge: ${item.subject}...`);
     applyCenteredWatermark(rawPath, logoPath, outPath);
 
     const caption = generateCaption(item.subject);
@@ -179,7 +179,7 @@ async function main() {
       follow_comment: comment
     });
 
-    console.log(`      ✅ Watermarked (40px, 70% opacity) -> ${outFilename}`);
+    console.log(`      ✅ Watermarked (43px, 50% opacity) -> ${outFilename}`);
   }
 
   saveJson(TODAY_DOODLES_PATH, {
