@@ -1,8 +1,42 @@
 {
   "version": "1.0.0",
   "lastUpdated": "2026-10-16",
-  "postedFileIds": [],
-  "postedFilenames": [],
-  "postedSubjects": [],
-  "history": []
+  "postedFileIds": [
+    "15SzRk8nQbelsMyDiVdfUYkYfOwJpuRyR",
+    "1r3FOM5Cz4Cylk9Zjcvvckiewe-aHFgN2",
+    "1fn_3jtF5IdtaynQYuecf4tAU6KW6Ydp9"
+  ],
+  "postedFilenames": [
+    "dumbo_octopus_2026-10-16.jpg",
+    "beluga_whale_2026-10-16.jpg",
+    "pufferfish_2026-10-16.jpg"
+  ],
+  "postedSubjects": [
+    "Dumbo Octopus",
+    "Beluga Whale",
+    "Pufferfish"
+  ],
+  "history": [
+    {
+      "date": "2026-10-16T17:42:08.310Z",
+      "subject": "Dumbo Octopus",
+      "filename": "dumbo_octopus_2026-10-16.jpg",
+      "driveFileId": "15SzRk8nQbelsMyDiVdfUYkYfOwJpuRyR",
+      "fb_post_id": "1298820806658884_122102163669508656"
+    },
+    {
+      "date": "2026-10-16T17:42:20.760Z",
+      "subject": "Beluga Whale",
+      "filename": "beluga_whale_2026-10-16.jpg",
+      "driveFileId": "1r3FOM5Cz4Cylk9Zjcvvckiewe-aHFgN2",
+      "fb_post_id": "1298820806658884_122102163831508656"
+    },
+    {
+      "date": "2026-10-16T17:42:32.095Z",
+      "subject": "Pufferfish",
+      "filename": "pufferfish_2026-10-16.jpg",
+      "driveFileId": "1fn_3jtF5IdtaynQYuecf4tAU6KW6Ydp9",
+      "fb_post_id": "1298820806658884_122102164101508656"
+    }
+  ]
 }
