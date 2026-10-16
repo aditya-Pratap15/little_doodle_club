@@ -2,22 +2,30 @@ name: Little Doodle Club - Daily Tutorial Automation
 
 on:
   schedule:
-    # Runs ONCE daily at 10:00 AM UTC (06:00 AM EDT / 03:30 PM IST)
-    # Fetches 3 tutorials from Drive, watermarks them, and schedules them into
-    # Facebook Page Planner across 3 peak USA hours (08:30 AM, 01:30 PM, 06:30 PM EDT)
-    - cron: '0 10 * * *'
+    # RUN 1 (Morning Inspiration): 12:30 UTC = 08:30 AM EDT / 06:00 PM IST
+    # -> Uploads all 3 tutorials: Post 1 LIVE + comment, Posts 2 & 3 scheduled into Facebook Page Planner!
+    - cron: '30 12 * * *'
+
+    # RUN 2 (Afternoon Comment Drop): 17:35 UTC = 01:35 PM EDT / 11:05 PM IST
+    # -> Wakes up 5 mins after Post 2 goes live to drop Follow Comment 2! (Takes ~5 seconds)
+    - cron: '35 17 * * *'
+
+    # RUN 3 (Evening Comment Drop): 22:35 UTC = 06:35 PM EDT / 04:05 AM IST (+1)
+    # -> Wakes up 5 mins after Post 3 goes live to drop Follow Comment 3! (Takes ~5 seconds)
+    - cron: '35 22 * * *'
+
   workflow_dispatch:
     inputs:
-      post_count:
-        description: 'Number of unposted images to fetch and schedule (default: 3)'
+      mode:
+        description: 'Execution mode: "pipeline" (fetch + schedule all 3) or "comments" (drop pending comments)'
         required: false
-        default: '3'
+        default: 'pipeline'
 
 permissions:
   contents: write
 
 jobs:
-  doodle-pipeline:
+  doodle-automation:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -30,24 +38,57 @@ jobs:
         with:
           node-version: 20
 
+      - name: Determine Run Mode
+        id: run_mode
+        run: |
+          HOUR=$(date -u +"%H")
+          INPUT_MODE="${{ github.event.inputs.mode }}"
+          if [ -n "$INPUT_MODE" ]; then
+            echo "mode=$INPUT_MODE" >> $GITHUB_OUTPUT
+          elif [ "$HOUR" -eq 12 ]; then
+            echo "mode=pipeline" >> $GITHUB_OUTPUT
+          else
+            echo "mode=comments" >> $GITHUB_OUTPUT
+          fi
+
+      # -------------------------------------------------------------
+      # MORNING RUN: Full Pipeline (Fetch 3, Watermark, Schedule, Post 1 Live)
+      # -------------------------------------------------------------
       - name: Verify FFmpeg
+        if: steps.run_mode.outputs.mode == 'pipeline'
         run: ffmpeg -version
 
       - name: Fetch 3 Random Diverse Tutorials from Google Drive
+        if: steps.run_mode.outputs.mode == 'pipeline'
         env:
           APPS_SCRIPT_URL: ${{ secrets.APPS_SCRIPT_URL }}
-          POST_COUNT: ${{ github.event.inputs.post_count || '3' }}
+          POST_COUNT: '3'
         run: node scripts/fetch_from_drive.js
 
       - name: Apply Centered Watermark & Generate Captions
+        if: steps.run_mode.outputs.mode == 'pipeline'
         run: node scripts/watermark_studio.js
 
-      - name: Schedule 3 Posts into Facebook Page Planner (USA Timing)
+      - name: Upload Post 1 LIVE + Schedule Posts 2 & 3 in Facebook Planner
+        if: steps.run_mode.outputs.mode == 'pipeline'
         env:
           FB_PAGE_ID_DOODLE: ${{ secrets.FB_PAGE_ID_DOODLE || '1298820806658884' }}
           FB_TOKEN_DOODLE: ${{ secrets.FB_TOKEN_DOODLE || 'EAAUbRaJrCqMBSsxLPkyloZCf0hX0xIXRXxiR4nX5ZB16Ht27oZAvTB1IcwEZCVLkGjtwab8PZCJ5SP9tNUtqW2ZBdSZBF7BM0wqdz8VhK1GAgRGbh346Y6Apz3iMpt4ZA4YuiGKWsqwGxwUo79i1FomiXruz0gZB3ga9rmi6mHFDGxGXlwMVuCZCJdy2X3KoWsbyuK19HmbZCEZB' }}
         run: node scripts/post_to_facebook.js
 
+      # -------------------------------------------------------------
+      # AFTERNOON & EVENING RUNS: Lightweight Comment Dropper (~5s)
+      # -------------------------------------------------------------
+      - name: Drop Pending Follow Comments on Live Posts
+        if: steps.run_mode.outputs.mode == 'comments'
+        env:
+          FB_PAGE_ID_DOODLE: ${{ secrets.FB_PAGE_ID_DOODLE || '1298820806658884' }}
+          FB_TOKEN_DOODLE: ${{ secrets.FB_TOKEN_DOODLE || 'EAAUbRaJrCqMBSsxLPkyloZCf0hX0xIXRXxiR4nX5ZB16Ht27oZAvTB1IcwEZCVLkGjtwab8PZCJ5SP9tNUtqW2ZBdSZBF7BM0wqdz8VhK1GAgRGbh346Y6Apz3iMpt4ZA4YuiGKWsqwGxwUo79i1FomiXruz0gZB3ga9rmi6mHFDGxGXlwMVuCZCJdy2X3KoWsbyuK19HmbZCEZB' }}
+        run: node scripts/post_pending_comments.js
+
+      # -------------------------------------------------------------
+      # Commit State & History back to Git
+      # -------------------------------------------------------------
       - name: Commit State & History to Git
         if: always()
         run: |
@@ -55,7 +96,7 @@ jobs:
           git config --local user.name "GitHub Action Bot"
           git add state.json today_doodles.json fetched_doodles.json branded_doodles/ incoming_doodles/
           if ! git diff --staged --quiet; then
-            git commit -m "Auto-progress: tutorials scheduled into Facebook Planner [skip ci]"
+            git commit -m "Auto-progress: pipeline state updated [skip ci]"
             for i in 1 2 3; do
               git pull --rebase origin main || true
               git push origin main && break || sleep 2
