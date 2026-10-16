@@ -2,17 +2,16 @@ name: Little Doodle Club - Daily Tutorial Automation
 
 on:
   schedule:
-    # 3 Peak USA Hours (EDT / UTC-4):
-    # - 12:30 UTC = 08:30 AM EDT (Peak 1 - Morning Inspiration) / 06:00 PM IST
-    # - 17:30 UTC = 01:30 PM EDT (Peak 2 - Afternoon Creative Break) / 11:00 PM IST
-    # - 22:30 UTC = 06:30 PM EDT (Peak 3 - Evening Relax & Draw) / 04:00 AM IST (+1)
-    - cron: '30 12,17,22 * * *'
+    # Runs ONCE daily at 10:00 AM UTC (06:00 AM EDT / 03:30 PM IST)
+    # Fetches 3 tutorials from Drive, watermarks them, and schedules them into
+    # Facebook Page Planner across 3 peak USA hours (08:30 AM, 01:30 PM, 06:30 PM EDT)
+    - cron: '0 10 * * *'
   workflow_dispatch:
     inputs:
       post_count:
-        description: 'Number of unposted images to fetch and post (default: 1 for spaced drops, or 3 for batch)'
+        description: 'Number of unposted images to fetch and schedule (default: 3)'
         required: false
-        default: '1'
+        default: '3'
 
 permissions:
   contents: write
@@ -34,16 +33,16 @@ jobs:
       - name: Verify FFmpeg
         run: ffmpeg -version
 
-      - name: Fetch Random Diverse Tutorial from Google Drive
+      - name: Fetch 3 Random Diverse Tutorials from Google Drive
         env:
           APPS_SCRIPT_URL: ${{ secrets.APPS_SCRIPT_URL }}
-          POST_COUNT: ${{ github.event.inputs.post_count || '1' }}
+          POST_COUNT: ${{ github.event.inputs.post_count || '3' }}
         run: node scripts/fetch_from_drive.js
 
       - name: Apply Centered Watermark & Generate Captions
         run: node scripts/watermark_studio.js
 
-      - name: Publish to Facebook Page & Add Follow Comment
+      - name: Schedule 3 Posts into Facebook Page Planner (USA Timing)
         env:
           FB_PAGE_ID_DOODLE: ${{ secrets.FB_PAGE_ID_DOODLE || '1298820806658884' }}
           FB_TOKEN_DOODLE: ${{ secrets.FB_TOKEN_DOODLE || 'EAAUbRaJrCqMBSsxLPkyloZCf0hX0xIXRXxiR4nX5ZB16Ht27oZAvTB1IcwEZCVLkGjtwab8PZCJ5SP9tNUtqW2ZBdSZBF7BM0wqdz8VhK1GAgRGbh346Y6Apz3iMpt4ZA4YuiGKWsqwGxwUo79i1FomiXruz0gZB3ga9rmi6mHFDGxGXlwMVuCZCJdy2X3KoWsbyuK19HmbZCEZB' }}
@@ -56,7 +55,7 @@ jobs:
           git config --local user.name "GitHub Action Bot"
           git add state.json today_doodles.json fetched_doodles.json branded_doodles/ incoming_doodles/
           if ! git diff --staged --quiet; then
-            git commit -m "Auto-progress: tutorial published and state updated [skip ci]"
+            git commit -m "Auto-progress: tutorials scheduled into Facebook Planner [skip ci]"
             for i in 1 2 3; do
               git pull --rebase origin main || true
               git push origin main && break || sleep 2

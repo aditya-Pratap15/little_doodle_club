@@ -4,11 +4,10 @@
  * ---------------------------------------------------------
  * 1. Takes daily tutorial images (fetched from Drive).
  * 2. Overlays the page logo at the EXACT CENTER of the 4-panel grid ((W-w)/2 : (H-h)/2).
- * 3. Watermark specs: Exactly 43px size with 30% transparency (0.7 alpha) for a subtle watermark.
+ * 3. Watermark specs: Exactly 43px size with 50% opacity for a clean, subtle emblem.
  * 4. Inspects filename to identify the subject (e.g., 'chubby_capybara_2026-10-17.jpg' -> 'Chubby Capybara').
- * 5. Generates rich captions with Unicode bold, tutorial steps, and tailored hashtags.
- * 6. Prepares the pinned follow comment with page link https://www.facebook.com/1298820806658884.
- * 7. Outputs ready-to-post payload to 'today_doodles.json'.
+ * 5. Generates rich captions with Unicode bold, tutorial steps, hashtags, AND page follow footer.
+ * 6. Outputs ready-to-post payload to 'today_doodles.json'.
  */
 
 const fs = require('fs');
@@ -75,7 +74,7 @@ function extractSubject(filename) {
 
 /**
  * Watermark image at exact center: (W-w)/2 : (H-h)/2
- * Logo is scaled to 43px with 30% transparency (0.7 opacity)
+ * Logo is scaled to 43px with 50% opacity
  */
 function applyCenteredWatermark(inputPath, logoPath, outputPath) {
   const filter = '[1:v]scale=43:43,format=rgba,colorchannelmixer=aa=0.5[logo];[0:v][logo]overlay=(W-w)/2:(H-h)/2';
@@ -84,7 +83,7 @@ function applyCenteredWatermark(inputPath, logoPath, outputPath) {
 }
 
 /**
- * Generate Caption and Hashtags based on subject
+ * Generate Caption and Hashtags with built-in Follow CTA & Page link
  */
 function generateCaption(subject) {
   const subjectBold = toUnicodeBold(subject);
@@ -99,6 +98,10 @@ Follow these 4 simple steps to bring your ${subject} doodle to life!
 4️⃣ Color and shade for the final pop!
 
 💬 Which cute doodle should we draw next? Drop your ideas in the comments below! 👇
+
+❤️ Loving these daily easy drawing guides?
+👉 Follow Little Doodle Club for 3 new step-by-step doodle tutorials every single day!
+🎨 https://www.facebook.com/1298820806658884
 
 🏷️ #LittleDoodleClub #HowToDraw #${tagSubject} #DrawingTutorial #EasyDrawing #StepByStepDrawing #DoodleArt #ArtForBeginners #CuteArt #DrawingGuide #DailyDoodle`;
 
@@ -121,7 +124,6 @@ async function main() {
 
   ensureDir(BRANDED_DIR);
 
-  // Find logo
   const logoPath = LOGO_PATHS.find(p => fs.existsSync(p));
   if (!logoPath) {
     console.error('❌ Logo not found in assets/page_logo.png or workspace!');
@@ -129,7 +131,6 @@ async function main() {
   }
   console.log(`✅ Found Page Logo: ${path.basename(logoPath)}`);
 
-  // Load items to watermark from fetched_doodles.json or incoming_doodles
   let items = [];
   const fetched = loadJson(FETCHED_JSON_PATH, null);
   if (fetched && Array.isArray(fetched.doodles) && fetched.doodles.length > 0) {
