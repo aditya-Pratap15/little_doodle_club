@@ -6,8 +6,9 @@
  * 2. Overlays the page logo at the EXACT CENTER of the 4-panel grid ((W-w)/2 : (H-h)/2).
  * 3. Watermark specs: Exactly 43px size with 50% opacity for a clean, subtle emblem.
  * 4. Inspects filename to identify the subject (e.g., 'chubby_capybara_2026-10-17.jpg' -> 'Chubby Capybara').
- * 5. Generates rich captions with Unicode bold, tutorial steps, hashtags, AND page follow footer.
- * 6. Outputs ready-to-post payload to 'today_doodles.json'.
+ * 5. Generates rich captions with Unicode bold, tutorial steps, and hashtags.
+ * 6. Generates DYNAMIC, SUBJECT-SPECIFIC rotating follow comments (100% spam-safe).
+ * 7. Outputs ready-to-post payload to 'today_doodles.json'.
  */
 
 const fs = require('fs');
@@ -109,12 +110,25 @@ Follow these 4 simple steps to bring your ${subject} doodle to life!
 }
 
 /**
- * Generate Pinned/First Follow Comment
+ * DYNAMIC, SUBJECT-SPECIFIC ROTATING COMMENTS (100% Anti-Spam Safe)
+ * Includes artwork subject and rotates across 8 organic templates
  */
-function generateFollowComment() {
-  return `❤️ Loving these daily easy drawing guides?
-👉 Follow Little Doodle Club for 3 new step-by-step doodle tutorials every single day!
-🎨 https://www.facebook.com/1298820806658884`;
+function generateFollowComment(subject) {
+  const cleanSubj = subject || 'cute sketch';
+  const templates = [
+    `Loved sketching this ${cleanSubj}? 🎨 Save this guide and follow Little Doodle Club for 3 new step-by-step drawing tutorials every day!\n👉 https://www.facebook.com/1298820806658884`,
+    `Who's trying to draw this ${cleanSubj} today? ✏️ Grab your pencils and follow our page for daily easy doodle inspiration!\n❤️ https://www.facebook.com/1298820806658884`,
+    `Want more simple doodles like this ${cleanSubj}? 🌟 Follow Little Doodle Club so you never miss our next tutorial drop!\n👇 https://www.facebook.com/1298820806658884`,
+    `Tag a friend who would love drawing this ${cleanSubj}! 👫 And be sure to follow our page for 3 fresh step-by-step guides every single day!\n🎨 https://www.facebook.com/1298820806658884`,
+    `Hope you enjoyed learning how to draw this ${cleanSubj}! 💖 Follow Little Doodle Club for easy creative breaks all week long!\n👉 https://www.facebook.com/1298820806658884`,
+    `Which step of this ${cleanSubj} was your favorite? Let us know below and follow our page for 3 new daily drawing ideas!\n✨ https://www.facebook.com/1298820806658884`,
+    `Drawing is so relaxing! 🌿 Follow Little Doodle Club for daily 4-step sketching guides just like this ${cleanSubj}!\n👇 https://www.facebook.com/1298820806658884`,
+    `Save this ${cleanSubj} tutorial for your next sketchbook session! 📖 Tap follow to see 3 new creative doodle guides every day!\n🎨 https://www.facebook.com/1298820806658884`
+  ];
+
+  const hash = Array.from(cleanSubj).reduce((acc, c) => acc + c.charCodeAt(0), 0);
+  const idx = Math.abs(hash) % templates.length;
+  return templates[idx];
 }
 
 async function main() {
@@ -169,7 +183,7 @@ async function main() {
     applyCenteredWatermark(rawPath, logoPath, outPath);
 
     const caption = generateCaption(item.subject);
-    const comment = generateFollowComment();
+    const comment = generateFollowComment(item.subject);
 
     readyDoodles.push({
       driveFileId: item.driveFileId,
@@ -181,6 +195,7 @@ async function main() {
     });
 
     console.log(`      ✅ Watermarked (43px, 50% opacity) -> ${outFilename}`);
+    console.log(`      💬 Dynamic Comment Generated: "${comment.split('\n')[0]}"`);
   }
 
   saveJson(TODAY_DOODLES_PATH, {

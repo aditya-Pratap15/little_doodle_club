@@ -3,7 +3,7 @@
  * 💬 LITTLE DOODLE CLUB - AUTO COMMENT DROPPER
  * --------------------------------------------
  * Wakes up at afternoon (01:35 PM EDT) and evening (06:35 PM EDT)
- * to drop the follow comment under scheduled posts after they go live!
+ * to drop dynamic, personalized follow comments under scheduled posts after they go live!
  */
 
 const fs = require('fs');
@@ -29,6 +29,26 @@ function loadJson(p, fallback = {}) {
 
 function saveJson(p, data) {
   fs.writeFileSync(p, JSON.stringify(data, null, 2) + '\n', 'utf8');
+}
+
+/**
+ * Dynamic subject-specific fallback comment generator
+ */
+function generateFollowComment(subject) {
+  const cleanSubj = subject || 'cute sketch';
+  const templates = [
+    `Loved sketching this ${cleanSubj}? 🎨 Save this guide and follow Little Doodle Club for 3 new step-by-step drawing tutorials every day!\n👉 https://www.facebook.com/1298820806658884`,
+    `Who's trying to draw this ${cleanSubj} today? ✏️ Grab your pencils and follow our page for daily easy doodle inspiration!\n❤️ https://www.facebook.com/1298820806658884`,
+    `Want more simple doodles like this ${cleanSubj}? 🌟 Follow Little Doodle Club so you never miss our next tutorial drop!\n👇 https://www.facebook.com/1298820806658884`,
+    `Tag a friend who would love drawing this ${cleanSubj}! 👫 And be sure to follow our page for 3 fresh step-by-step guides every single day!\n🎨 https://www.facebook.com/1298820806658884`,
+    `Hope you enjoyed learning how to draw this ${cleanSubj}! 💖 Follow Little Doodle Club for easy creative breaks all week long!\n👉 https://www.facebook.com/1298820806658884`,
+    `Which step of this ${cleanSubj} was your favorite? Let us know below and follow our page for 3 new daily drawing ideas!\n✨ https://www.facebook.com/1298820806658884`,
+    `Drawing is so relaxing! 🌿 Follow Little Doodle Club for daily 4-step sketching guides just like this ${cleanSubj}!\n👇 https://www.facebook.com/1298820806658884`,
+    `Save this ${cleanSubj} tutorial for your next sketchbook session! 📖 Tap follow to see 3 new creative doodle guides every day!\n🎨 https://www.facebook.com/1298820806658884`
+  ];
+  const hash = Array.from(cleanSubj).reduce((acc, c) => acc + c.charCodeAt(0), 0);
+  const idx = Math.abs(hash) % templates.length;
+  return templates[idx];
 }
 
 /**
@@ -68,7 +88,7 @@ function postComment(postId, token, message) {
 
 async function main() {
   console.log('======================================================');
-  console.log('💬 Little Doodle Club - Pending Follow Comments Dropper');
+  console.log('💬 Little Doodle Club - Dynamic Follow Comments Dropper');
   console.log('======================================================\n');
 
   if (!fs.existsSync(TODAY_DOODLES_PATH)) {
@@ -91,35 +111,31 @@ async function main() {
   for (let idx = 0; idx < doodles.length; idx++) {
     const d = doodles[idx];
 
-    // Must have a Facebook post ID
     if (!d.fb_post_id) continue;
 
-    // Skip if already commented
     if (d.comment_posted) {
       console.log(`⏭️  [${idx + 1}/${doodles.length}] "${d.subject}" already has comment posted. Skipping.`);
       continue;
     }
 
-    // Check if the scheduled publish time has arrived (or was immediate)
     if (d.scheduled_publish_time && d.scheduled_publish_time > nowSec + 120) {
       const waitMins = Math.round((d.scheduled_publish_time - nowSec) / 60);
       console.log(`⏳ [${idx + 1}/${doodles.length}] "${d.subject}" not live yet (publishes in ~\n${waitMins} mins). Will comment on next run.`);
       continue;
     }
 
-    console.log(`💬 [${idx + 1}/${doodles.length}] Posting follow comment for live tutorial: "${d.subject}" (Post ID: ${d.fb_post_id})...`);
-
-    const commentMsg = d.follow_comment || '❤️ Loving these daily easy drawing guides?\n👉 Follow Little Doodle Club for 3 new step-by-step doodle tutorials every single day!\n🎨 https://www.facebook.com/1298820806658884';
+    const commentMsg = d.follow_comment || generateFollowComment(d.subject);
+    console.log(`💬 [${idx + 1}/${doodles.length}] Posting dynamic follow comment for live tutorial: "${d.subject}"...`);
+    console.log(`   Content: "${commentMsg.split('\n')[0]}"`);
 
     const res = await postComment(d.fb_post_id, PAGE_TOKEN, commentMsg);
 
     if (res.status === 200 && res.body && res.body.id) {
-      console.log(`   ✅ Follow comment posted successfully! (Comment ID: ${res.body.id})`);
+      console.log(`   ✅ Dynamic comment posted! (ID: ${res.body.id})`);
       d.comment_posted = true;
       d.comment_id = res.body.id;
       commentedCount++;
 
-      // Update in state history too
       if (Array.isArray(state.history)) {
         const histItem = state.history.find(h => h.fb_post_id === d.fb_post_id);
         if (histItem) histItem.comment_posted = true;
