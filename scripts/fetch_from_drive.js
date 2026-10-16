@@ -6,13 +6,12 @@
  *    1fIKXiOzUu_hEDjG-CIHY-p_roflZT5n5
  * 2. Cross-references against 'state.json' so NO image or subject is EVER repeated.
  * 3. Shuffles all unposted images randomly to pick a rich mix of different themes every day!
- * 4. Downloads up to targetCount (3) unposted images into 'incoming_doodles/'.
+ * 4. Downloads up to targetCount unposted images into 'incoming_doodles/'.
  * 5. Outputs metadata to 'fetched_doodles.json'.
  */
 
 const fs = require('fs');
 const path = require('path');
-const https = require('https');
 
 const BASE_DIR = path.resolve(__dirname, '..');
 const INCOMING_DIR = path.join(BASE_DIR, 'incoming_doodles');
@@ -66,73 +65,24 @@ function extractSubjectFromFilename(filename) {
 }
 
 /**
- * Download file from URL (following Google Drive redirects)
+ * Fetch JSON with retry for Google Apps Script cold-starts & redirects
  */
-function downloadFile(url, destPath) {
-  return new Promise((resolve, reject) => {
-    const file = fs.createWriteStream(destPath);
-    https.get(url, (res) => {
-      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        return downloadFile(res.headers.location, destPath).then(resolve).catch(reject);
+async function fetchJsonFromAppsScript(url, retries = 3) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      const res = await fetch(url, { redirect: 'follow' });
+      const text = await res.text();
+      const trimmed = text.trim();
+      if (trimmed.startsWith('{') || trimmed.startsWith('[')) {
+        return JSON.parse(trimmed);
       }
-      if (res.statusCode !== 200) {
-        file.close();
-        try { fs.unlinkSync(destPath); } catch(e){}
-        return reject(new Error(`Download failed with HTTP ${res.statusCode}`));
-      }
-      res.pipe(file);
-      file.on('finish', () => {
-        file.close(() => resolve(destPath));
-      });
-    }).on('error', (err) => {
-      file.close();
-      try { fs.unlinkSync(destPath); } catch(e){}
-      reject(err);
-    });
-  });
-}
-
-/**
- * Fetch file binary base64 via Apps Script Web App
- */
-async function fetchBase64FromAppsScript(webAppUrl, fileId) {
-  const url = `${webAppUrl}?fileId=${encodeURIComponent(fileId)}`;
-  return new Promise((resolve) => {
-    https.get(url, res => {
-      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        https.get(res.headers.location, r2 => {
-          let d = ''; r2.on('data', c => d += c); r2.on('end', () => {
-            try { resolve(JSON.parse(d)); } catch(e){ resolve(null); }
-          });
-        }).on('error', () => resolve(null));
-        return;
-      }
-      let d = ''; res.on('data', c => d += c); res.on('end', () => {
-        try { resolve(JSON.parse(d)); } catch(e){ resolve(null); }
-      });
-    }).on('error', () => resolve(null));
-  });
-}
-
-/**
- * Query Apps Script Web App for file list
- */
-async function queryAppsScriptFiles(webAppUrl) {
-  return new Promise((resolve) => {
-    https.get(webAppUrl, res => {
-      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        https.get(res.headers.location, r2 => {
-          let d = ''; r2.on('data', c => d += c); r2.on('end', () => {
-            try { resolve(JSON.parse(d)); } catch(e){ resolve({ success: false, error: e.message }); }
-          });
-        }).on('error', err => resolve({ success: false, error: err.message }));
-        return;
-      }
-      let d = ''; res.on('data', c => d += c); res.on('end', () => {
-        try { resolve(JSON.parse(d)); } catch(e){ resolve({ success: false, error: e.message }); }
-      });
-    }).on('error', err => resolve({ success: false, error: err.message }));
-  });
+      if (attempt < retries) await new Promise(r => setTimeout(r, 1500));
+    } catch(e) {
+      if (attempt === retries) throw e;
+      await new Promise(r => setTimeout(r, 1500));
+    }
+  }
+  return null;
 }
 
 async function main() {
@@ -159,60 +109,64 @@ async function main() {
   // METHOD 1: Fetch via Google Apps Script Web App
   if (APPS_SCRIPT_URL) {
     console.log('📡 Querying Google Drive library via Apps Script Web App...');
-    const result = await queryAppsScriptFiles(APPS_SCRIPT_URL);
+    try {
+      const result = await fetchJsonFromAppsScript(APPS_SCRIPT_URL);
 
-    if (result && result.success && Array.isArray(result.files)) {
-      console.log(`✅ Found ${result.files.length} total files in Google Drive folder.\n`);
+      if (result && result.success && Array.isArray(result.files)) {
+        console.log(`✅ Found ${result.files.length} total files in Google Drive folder.\n`);
 
-      // Filter out already posted files by ID, filename, and subject
-      const unpostedFiles = result.files.filter(f => {
-        const subj = extractSubjectFromFilename(f.name);
-        return !state.postedFileIds.includes(f.id) &&
-               !state.postedFilenames.includes(f.name) &&
-               !state.postedSubjects.includes(subj);
-      });
+        // Filter out already posted files by ID, filename, and subject
+        const unpostedFiles = result.files.filter(f => {
+          const subj = extractSubjectFromFilename(f.name);
+          return !state.postedFileIds.includes(f.id) &&
+                 !state.postedFilenames.includes(f.name) &&
+                 !state.postedSubjects.includes(subj);
+        });
 
-      console.log(`🎯 Unposted files available across all themes: ${unpostedFiles.length}`);
+        console.log(`🎯 Unposted files available across all themes: ${unpostedFiles.length}`);
 
-      // Shuffle randomly across all unposted files to pick an exciting variety
-      shuffleArray(unpostedFiles);
+        // Shuffle randomly across all unposted files to pick an exciting variety
+        shuffleArray(unpostedFiles);
 
-      const candidates = unpostedFiles.slice(0, targetCount);
+        const candidates = unpostedFiles.slice(0, targetCount);
 
-      for (let i = 0; i < candidates.length; i++) {
-        const item = candidates[i];
-        const destPath = path.join(INCOMING_DIR, item.name);
-        const subject = extractSubjectFromFilename(item.name);
+        for (let i = 0; i < candidates.length; i++) {
+          const item = candidates[i];
+          const destPath = path.join(INCOMING_DIR, item.name);
+          const subject = extractSubjectFromFilename(item.name);
 
-        console.log(`   [${i + 1}/${candidates.length}] Downloading (Random Pick): ${item.name} (${subject})...`);
+          console.log(`   [${i + 1}/${candidates.length}] Downloading (Random Pick): ${item.name} (${subject})...`);
 
-        // Fetch binary base64 directly from Apps Script
-        const base64Res = await fetchBase64FromAppsScript(APPS_SCRIPT_URL, item.id);
-        if (base64Res && base64Res.base64) {
-          fs.writeFileSync(destPath, Buffer.from(base64Res.base64, 'base64'));
-          console.log(`      ✅ Downloaded ${(fs.statSync(destPath).size / 1024).toFixed(1)} KB via Apps Script Blob`);
-        } else if (item.downloadUrl) {
+          const dlUrl = item.downloadUrl || `https://drive.google.com/uc?export=download&id=${item.id}`;
           try {
-            await downloadFile(item.downloadUrl, destPath);
-            console.log(`      ✅ Downloaded via Direct Drive Stream`);
+            const dlRes = await fetch(dlUrl, { redirect: 'follow' });
+            if (dlRes.status === 200) {
+              const buf = Buffer.from(await dlRes.arrayBuffer());
+              fs.writeFileSync(destPath, buf);
+              console.log(`      ✅ Downloaded ${(buf.length / 1024).toFixed(1)} KB via Direct Drive Stream`);
+            } else {
+              throw new Error(`HTTP ${dlRes.status}`);
+            }
           } catch(dlErr) {
             console.error(`      ❌ Failed to download ${item.name}:`, dlErr.message);
             continue;
           }
-        }
 
-        if (fs.existsSync(destPath)) {
-          fetchedDoodles.push({
-            driveFileId: item.id,
-            filename: item.name,
-            subject: subject,
-            rawImagePath: path.relative(BASE_DIR, destPath).replace(/\\/g, '/'),
-            createdTime: item.createdTime
-          });
+          if (fs.existsSync(destPath)) {
+            fetchedDoodles.push({
+              driveFileId: item.id,
+              filename: item.name,
+              subject: subject,
+              rawImagePath: path.relative(BASE_DIR, destPath).replace(/\\/g, '/'),
+              createdTime: item.createdTime
+            });
+          }
         }
+      } else {
+        console.warn('⚠️ Could not retrieve files from Apps Script Web App:', result ? result.error : 'No response');
       }
-    } else {
-      console.warn('⚠️ Could not retrieve files from Apps Script Web App:', result ? result.error : 'No response');
+    } catch(err) {
+      console.warn('⚠️ Error querying Apps Script:', err.message);
     }
   } else {
     console.log('ℹ️ APPS_SCRIPT_URL not set in environment.');

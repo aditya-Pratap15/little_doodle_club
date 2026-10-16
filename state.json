@@ -1,42 +1,22 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-10-16T17:54:31.989Z",
+  "lastUpdated": "2026-10-16T18:05:17.765Z",
   "postedFileIds": [
-    "1tkaJzUqNLq_7mLH3DSA7LOvY79-rqBke",
-    "1tPk5PWJKejmNHF1PWFCLsvaL3MmPFzC2",
-    "1O1MB04IMt-Tzdfd8EaQ-oVeLTx98sxSK"
+    "1oRo1KHjwpsggGoz9gC26EQ7Vjv6iCTPi"
   ],
   "postedFilenames": [
-    "croissant_2026-10-14.jpg",
-    "succulent_2026-10-13.jpg",
-    "giraffe_2026-10-12.jpg"
+    "sunflower_2026-10-13.jpg"
   ],
   "postedSubjects": [
-    "Croissant",
-    "Succulent",
-    "Giraffe"
+    "Sunflower"
   ],
   "history": [
     {
-      "date": "2026-10-16T17:57:39.421Z",
-      "subject": "Croissant",
-      "filename": "croissant_2026-10-14.jpg",
-      "driveFileId": "1tkaJzUqNLq_7mLH3DSA7LOvY79-rqBke",
-      "fb_post_id": "1298820806658884_122102173107508656"
-    },
-    {
-      "date": "2026-10-16T17:57:50.976Z",
-      "subject": "Succulent",
-      "filename": "succulent_2026-10-13.jpg",
-      "driveFileId": "1tPk5PWJKejmNHF1PWFCLsvaL3MmPFzC2",
-      "fb_post_id": "1298820806658884_122102173347508656"
-    },
-    {
-      "date": "2026-10-16T17:58:03.426Z",
-      "subject": "Giraffe",
-      "filename": "giraffe_2026-10-12.jpg",
-      "driveFileId": "1O1MB04IMt-Tzdfd8EaQ-oVeLTx98sxSK",
-      "fb_post_id": "1298820806658884_122102173605508656"
+      "date": "2026-10-16T18:12:37.303Z",
+      "subject": "Sunflower",
+      "filename": "sunflower_2026-10-13.jpg",
+      "driveFileId": "1oRo1KHjwpsggGoz9gC26EQ7Vjv6iCTPi",
+      "fb_post_id": "1298820806658884_122102188749508656"
     }
   ]
 }

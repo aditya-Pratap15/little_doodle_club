@@ -1,26 +1,12 @@
 {
-  "fetchedAt": "2026-10-16T17:56:56.743Z",
+  "fetchedAt": "2026-10-16T18:12:10.268Z",
   "doodles": [
     {
-      "driveFileId": "1tkaJzUqNLq_7mLH3DSA7LOvY79-rqBke",
-      "filename": "croissant_2026-10-14.jpg",
-      "subject": "Croissant",
-      "rawImagePath": "incoming_doodles/croissant_2026-10-14.jpg",
-      "createdTime": "2026-10-14T01:10:44.968Z"
-    },
-    {
-      "driveFileId": "1tPk5PWJKejmNHF1PWFCLsvaL3MmPFzC2",
-      "filename": "succulent_2026-10-13.jpg",
-      "subject": "Succulent",
-      "rawImagePath": "incoming_doodles/succulent_2026-10-13.jpg",
-      "createdTime": "2026-10-13T00:39:13.293Z"
-    },
-    {
-      "driveFileId": "1O1MB04IMt-Tzdfd8EaQ-oVeLTx98sxSK",
-      "filename": "giraffe_2026-10-12.jpg",
-      "subject": "Giraffe",
-      "rawImagePath": "incoming_doodles/giraffe_2026-10-12.jpg",
-      "createdTime": "2026-10-12T01:06:11.720Z"
+      "driveFileId": "1oRo1KHjwpsggGoz9gC26EQ7Vjv6iCTPi",
+      "filename": "sunflower_2026-10-13.jpg",
+      "subject": "Sunflower",
+      "rawImagePath": "incoming_doodles/sunflower_2026-10-13.jpg",
+      "createdTime": "2026-10-13T00:39:12.985Z"
     }
   ]
 }
