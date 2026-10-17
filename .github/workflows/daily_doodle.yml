@@ -45,7 +45,7 @@ jobs:
           INPUT_MODE="${{ github.event.inputs.mode }}"
           if [ -n "$INPUT_MODE" ]; then
             echo "mode=$INPUT_MODE" >> $GITHUB_OUTPUT
-          elif [ "$HOUR" -eq 12 ]; then
+          elif [ "$HOUR" -ge 12 ] && [ "$HOUR" -le 15 ]; then
             echo "mode=pipeline" >> $GITHUB_OUTPUT
           else
             echo "mode=comments" >> $GITHUB_OUTPUT
