@@ -2,13 +2,16 @@
   "version": "1.0.0",
   "lastUpdated": "2026-10-16T18:05:17.765Z",
   "postedFileIds": [
-    "1oRo1KHjwpsggGoz9gC26EQ7Vjv6iCTPi"
+    "1oRo1KHjwpsggGoz9gC26EQ7Vjv6iCTPi",
+    "kitten_2026-10-10"
   ],
   "postedFilenames": [
-    "sunflower_2026-10-13.jpg"
+    "sunflower_2026-10-13.jpg",
+    "kitten_2026-10-10.jpg"
   ],
   "postedSubjects": [
-    "Sunflower"
+    "Sunflower",
+    "Kitten"
   ],
   "history": [
     {
@@ -17,6 +20,15 @@
       "filename": "sunflower_2026-10-13.jpg",
       "driveFileId": "1oRo1KHjwpsggGoz9gC26EQ7Vjv6iCTPi",
       "fb_post_id": "1298820806658884_122102188749508656",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-10-17T18:22:01.574Z",
+      "subject": "Kitten",
+      "filename": "kitten_2026-10-10.jpg",
+      "driveFileId": "kitten_2026-10-10",
+      "fb_post_id": "1298820806658884_122102985495508656",
+      "scheduled_for": "LIVE (Morning)",
       "comment_posted": true
     }
   ]

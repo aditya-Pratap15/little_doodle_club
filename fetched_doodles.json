@@ -1,12 +1,12 @@
 {
-  "fetchedAt": "2026-10-16T18:12:10.268Z",
+  "fetchedAt": "2026-10-17T18:21:34.354Z",
   "doodles": [
     {
-      "driveFileId": "1oRo1KHjwpsggGoz9gC26EQ7Vjv6iCTPi",
-      "filename": "sunflower_2026-10-13.jpg",
-      "subject": "Sunflower",
-      "rawImagePath": "incoming_doodles/sunflower_2026-10-13.jpg",
-      "createdTime": "2026-10-13T00:39:12.985Z"
+      "driveFileId": "kitten_2026-10-10",
+      "filename": "kitten_2026-10-10.jpg",
+      "subject": "Kitten",
+      "rawImagePath": "incoming_doodles/kitten_2026-10-10.jpg",
+      "createdTime": "2026-10-17T18:21:34.355Z"
     }
   ]
 }
