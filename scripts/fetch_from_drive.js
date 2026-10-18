@@ -6,7 +6,7 @@
  *    daily arts (ID: 1fIKXiOzUu_hEDjG-CIHY-p_roflZT5n5)
  * 2. Cross-references against 'state.json' so NO image or subject is EVER repeated.
  * 3. Shuffles unposted images randomly to pick 3 fresh tutorials.
- * 4. Downloads the 3 images into 'incoming_doodles/'.
+ * 4. Downloads the 3 images into 'incoming_doodles/' with dual-layer fallback (direct stream + Apps Script base64).
  * 5. Outputs metadata to 'fetched_doodles.json'.
  */
 
@@ -15,6 +15,7 @@ const path = require('path');
 
 const BASE_DIR = path.resolve(__dirname, '..');
 const INCOMING_DIR = path.join(BASE_DIR, 'incoming_doodles');
+const BRANDED_DIR = path.join(BASE_DIR, 'branded_doodles');
 const FETCHED_METADATA_PATH = path.join(BASE_DIR, 'fetched_doodles.json');
 const STATE_PATH = path.join(BASE_DIR, 'state.json');
 
@@ -95,10 +96,10 @@ async function main() {
   fs.readdirSync(INCOMING_DIR).forEach(f => {
     if (f !== '.gitkeep') fs.unlinkSync(path.join(INCOMING_DIR, f));
   });
-  const brandedDir = path.join(BASE_DIR, 'branded_doodles');
-  ensureDir(brandedDir);
-  fs.readdirSync(brandedDir).forEach(f => {
-    if (f !== '.gitkeep') fs.unlinkSync(path.join(brandedDir, f));
+
+  ensureDir(BRANDED_DIR);
+  fs.readdirSync(BRANDED_DIR).forEach(f => {
+    if (f !== '.gitkeep') fs.unlinkSync(path.join(BRANDED_DIR, f));
   });
 
   const state = loadJson(STATE_PATH, {
@@ -139,10 +140,10 @@ async function main() {
            !state.postedSubjects.includes(subj);
   });
 
-  console.log(`🎯 Unposted tutorials available in Google Drive: ${unpostedFiles.length}`);
+  console.log(`🎲 Unposted tutorials available in Google Drive: ${unpostedFiles.length}`);
 
   if (unpostedFiles.length === 0) {
-    console.log('⚠️ Zero unposted tutorials remaining in Google Drive folder.');
+    console.log('ℹ️ Zero unposted tutorials remaining in Google Drive folder.');
     process.exit(0);
   }
 
@@ -158,22 +159,44 @@ async function main() {
 
     console.log(`   [${i + 1}/${candidates.length}] Downloading (Random Pick from Drive): ${item.name} (${subject})...`);
 
+    let downloaded = false;
     const dlUrl = item.downloadUrl || `https://drive.google.com/uc?export=download&id=${item.id}`;
+
+    // Attempt 1: Direct stream download
     try {
       const dlRes = await fetch(dlUrl, { redirect: 'follow' });
       if (dlRes.status === 200) {
         const buf = Buffer.from(await dlRes.arrayBuffer());
-        fs.writeFileSync(destPath, buf);
-        console.log(`      ✅ Downloaded ${(buf.length / 1024).toFixed(1)} KB from Drive`);
-      } else {
-        throw new Error(`HTTP ${dlRes.status}`);
+        if (buf.length > 1000) {
+          fs.writeFileSync(destPath, buf);
+          console.log(`      ✅ Downloaded (${(buf.length / 1024).toFixed(1)} KB) from Drive stream`);
+          downloaded = true;
+        }
       }
     } catch(dlErr) {
-      console.error(`      ❌ Failed to download ${item.name}:`, dlErr.message);
-      continue;
+      console.warn(`      ⚠️ Direct download notice: ${dlErr.message}`);
     }
 
-    if (fs.existsSync(destPath)) {
+    // Attempt 2: Rock-solid fallback via Apps Script base64 binary endpoint
+    if (!downloaded) {
+      console.log(`      🔄 Falling back to Apps Script base64 stream for: ${item.name}...`);
+      try {
+        const sep = APPS_SCRIPT_URL.includes('?') ? '&' : '?';
+        const b64Data = await fetchJsonFromAppsScript(`${APPS_SCRIPT_URL}${sep}fileId=${item.id}`);
+        if (b64Data && b64Data.success && b64Data.base64) {
+          const buf = Buffer.from(b64Data.base64, 'base64');
+          fs.writeFileSync(destPath, buf);
+          console.log(`      ✅ Base64 download succeeded (${(buf.length / 1024).toFixed(1)} KB)`);
+          downloaded = true;
+        } else {
+          console.error(`      ❌ Base64 fetch failed:`, b64Data ? b64Data.error : 'No data');
+        }
+      } catch(b64Err) {
+        console.error(`      ❌ Base64 error:`, b64Err.message);
+      }
+    }
+
+    if (downloaded && fs.existsSync(destPath)) {
       fetchedDoodles.push({
         driveFileId: item.id,
         filename: item.name,
@@ -195,7 +218,7 @@ async function main() {
     doodles: fetchedDoodles
   });
 
-  console.log(`📁 Metadata written to: fetched_doodles.json\n`);
+  console.log(`💾 Metadata written to: fetched_doodles.json\n`);
 }
 
 main().catch(err => {
