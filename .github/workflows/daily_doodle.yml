@@ -41,14 +41,26 @@ jobs:
       - name: Determine Run Mode
         id: run_mode
         run: |
-          HOUR=$(date -u +"%H")
           INPUT_MODE="${{ github.event.inputs.mode }}"
           if [ -n "$INPUT_MODE" ]; then
             echo "mode=$INPUT_MODE" >> $GITHUB_OUTPUT
-          elif [ "$HOUR" -ge 12 ] && [ "$HOUR" -le 15 ]; then
-            echo "mode=pipeline" >> $GITHUB_OUTPUT
           else
-            echo "mode=comments" >> $GITHUB_OUTPUT
+            MODE=$(node -e '
+              const fs = require("fs");
+              try {
+                const state = JSON.parse(fs.readFileSync("state.json", "utf8"));
+                const today = new Date().toISOString().slice(0, 10);
+                if (state.lastPipelineDate !== today) {
+                  console.log("pipeline");
+                } else {
+                  console.log("comments");
+                }
+              } catch(e) {
+                console.log("pipeline");
+              }
+            ')
+            echo "Determined mode: $MODE"
+            echo "mode=$MODE" >> $GITHUB_OUTPUT
           fi
 
       # -------------------------------------------------------------

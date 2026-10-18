@@ -1,12 +1,26 @@
 {
-  "fetchedAt": "2026-10-17T18:21:34.354Z",
+  "fetchedAt": "2026-10-18T17:10:26.358Z",
   "doodles": [
     {
-      "driveFileId": "kitten_2026-10-10",
-      "filename": "kitten_2026-10-10.jpg",
-      "subject": "Kitten",
-      "rawImagePath": "incoming_doodles/kitten_2026-10-10.jpg",
-      "createdTime": "2026-10-17T18:21:34.355Z"
+      "driveFileId": "baby_sea_turtle_2026-10-16.jpg",
+      "filename": "baby_sea_turtle_2026-10-16.jpg",
+      "subject": "Baby Sea Turtle",
+      "rawImagePath": "daily_doodles/baby_sea_turtle_2026-10-16.jpg",
+      "createdTime": "2026-10-16T16:48:59.160Z"
+    },
+    {
+      "driveFileId": "baby_dragon_2026-10-18.jpg",
+      "filename": "baby_dragon_2026-10-18.jpg",
+      "subject": "Baby Dragon",
+      "rawImagePath": "daily_doodles/baby_dragon_2026-10-18.jpg",
+      "createdTime": "2026-10-18T17:08:58.978Z"
+    },
+    {
+      "driveFileId": "baby_griffin_2026-10-18.jpg",
+      "filename": "baby_griffin_2026-10-18.jpg",
+      "subject": "Baby Griffin",
+      "rawImagePath": "daily_doodles/baby_griffin_2026-10-18.jpg",
+      "createdTime": "2026-10-18T17:08:01.986Z"
     }
   ]
 }

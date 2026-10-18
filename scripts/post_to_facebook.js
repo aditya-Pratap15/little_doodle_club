@@ -61,10 +61,12 @@ function getPeakUsaSlots() {
   ];
 
   const nowSec = Math.floor(Date.now() / 1000);
-  return slots.map(s => {
+  return slots.map((s, idx) => {
     let ts = Math.floor(new Date(s.timeStr).getTime() / 1000);
     if (!s.forceLive && ts <= nowSec + 600) {
-      ts += 86400; // +24 hours
+      // If the target slot has already passed today due to runner delays, space it out today:
+      // Slot 2: +2 hours from now, Slot 3: +5 hours from now
+      ts = nowSec + (idx === 1 ? 7200 : 18000);
     }
     return {
       name: s.name,
@@ -205,8 +207,6 @@ async function main() {
   console.log(`Page: Little Doodle Club (${PAGE_ID})`);
   console.log(`Total Tutorials to Process: ${doodles.length}\n`);
 
-  const nowSec = Math.floor(Date.now() / 1000);
-
   for (let idx = 0; idx < doodles.length; idx++) {
     const d = doodles[idx];
     const slot = slots[idx % slots.length];
@@ -215,11 +215,11 @@ async function main() {
     const schedTs = isLiveImmediate ? null : slot.timestamp;
 
     if (d.fb_post_id) {
-      console.log(`⏭️  [${idx + 1}/${doodles.length}] "${d.subject}" already scheduled/posted (ID: ${d.fb_post_id}). Skipping.`);
+      console.log(`⏩  [${idx + 1}/${doodles.length}] "${d.subject}" already scheduled/posted (ID: ${d.fb_post_id}). Skipping.`);
       continue;
     }
     if (d.driveFileId && state.postedFileIds.includes(d.driveFileId)) {
-      console.log(`⏭️  [${idx + 1}/${doodles.length}] "${d.subject}" already marked in state.json. Skipping.`);
+      console.log(`⏩  [${idx + 1}/${doodles.length}] "${d.subject}" already marked in state.json. Skipping.`);
       continue;
     }
 
@@ -232,7 +232,7 @@ async function main() {
     if (isLiveImmediate) {
       console.log(`🚀 [${idx + 1}/${doodles.length}] Publishing "${d.subject}" LIVE to Facebook (Morning Slot)...`);
     } else {
-      console.log(`🕒 [${idx + 1}/${doodles.length}] Scheduling "${d.subject}" into Facebook Page Planner for: ${slot.edt} EDT (${slot.ist} IST)...`);
+      console.log(`📅 [${idx + 1}/${doodles.length}] Scheduling "${d.subject}" into Facebook Page Planner for: ${slot.edt} EDT (${slot.ist} IST)...`);
     }
 
     const res = await uploadPhotoToPage(PAGE_ID, PAGE_TOKEN, d.caption, imgPath, schedTs);
@@ -290,6 +290,12 @@ async function main() {
       await new Promise(r => setTimeout(r, 4000));
     }
   }
+
+  // Mark pipeline date anchor so subsequent runs know today's batch is done
+  const todayDateStr = new Date().toISOString().slice(0, 10);
+  state.lastPipelineDate = todayDateStr;
+  state.lastUpdated = new Date().toISOString();
+  saveJson(STATE_PATH, state);
 
   console.log('🎉 All tutorials processed (Post 1 live + Posts 2 & 3 scheduled)!\n');
 }
