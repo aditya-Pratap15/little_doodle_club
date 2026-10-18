@@ -1,74 +1,35 @@
 {
-  "version": "1.0.0",
-  "lastUpdated": "2026-10-18T17:11:03.960Z",
-  "postedFileIds": [
-    "1oRo1KHjwpsggGoz9gC26EQ7Vjv6iCTPi",
-    "kitten_2026-10-10",
-    "baby_sea_turtle_2026-10-16.jpg",
-    "baby_dragon_2026-10-18.jpg",
-    "baby_griffin_2026-10-18.jpg"
-  ],
-  "postedFilenames": [
-    "sunflower_2026-10-13.jpg",
-    "kitten_2026-10-10.jpg",
-    "baby_sea_turtle_2026-10-16.jpg",
-    "baby_dragon_2026-10-18.jpg",
-    "baby_griffin_2026-10-18.jpg"
-  ],
-  "postedSubjects": [
-    "Sunflower",
-    "Kitten",
-    "Baby Sea Turtle",
-    "Baby Dragon",
-    "Baby Griffin"
-  ],
-  "history": [
-    {
-      "date": "2026-10-16T18:12:37.303Z",
-      "subject": "Sunflower",
-      "filename": "sunflower_2026-10-13.jpg",
-      "driveFileId": "1oRo1KHjwpsggGoz9gC26EQ7Vjv6iCTPi",
-      "fb_post_id": "1298820806658884_122102188749508656",
-      "comment_posted": true
-    },
-    {
-      "date": "2026-10-17T18:22:01.574Z",
-      "subject": "Kitten",
-      "filename": "kitten_2026-10-10.jpg",
-      "driveFileId": "kitten_2026-10-10",
-      "fb_post_id": "1298820806658884_122102985495508656",
-      "scheduled_for": "LIVE (Morning)",
-      "comment_posted": true
-    },
-    {
-      "date": "2026-10-18T17:10:51.336Z",
-      "subject": "Baby Sea Turtle",
-      "filename": "baby_sea_turtle_2026-10-16.jpg",
-      "driveFileId": "baby_sea_turtle_2026-10-16.jpg",
-      "fb_post_id": "1298820806658884_122103763023508656",
-      "scheduled_for": "LIVE (Morning)",
-      "comment_posted": true
-    },
-    {
-      "date": "2026-10-18T17:10:57.615Z",
-      "subject": "Baby Dragon",
-      "filename": "baby_dragon_2026-10-18.jpg",
-      "driveFileId": "baby_dragon_2026-10-18.jpg",
-      "fb_post_id": "122103763269508656",
-      "scheduled_for": "10/18/2026, 1:30:00 PM",
-      "comment_posted": false
-    },
-    {
-      "date": "2026-10-18T17:11:03.958Z",
-      "subject": "Baby Griffin",
-      "filename": "baby_griffin_2026-10-18.jpg",
-      "driveFileId": "baby_griffin_2026-10-18.jpg",
-      "fb_post_id": "122103763371508656",
-      "scheduled_for": "10/18/2026, 6:30:00 PM",
-      "comment_posted": false
-    }
-  ],
-  "totalDoodlesGenerated": 3,
-  "lastGeneratedDate": "2026-10-18",
-  "lastPipelineDate": "2026-10-18"
+    "version":  "1.0.0",
+    "postedFileIds":  [
+                          "1oRo1KHjwpsggGoz9gC26EQ7Vjv6iCTPi",
+                          "kitten_2026-10-10"
+                      ],
+    "postedFilenames":  [
+                            "sunflower_2026-10-13.jpg",
+                            "kitten_2026-10-10.jpg"
+                        ],
+    "lastUpdated":  "2026-10-17T18:22:01.574Z",
+    "postedSubjects":  [
+                           "Sunflower",
+                           "Kitten"
+                       ],
+    "history":  [
+                    {
+                        "filename":  "sunflower_2026-10-13.jpg",
+                        "subject":  "Sunflower",
+                        "fb_post_id":  "1298820806658884_122102188749508656",
+                        "date":  "2026-10-16T18:12:37.303Z",
+                        "comment_posted":  true,
+                        "driveFileId":  "1oRo1KHjwpsggGoz9gC26EQ7Vjv6iCTPi"
+                    },
+                    {
+                        "filename":  "kitten_2026-10-10.jpg",
+                        "subject":  "Kitten",
+                        "fb_post_id":  "1298820806658884_122102985495508656",
+                        "scheduled_for":  "LIVE (Morning)",
+                        "date":  "2026-10-17T18:22:01.574Z",
+                        "comment_posted":  true,
+                        "driveFileId":  "kitten_2026-10-10"
+                    }
+                ]
 }

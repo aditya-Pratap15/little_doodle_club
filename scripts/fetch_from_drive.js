@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /**
- * 🎨 LITTLE DOODLE CLUB - GOOGLE DRIVE RANDOM INGESTION (Never-Expiring)
- * ---------------------------------------------------------------------
- * 1. Queries the Google Apps Script Web App for all images in Drive folder:
- *    1fIKXiOzUu_hEDjG-CIHY-p_roflZT5n5
+ * 🎨 LITTLE DOODLE CLUB - GOOGLE DRIVE INGESTION (daily arts folder)
+ * -----------------------------------------------------------------
+ * 1. Queries Google Apps Script Web App for files in Google Drive folder:
+ *    daily arts (ID: 1fIKXiOzUu_hEDjG-CIHY-p_roflZT5n5)
  * 2. Cross-references against 'state.json' so NO image or subject is EVER repeated.
- * 3. Shuffles all unposted images randomly to pick a rich mix of different themes every day!
- * 4. Downloads up to targetCount unposted images into 'incoming_doodles/'.
+ * 3. Shuffles unposted images randomly to pick 3 fresh tutorials.
+ * 4. Downloads the 3 images into 'incoming_doodles/'.
  * 5. Outputs metadata to 'fetched_doodles.json'.
  */
 
@@ -87,7 +87,7 @@ async function fetchJsonFromAppsScript(url, retries = 3) {
 
 async function main() {
   console.log('======================================================');
-  console.log('🎲 Little Doodle Club - Random Diverse Theme Ingestion');
+  console.log('🎨 Little Doodle Club - Google Drive Ingestion (daily arts)');
   console.log('======================================================\n');
 
   ensureDir(INCOMING_DIR);
@@ -106,118 +106,81 @@ async function main() {
   const targetCount = parseInt(process.env.POST_COUNT || '3', 10);
   const fetchedDoodles = [];
 
-  // METHOD 1: Fetch via Google Apps Script Web App
-  if (APPS_SCRIPT_URL) {
-    console.log('📡 Querying Google Drive library via Apps Script Web App...');
-    try {
-      const result = await fetchJsonFromAppsScript(APPS_SCRIPT_URL);
-
-      if (result && result.success && Array.isArray(result.files)) {
-        console.log(`✅ Found ${result.files.length} total files in Google Drive folder.\n`);
-
-        // Filter out already posted files by ID, filename, and subject
-        const unpostedFiles = result.files.filter(f => {
-          const subj = extractSubjectFromFilename(f.name);
-          return !state.postedFileIds.includes(f.id) &&
-                 !state.postedFilenames.includes(f.name) &&
-                 !state.postedSubjects.includes(subj);
-        });
-
-        console.log(`🎯 Unposted files available across all themes: ${unpostedFiles.length}`);
-
-        // Shuffle randomly across all unposted files to pick an exciting variety
-        shuffleArray(unpostedFiles);
-
-        const candidates = unpostedFiles.slice(0, targetCount);
-
-        for (let i = 0; i < candidates.length; i++) {
-          const item = candidates[i];
-          const destPath = path.join(INCOMING_DIR, item.name);
-          const subject = extractSubjectFromFilename(item.name);
-
-          console.log(`   [${i + 1}/${candidates.length}] Downloading (Random Pick): ${item.name} (${subject})...`);
-
-          const dlUrl = item.downloadUrl || `https://drive.google.com/uc?export=download&id=${item.id}`;
-          try {
-            const dlRes = await fetch(dlUrl, { redirect: 'follow' });
-            if (dlRes.status === 200) {
-              const buf = Buffer.from(await dlRes.arrayBuffer());
-              fs.writeFileSync(destPath, buf);
-              console.log(`      ✅ Downloaded ${(buf.length / 1024).toFixed(1)} KB via Direct Drive Stream`);
-            } else {
-              throw new Error(`HTTP ${dlRes.status}`);
-            }
-          } catch(dlErr) {
-            console.error(`      ❌ Failed to download ${item.name}:`, dlErr.message);
-            continue;
-          }
-
-          if (fs.existsSync(destPath)) {
-            fetchedDoodles.push({
-              driveFileId: item.id,
-              filename: item.name,
-              subject: subject,
-              rawImagePath: path.relative(BASE_DIR, destPath).replace(/\\/g, '/'),
-              createdTime: item.createdTime
-            });
-          }
-        }
-      } else {
-        console.warn('⚠️ Could not retrieve files from Apps Script Web App:', result ? result.error : 'No response');
-      }
-    } catch(err) {
-      console.warn('⚠️ Error querying Apps Script:', err.message);
-    }
-  } else {
-    console.log('ℹ️ APPS_SCRIPT_URL not set in environment.');
+  if (!APPS_SCRIPT_URL) {
+    console.error('❌ APPS_SCRIPT_URL environment variable is missing.');
+    console.error('   Please ensure APPS_SCRIPT_URL is configured in GitHub repository secrets.');
+    process.exit(1);
   }
 
-  // METHOD 2: Fallback to existing files in local storage (shuffled randomly)
-  if (fetchedDoodles.length < targetCount) {
-    console.log(`\n🔍 Checking local storage for unprocessed tutorials...`);
-    const searchDirs = [INCOMING_DIR, path.join(BASE_DIR, 'daily_doodles')];
-    let localCandidates = [];
+  console.log('📡 Querying Google Drive folder (daily arts) via Apps Script Web App...');
+  const result = await fetchJsonFromAppsScript(APPS_SCRIPT_URL);
 
-    for (const sDir of searchDirs) {
-      if (!fs.existsSync(sDir)) continue;
-      const localFiles = fs.readdirSync(sDir).filter(f => f.match(/\.(jpg|jpeg|png)$/i));
+  if (!result || !result.success || !Array.isArray(result.files)) {
+    console.error('❌ Failed to retrieve files from Google Apps Script Web App:', result ? result.error : 'No response');
+    process.exit(1);
+  }
 
-      for (const f of localFiles) {
-        const subject = extractSubjectFromFilename(f);
-        const fullP = path.join(sDir, f);
+  console.log(`✅ Found ${result.files.length} total files in Google Drive folder "daily arts".\n`);
 
-        const alreadyFetched = fetchedDoodles.some(d => d.filename === f);
-        const alreadyPosted = state.postedFileIds.includes(f) ||
-                              state.postedFilenames.includes(f) ||
-                              state.postedSubjects.includes(subject);
+  // Filter out already posted files by ID, filename, and subject
+  const unpostedFiles = result.files.filter(f => {
+    const subj = extractSubjectFromFilename(f.name);
+    return !state.postedFileIds.includes(f.id) &&
+           !state.postedFilenames.includes(f.name) &&
+           !state.postedSubjects.includes(subj);
+  });
 
-        if (!alreadyFetched && !alreadyPosted) {
-          localCandidates.push({ f, subject, fullP });
-        }
+  console.log(`🎯 Unposted tutorials available in Google Drive: ${unpostedFiles.length}`);
+
+  if (unpostedFiles.length === 0) {
+    console.log('⚠️ Zero unposted tutorials remaining in Google Drive folder.');
+    process.exit(0);
+  }
+
+  // Shuffle randomly across all unposted files to pick 3 random tutorials
+  shuffleArray(unpostedFiles);
+
+  const candidates = unpostedFiles.slice(0, targetCount);
+
+  for (let i = 0; i < candidates.length; i++) {
+    const item = candidates[i];
+    const destPath = path.join(INCOMING_DIR, item.name);
+    const subject = extractSubjectFromFilename(item.name);
+
+    console.log(`   [${i + 1}/${candidates.length}] Downloading (Random Pick from Drive): ${item.name} (${subject})...`);
+
+    const dlUrl = item.downloadUrl || `https://drive.google.com/uc?export=download&id=${item.id}`;
+    try {
+      const dlRes = await fetch(dlUrl, { redirect: 'follow' });
+      if (dlRes.status === 200) {
+        const buf = Buffer.from(await dlRes.arrayBuffer());
+        fs.writeFileSync(destPath, buf);
+        console.log(`      ✅ Downloaded ${(buf.length / 1024).toFixed(1)} KB from Drive`);
+      } else {
+        throw new Error(`HTTP ${dlRes.status}`);
       }
+    } catch(dlErr) {
+      console.error(`      ❌ Failed to download ${item.name}:`, dlErr.message);
+      continue;
     }
 
-    shuffleArray(localCandidates);
-
-    for (const cand of localCandidates) {
-      if (fetchedDoodles.length >= targetCount) break;
+    if (fs.existsSync(destPath)) {
       fetchedDoodles.push({
-        driveFileId: cand.f,
-        filename: cand.f,
-        subject: cand.subject,
-        rawImagePath: path.relative(BASE_DIR, cand.fullP).replace(/\\/g, '/'),
-        createdTime: fs.statSync(cand.fullP).mtime.toISOString()
+        driveFileId: item.id,
+        filename: item.name,
+        subject: subject,
+        rawImagePath: path.relative(BASE_DIR, destPath).replace(/\\/g, '/'),
+        createdTime: item.createdTime
       });
-      console.log(`   ✅ Found local tutorial: ${cand.f} (${cand.subject})`);
     }
   }
 
   if (fetchedDoodles.length === 0) {
-    console.log('\nℹ️ Zero new unposted tutorials found. Nothing to process.');
-    process.exit(0);
+    console.error('❌ Failed to download any tutorials from Google Drive.');
+    process.exit(1);
   }
 
-  console.log(`\n🎉 Successfully prepared ${fetchedDoodles.length} unposted random tutorials!`);
+  console.log(`\n🎉 Successfully fetched ${fetchedDoodles.length} random tutorials from Google Drive!`);
   saveJson(FETCHED_METADATA_PATH, {
     fetchedAt: new Date().toISOString(),
     doodles: fetchedDoodles
