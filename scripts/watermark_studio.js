@@ -90,7 +90,7 @@ function generateCaption(subject) {
   const subjectBold = toUnicodeBold(subject);
   const tagSubject = subject.replace(/\s+/g, '');
 
-  const caption = `✨ 𝗛𝗼𝘄 𝘁𝗼 𝗗𝗿𝗮𝘄: ${subjectBold} 🎨✏️
+  return `✨ 𝗛𝗼𝘄 𝘁𝗼 𝗗𝗿𝗮𝘄: ${subjectBold} 🎨✏️
 
 Follow these 4 simple steps to bring your ${subject} doodle to life!
 1️⃣ Start with basic shapes & proportions
@@ -105,8 +105,6 @@ Follow these 4 simple steps to bring your ${subject} doodle to life!
 🎨 https://www.facebook.com/1298820806658884
 
 🏷️ #LittleDoodleClub #HowToDraw #${tagSubject} #DrawingTutorial #EasyDrawing #StepByStepDrawing #DoodleArt #ArtForBeginners #CuteArt #DrawingGuide #DailyDoodle`;
-
-  return caption;
 }
 
 /**
@@ -118,11 +116,11 @@ function generateFollowComment(subject) {
   const templates = [
     `Loved sketching this ${cleanSubj}? 🎨 Save this guide and follow Little Doodle Club for 3 new step-by-step drawing tutorials every day!\n👉 https://www.facebook.com/1298820806658884`,
     `Who's trying to draw this ${cleanSubj} today? ✏️ Grab your pencils and follow our page for daily easy doodle inspiration!\n❤️ https://www.facebook.com/1298820806658884`,
-    `Want more simple doodles like this ${cleanSubj}? 🌟 Follow Little Doodle Club so you never miss our next tutorial drop!\n👇 https://www.facebook.com/1298820806658884`,
+    `Want more simple doodles like this ${cleanSubj}? 🌟 Follow Little Doodle Club so you never miss our next tutorial drop!\n👉 https://www.facebook.com/1298820806658884`,
     `Tag a friend who would love drawing this ${cleanSubj}! 👫 And be sure to follow our page for 3 fresh step-by-step guides every single day!\n🎨 https://www.facebook.com/1298820806658884`,
-    `Hope you enjoyed learning how to draw this ${cleanSubj}! 💖 Follow Little Doodle Club for easy creative breaks all week long!\n👉 https://www.facebook.com/1298820806658884`,
+    `Hope you enjoyed learning how to draw this ${cleanSubj}! 💛 Follow Little Doodle Club for easy creative breaks all week long!\n👉 https://www.facebook.com/1298820806658884`,
     `Which step of this ${cleanSubj} was your favorite? Let us know below and follow our page for 3 new daily drawing ideas!\n✨ https://www.facebook.com/1298820806658884`,
-    `Drawing is so relaxing! 🌿 Follow Little Doodle Club for daily 4-step sketching guides just like this ${cleanSubj}!\n👇 https://www.facebook.com/1298820806658884`,
+    `Drawing is so relaxing! ☕ Follow Little Doodle Club for daily 4-step sketching guides just like this ${cleanSubj}!\n👉 https://www.facebook.com/1298820806658884`,
     `Save this ${cleanSubj} tutorial for your next sketchbook session! 📖 Tap follow to see 3 new creative doodle guides every day!\n🎨 https://www.facebook.com/1298820806658884`
   ];
 

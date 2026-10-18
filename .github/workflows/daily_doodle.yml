@@ -106,7 +106,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
-          git add -A state.json today_doodles.json fetched_doodles.json branded_doodles/ incoming_doodles/ 2>/dev/null || git add -A
+          git add state.json today_doodles.json fetched_doodles.json
           if ! git diff --staged --quiet; then
             git commit -m "Auto-progress: pipeline state updated [skip ci]"
             for i in 1 2 3; do

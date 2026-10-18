@@ -1,14 +1,13 @@
 #!/usr/bin/env node
 /**
- * 🎨 LITTLE DOODLE CLUB - HYBRID PUBLISHER & PLANNER SCHEDULER
- * -----------------------------------------------------------
- * Architecture:
- * - Post 1 (Morning Inspiration - 08:30 AM EDT):
- *     Published LIVE immediately + First Follow Comment dropped immediately!
- * - Post 2 (Afternoon Break - 01:30 PM EDT):
- *     Scheduled into Facebook Page Planner. (Comment dropped by afternoon wake run)
- * - Post 3 (Evening Relax & Draw - 06:30 PM EDT):
- *     Scheduled into Facebook Page Planner. (Comment dropped by evening wake run)
+ * 🎨 LITTLE DOODLE CLUB - HYBRID PUBLISHER & SCHEDULER
+ * ----------------------------------------------------
+ * Reads 'today_doodles.json' (3 watermarked tutorial sheets).
+ * - Post 1 (Morning 08:30 AM EDT): PUBLISHED LIVE IMMEDIATELY + First Comment posted alongside it!
+ * - Post 2 (Afternoon 01:30 PM EDT): SCHEDULED into Facebook Page Planner!
+ * - Post 3 (Evening 06:30 PM EDT): SCHEDULED into Facebook Page Planner!
+ *
+ * Saves live post ID & scheduled post IDs to today_doodles.json and state.json.
  */
 
 const fs = require('fs');
@@ -19,8 +18,10 @@ const BASE_DIR = path.resolve(__dirname, '..');
 const TODAY_DOODLES_PATH = path.join(BASE_DIR, 'today_doodles.json');
 const STATE_PATH = path.join(BASE_DIR, 'state.json');
 
+const VERIFIED_PAGE_ID = '1298820806658884';
 const VERIFIED_PAGE_TOKEN = 'EAAUbRaJrCqMBSsxLPkyloZCf0hX0xIXRXxiR4nX5ZB16Ht27oZAvTB1IcwEZCVLkGjtwab8PZCJ5SP9tNUtqW2ZBdSZBF7BM0wqdz8VhK1GAgRGbh346Y6Apz3iMpt4ZA4YuiGKWsqwGxwUo79i1FomiXruz0gZB3ga9rmi6mHFDGxGXlwMVuCZCJdy2X3KoWsbyuK19HmbZCEZB';
-const PAGE_ID = (process.env.FB_PAGE_ID_DOODLE || process.env.FB_PAGE_ID || '1298820806658884').trim();
+
+const PAGE_ID = (process.env.FB_PAGE_ID_DOODLE || process.env.FB_PAGE_ID || VERIFIED_PAGE_ID).trim();
 const PAGE_TOKEN = (process.env.FB_TOKEN_DOODLE || process.env.FB_PAGE_TOKEN || VERIFIED_PAGE_TOKEN).trim();
 
 function loadJson(p, fallback = {}) {
@@ -94,10 +95,10 @@ function uploadPhotoToPage(pageId, token, caption, imagePath, scheduledPublishTi
       };
 
       addField('access_token', token);
-      addField('message', caption);
+      addField('caption', caption);
 
-      const nowSec = Math.floor(Date.now() / 1000);
-      if (scheduledPublishTime && scheduledPublishTime > nowSec + 600) {
+      const nowTs = Math.floor(Date.now() / 1000);
+      if (scheduledPublishTime && scheduledPublishTime > nowTs + 600) {
         addField('published', 'false');
         addField('scheduled_publish_time', String(scheduledPublishTime));
       } else {
@@ -117,14 +118,14 @@ function uploadPhotoToPage(pageId, token, caption, imagePath, scheduledPublishTi
           'Content-Type': `multipart/form-data; boundary=${boundary}`,
           'Content-Length': payload.length
         }
-      }, res => {
-        let data = '';
-        res.on('data', chunk => data += chunk);
+      }, (res) => {
+        let d = '';
+        res.on('data', c => d += c);
         res.on('end', () => {
           try {
-            resolve({ status: res.statusCode, body: JSON.parse(data) });
-          } catch (e) {
-            resolve({ status: res.statusCode, body: data });
+            resolve({ status: res.statusCode, body: JSON.parse(d) });
+          } catch(e) {
+            resolve({ status: res.statusCode, body: d });
           }
         });
       });
@@ -132,7 +133,7 @@ function uploadPhotoToPage(pageId, token, caption, imagePath, scheduledPublishTi
       req.on('error', err => resolve({ status: 500, error: err.message }));
       req.write(payload);
       req.end();
-    } catch (e) {
+    } catch(e) {
       resolve({ status: 500, error: e.message });
     }
   });
@@ -179,7 +180,7 @@ async function main() {
   console.log('======================================================\n');
 
   if (!fs.existsSync(TODAY_DOODLES_PATH)) {
-    console.error(`❌ ${TODAY_DOODLES_PATH} not found. Run watermark_studio.js first!`);
+    console.error('❌ Error: today_doodles.json not found. Run watermark_studio.js first.');
     process.exit(1);
   }
 
@@ -187,7 +188,7 @@ async function main() {
   const doodles = todayData.doodles || [];
 
   if (doodles.length === 0) {
-    console.log('⚠️ No doodles found in today_doodles.json.');
+    console.log('ℹ️ No doodles to publish.');
     process.exit(0);
   }
 
@@ -207,100 +208,90 @@ async function main() {
   console.log(`Page: Little Doodle Club (${PAGE_ID})`);
   console.log(`Total Tutorials to Process: ${doodles.length}\n`);
 
-  for (let idx = 0; idx < doodles.length; idx++) {
-    const d = doodles[idx];
-    const slot = slots[idx % slots.length];
-    // Slot 1 publishes LIVE immediately with comment! Slot 2 and 3 are scheduled into Facebook Planner
-    const isLiveImmediate = idx === 0 || slot.forceLive;
-    const schedTs = isLiveImmediate ? null : slot.timestamp;
+  for (let i = 0; i < doodles.length; i++) {
+    const doodle = doodles[i];
+    const imagePath = path.resolve(BASE_DIR, doodle.branded_image_path);
+    const slot = slots[i] || slots[0];
 
-    if (d.fb_post_id) {
-      console.log(`⏩  [${idx + 1}/${doodles.length}] "${d.subject}" already scheduled/posted (ID: ${d.fb_post_id}). Skipping.`);
-      continue;
-    }
-    if (d.driveFileId && state.postedFileIds.includes(d.driveFileId)) {
-      console.log(`⏩  [${idx + 1}/${doodles.length}] "${d.subject}" already marked in state.json. Skipping.`);
+    if (!fs.existsSync(imagePath)) {
+      console.warn(`⚠️ Image file not found: ${imagePath}, skipping.`);
       continue;
     }
 
-    const imgPath = path.resolve(BASE_DIR, d.branded_image_path);
-    if (!fs.existsSync(imgPath)) {
-      console.warn(`⚠️ Branded image not found: ${imgPath}, skipping.`);
-      continue;
-    }
+    const scheduledTime = slot.forceLive ? null : slot.timestamp;
 
-    if (isLiveImmediate) {
-      console.log(`🚀 [${idx + 1}/${doodles.length}] Publishing "${d.subject}" LIVE to Facebook (Morning Slot)...`);
+    if (slot.forceLive) {
+      console.log(`🚀 [${i + 1}/${doodles.length}] Publishing "${doodle.subject}" LIVE to Facebook (Morning Slot)...`);
     } else {
-      console.log(`📅 [${idx + 1}/${doodles.length}] Scheduling "${d.subject}" into Facebook Page Planner for: ${slot.edt} EDT (${slot.ist} IST)...`);
+      console.log(`📅 [${i + 1}/${doodles.length}] Scheduling "${doodle.subject}" into Facebook Page Planner for: ${slot.edt} EDT (${slot.ist} IST)...`);
     }
 
-    const res = await uploadPhotoToPage(PAGE_ID, PAGE_TOKEN, d.caption, imgPath, schedTs);
+    const res = await uploadPhotoToPage(PAGE_ID, PAGE_TOKEN, doodle.caption, imagePath, scheduledTime);
 
-    if (res.status === 200 && res.body && (res.body.post_id || res.body.id)) {
+    if (res.status === 200 && res.body && (res.body.id || res.body.post_id)) {
       const postId = res.body.post_id || res.body.id;
-      d.fb_post_id = postId;
-      d.scheduled_publish_time = schedTs;
+      doodle.fb_post_id = postId;
+      doodle.photo_id = res.body.id;
+      doodle.scheduled_publish_time = scheduledTime;
 
-      if (isLiveImmediate) {
+      if (slot.forceLive) {
         console.log(`   ✅ PUBLISHED LIVE! Post ID: ${postId}`);
+
+        // Post 1: Add first follow comment alongside the post immediately!
+        const commentMsg = doodle.follow_comment || `❤️ Loving these daily easy drawing guides?\n👉 Follow Little Doodle Club for 3 new step-by-step doodle tutorials every single day!\n🎨 https://www.facebook.com/1298820806658884`;
         console.log(`   💬 Adding first follow comment with page link...`);
-        const commentMsg = d.follow_comment || '❤️ Loving these daily easy drawing guides?\n👉 Follow Little Doodle Club for 3 new step-by-step doodle tutorials every single day!\n🎨 https://www.facebook.com/1298820806658884';
-        const commentRes = await postComment(postId, PAGE_TOKEN, commentMsg);
-        if (commentRes.status === 200) {
+        const cRes = await postComment(postId, PAGE_TOKEN, commentMsg);
+        if (cRes.status === 200 && cRes.body && cRes.body.id) {
           console.log(`   ✅ First follow comment posted successfully!`);
-          d.comment_posted = true;
+          doodle.comment_posted = true;
+          doodle.comment_id = cRes.body.id;
         } else {
-          d.comment_posted = false;
+          console.warn(`   ⚠️ Could not post comment:`, cRes.body || cRes.error);
+          doodle.comment_posted = false;
         }
       } else {
         console.log(`   ✅ SCHEDULED in Facebook Planner! Post ID: ${postId}`);
-        d.comment_posted = false;
+        doodle.comment_posted = false;
       }
 
-      // Update state
-      if (d.driveFileId && !state.postedFileIds.includes(d.driveFileId)) {
-        state.postedFileIds.push(d.driveFileId);
+      // Record to state to prevent reuse
+      if (doodle.driveFileId && !state.postedFileIds.includes(doodle.driveFileId)) {
+        state.postedFileIds.push(doodle.driveFileId);
       }
-      if (d.filename && !state.postedFilenames.includes(d.filename)) {
-        state.postedFilenames.push(d.filename);
+      if (doodle.filename && !state.postedFilenames.includes(doodle.filename)) {
+        state.postedFilenames.push(doodle.filename);
       }
-      if (d.subject && !state.postedSubjects.includes(d.subject)) {
-        state.postedSubjects.push(d.subject);
+      if (doodle.subject && !state.postedSubjects.includes(doodle.subject)) {
+        state.postedSubjects.push(doodle.subject);
       }
 
       state.history.push({
         date: new Date().toISOString(),
-        subject: d.subject,
-        filename: d.filename,
-        driveFileId: d.driveFileId,
+        subject: doodle.subject,
+        filename: doodle.filename,
+        driveFileId: doodle.driveFileId,
         fb_post_id: postId,
-        scheduled_for: isLiveImmediate ? 'LIVE (Morning)' : slot.edt,
-        comment_posted: d.comment_posted
+        scheduled_for: slot.forceLive ? 'LIVE (Morning)' : new Date(scheduledTime * 1000).toLocaleString(),
+        comment_posted: doodle.comment_posted
       });
 
-      saveJson(STATE_PATH, state);
+      state.lastUpdated = new Date().toISOString();
+      state.lastPipelineDate = new Date().toISOString().slice(0, 10);
+
       saveJson(TODAY_DOODLES_PATH, todayData);
+      saveJson(STATE_PATH, state);
       console.log(`   💾 State updated to prevent reuse.\n`);
     } else {
-      console.error(`   ❌ Facebook Upload Error (${res.status}):`, res.body || res.error);
+      console.error(`   ❌ Facebook Upload Failed (${res.status}):`, res.body || res.error);
     }
 
-    if (idx < doodles.length - 1) {
-      await new Promise(r => setTimeout(r, 4000));
-    }
+    await new Promise(r => setTimeout(r, 3000));
   }
-
-  // Mark pipeline date anchor so subsequent runs know today's batch is done
-  const todayDateStr = new Date().toISOString().slice(0, 10);
-  state.lastPipelineDate = todayDateStr;
-  state.lastUpdated = new Date().toISOString();
-  saveJson(STATE_PATH, state);
 
   console.log('🎉 All tutorials processed (Post 1 live + Posts 2 & 3 scheduled)!\n');
 }
 
 main().catch(err => {
-  console.error('❌ Fatal Facebook Script Error:', err);
+  console.error('❌ Fatal Posting Error:', err);
   process.exit(1);
 });

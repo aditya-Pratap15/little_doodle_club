@@ -91,6 +91,15 @@ async function main() {
   console.log('======================================================\n');
 
   ensureDir(INCOMING_DIR);
+  // Clear any temporary files from previous runs
+  fs.readdirSync(INCOMING_DIR).forEach(f => {
+    if (f !== '.gitkeep') fs.unlinkSync(path.join(INCOMING_DIR, f));
+  });
+  const brandedDir = path.join(BASE_DIR, 'branded_doodles');
+  ensureDir(brandedDir);
+  fs.readdirSync(brandedDir).forEach(f => {
+    if (f !== '.gitkeep') fs.unlinkSync(path.join(brandedDir, f));
+  });
 
   const state = loadJson(STATE_PATH, {
     postedFileIds: [],
