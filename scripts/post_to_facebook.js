@@ -254,14 +254,14 @@ async function main() {
         doodle.comment_posted = false;
       }
 
-      // Record to state to prevent reuse
+      // Record to state to prevent reuse (case-insensitive deduplication)
       if (doodle.driveFileId && !state.postedFileIds.includes(doodle.driveFileId)) {
         state.postedFileIds.push(doodle.driveFileId);
       }
-      if (doodle.filename && !state.postedFilenames.includes(doodle.filename)) {
+      if (doodle.filename && !state.postedFilenames.some(fn => fn.toLowerCase().trim() === doodle.filename.toLowerCase().trim())) {
         state.postedFilenames.push(doodle.filename);
       }
-      if (doodle.subject && !state.postedSubjects.includes(doodle.subject)) {
+      if (doodle.subject && !state.postedSubjects.some(s => s.toLowerCase().trim() === doodle.subject.toLowerCase().trim())) {
         state.postedSubjects.push(doodle.subject);
       }
 

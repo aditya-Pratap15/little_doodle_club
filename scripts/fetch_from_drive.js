@@ -132,12 +132,22 @@ async function main() {
 
   console.log(`✅ Found ${result.files.length} total files in Google Drive folder "daily arts".\n`);
 
-  // Filter out already posted files by ID, filename, and subject
+  const postedSubjsLower = (state.postedSubjects || []).map(s => String(s).toLowerCase().trim());
+  const postedFilesLower = (state.postedFilenames || []).map(fn => String(fn).toLowerCase().trim());
+  const postedIds = (state.postedFileIds || []).map(id => String(id).trim());
+
+  // Filter out already posted files by ID, filename, and subject (100% case-insensitive & trimmed)
   const unpostedFiles = result.files.filter(f => {
     const subj = extractSubjectFromFilename(f.name);
-    return !state.postedFileIds.includes(f.id) &&
-           !state.postedFilenames.includes(f.name) &&
-           !state.postedSubjects.includes(subj);
+    const subjLower = subj.toLowerCase().trim();
+    const nameLower = (f.name || '').toLowerCase().trim();
+    const fileId = String(f.id || '').trim();
+
+    const isIdPosted = postedIds.includes(fileId);
+    const isNamePosted = postedFilesLower.includes(nameLower);
+    const isSubjPosted = postedSubjsLower.includes(subjLower);
+
+    return !isIdPosted && !isNamePosted && !isSubjPosted;
   });
 
   console.log(`🎲 Unposted tutorials available in Google Drive: ${unpostedFiles.length}`);
