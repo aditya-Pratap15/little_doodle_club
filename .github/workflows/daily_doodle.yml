@@ -1,4 +1,4 @@
-name: Little Doodle Club - Daily Tutorial Automation
+﻿name: Little Doodle Club - Daily Tutorial Automation
 
 on:
   schedule:
@@ -66,9 +66,12 @@ jobs:
       # -------------------------------------------------------------
       # MORNING RUN: Full Pipeline (Fetch 3, Watermark, Schedule, Post 1 Live)
       # -------------------------------------------------------------
-      - name: Verify FFmpeg
+      - name: Install FFmpeg & System Dependencies
         if: steps.run_mode.outputs.mode == 'pipeline'
-        run: ffmpeg -version
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          ffmpeg -version
 
       - name: Fetch 3 Random Diverse Tutorials from Google Drive
         if: steps.run_mode.outputs.mode == 'pipeline'
