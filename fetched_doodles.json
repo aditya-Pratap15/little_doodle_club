@@ -1,6 +1,26 @@
 {
-    "fetchedAt":  null,
-    "doodles":  [
-
-                ]
+  "fetchedAt": "2026-10-20T11:06:44.467Z",
+  "doodles": [
+    {
+      "driveFileId": "1oOvkUndlnxkhaZT5N90WeuTV2hl5w893",
+      "filename": "propeller_biplane_2026-10-17.jpg",
+      "subject": "Propeller Biplane",
+      "rawImagePath": "incoming_doodles/propeller_biplane_2026-10-17.jpg",
+      "createdTime": "2026-10-17T01:31:45.635Z"
+    },
+    {
+      "driveFileId": "1GumVHdAkbVxBTQfWbu2CC_bOhanwIHGT",
+      "filename": "lotus_pocket_watch_2026-10-15.jpg",
+      "subject": "Lotus Pocket Watch",
+      "rawImagePath": "incoming_doodles/lotus_pocket_watch_2026-10-15.jpg",
+      "createdTime": "2026-10-15T01:02:42.701Z"
+    },
+    {
+      "driveFileId": "1fn_3jtF5IdtaynQYuecf4tAU6KW6Ydp9",
+      "filename": "pufferfish_2026-10-16.jpg",
+      "subject": "Pufferfish",
+      "rawImagePath": "incoming_doodles/pufferfish_2026-10-16.jpg",
+      "createdTime": "2026-10-16T00:49:13.186Z"
+    }
+  ]
 }

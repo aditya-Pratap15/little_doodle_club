@@ -1,35 +1,72 @@
 {
-    "version":  "1.0.0",
-    "postedFileIds":  [
-                          "1oRo1KHjwpsggGoz9gC26EQ7Vjv6iCTPi",
-                          "kitten_2026-10-10"
-                      ],
-    "postedFilenames":  [
-                            "sunflower_2026-10-13.jpg",
-                            "kitten_2026-10-10.jpg"
-                        ],
-    "lastUpdated":  "2026-10-17T18:22:01.574Z",
-    "postedSubjects":  [
-                           "Sunflower",
-                           "Kitten"
-                       ],
-    "history":  [
-                    {
-                        "filename":  "sunflower_2026-10-13.jpg",
-                        "subject":  "Sunflower",
-                        "fb_post_id":  "1298820806658884_122102188749508656",
-                        "date":  "2026-10-16T18:12:37.303Z",
-                        "comment_posted":  true,
-                        "driveFileId":  "1oRo1KHjwpsggGoz9gC26EQ7Vjv6iCTPi"
-                    },
-                    {
-                        "filename":  "kitten_2026-10-10.jpg",
-                        "subject":  "Kitten",
-                        "fb_post_id":  "1298820806658884_122102985495508656",
-                        "scheduled_for":  "LIVE (Morning)",
-                        "date":  "2026-10-17T18:22:01.574Z",
-                        "comment_posted":  true,
-                        "driveFileId":  "kitten_2026-10-10"
-                    }
-                ]
+  "version": "1.0.0",
+  "postedFileIds": [
+    "1oRo1KHjwpsggGoz9gC26EQ7Vjv6iCTPi",
+    "kitten_2026-10-10",
+    "1oOvkUndlnxkhaZT5N90WeuTV2hl5w893",
+    "1GumVHdAkbVxBTQfWbu2CC_bOhanwIHGT",
+    "1fn_3jtF5IdtaynQYuecf4tAU6KW6Ydp9"
+  ],
+  "postedFilenames": [
+    "sunflower_2026-10-13.jpg",
+    "kitten_2026-10-10.jpg",
+    "propeller_biplane_2026-10-17.jpg",
+    "lotus_pocket_watch_2026-10-15.jpg",
+    "pufferfish_2026-10-16.jpg"
+  ],
+  "lastUpdated": "2026-10-20T11:07:06.405Z",
+  "postedSubjects": [
+    "Sunflower",
+    "Kitten",
+    "Propeller Biplane",
+    "Lotus Pocket Watch",
+    "Pufferfish"
+  ],
+  "history": [
+    {
+      "filename": "sunflower_2026-10-13.jpg",
+      "subject": "Sunflower",
+      "fb_post_id": "1298820806658884_122102188749508656",
+      "date": "2026-10-16T18:12:37.303Z",
+      "comment_posted": true,
+      "driveFileId": "1oRo1KHjwpsggGoz9gC26EQ7Vjv6iCTPi"
+    },
+    {
+      "filename": "kitten_2026-10-10.jpg",
+      "subject": "Kitten",
+      "fb_post_id": "1298820806658884_122102985495508656",
+      "scheduled_for": "LIVE (Morning)",
+      "date": "2026-10-17T18:22:01.574Z",
+      "comment_posted": true,
+      "driveFileId": "kitten_2026-10-10"
+    },
+    {
+      "date": "2026-10-20T11:06:57.502Z",
+      "subject": "Propeller Biplane",
+      "filename": "propeller_biplane_2026-10-17.jpg",
+      "driveFileId": "1oOvkUndlnxkhaZT5N90WeuTV2hl5w893",
+      "fb_post_id": "1298820806658884_122105274099508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-10-20T11:07:02.127Z",
+      "subject": "Lotus Pocket Watch",
+      "filename": "lotus_pocket_watch_2026-10-15.jpg",
+      "driveFileId": "1GumVHdAkbVxBTQfWbu2CC_bOhanwIHGT",
+      "fb_post_id": "122105274339508656",
+      "scheduled_for": "10/20/2026, 5:30:00 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-10-20T11:07:06.405Z",
+      "subject": "Pufferfish",
+      "filename": "pufferfish_2026-10-16.jpg",
+      "driveFileId": "1fn_3jtF5IdtaynQYuecf4tAU6KW6Ydp9",
+      "fb_post_id": "122105274417508656",
+      "scheduled_for": "10/20/2026, 10:30:00 PM",
+      "comment_posted": false
+    }
+  ],
+  "lastPipelineDate": "2026-10-20"
 }
