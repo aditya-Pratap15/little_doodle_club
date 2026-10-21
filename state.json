@@ -5,22 +5,31 @@
     "kitten_2026-10-10",
     "1oOvkUndlnxkhaZT5N90WeuTV2hl5w893",
     "1GumVHdAkbVxBTQfWbu2CC_bOhanwIHGT",
-    "1fn_3jtF5IdtaynQYuecf4tAU6KW6Ydp9"
+    "1fn_3jtF5IdtaynQYuecf4tAU6KW6Ydp9",
+    "1RgSr7gwkbiqutKeg5yXu7xjWkaB-xyW_",
+    "1tkaJzUqNLq_7mLH3DSA7LOvY79-rqBke",
+    "1spj1Et_DsdvPrYpqVIofJx1w7INsksjc"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
     "kitten_2026-10-10.jpg",
     "propeller_biplane_2026-10-17.jpg",
     "lotus_pocket_watch_2026-10-15.jpg",
-    "pufferfish_2026-10-16.jpg"
+    "pufferfish_2026-10-16.jpg",
+    "latte_art_2026-10-14.jpg",
+    "croissant_2026-10-14.jpg",
+    "vintage_typewriter_2026-10-17.jpg"
   ],
-  "lastUpdated": "2026-10-20T11:07:06.405Z",
+  "lastUpdated": "2026-10-21T00:49:44.327Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
     "Propeller Biplane",
     "Lotus Pocket Watch",
-    "Pufferfish"
+    "Pufferfish",
+    "Latte Art",
+    "Croissant",
+    "Vintage Typewriter"
   ],
   "history": [
     {
@@ -66,7 +75,34 @@
       "fb_post_id": "122105274417508656",
       "scheduled_for": "10/20/2026, 10:30:00 PM",
       "comment_posted": false
+    },
+    {
+      "date": "2026-10-21T00:49:35.074Z",
+      "subject": "Latte Art",
+      "filename": "latte_art_2026-10-14.jpg",
+      "driveFileId": "1RgSr7gwkbiqutKeg5yXu7xjWkaB-xyW_",
+      "fb_post_id": "1298820806658884_122105828001508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-10-21T00:49:39.681Z",
+      "subject": "Croissant",
+      "filename": "croissant_2026-10-14.jpg",
+      "driveFileId": "1tkaJzUqNLq_7mLH3DSA7LOvY79-rqBke",
+      "fb_post_id": "122105828109508656",
+      "scheduled_for": "10/21/2026, 2:49:25 AM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-10-21T00:49:44.327Z",
+      "subject": "Vintage Typewriter",
+      "filename": "vintage_typewriter_2026-10-17.jpg",
+      "driveFileId": "1spj1Et_DsdvPrYpqVIofJx1w7INsksjc",
+      "fb_post_id": "122105828187508656",
+      "scheduled_for": "10/21/2026, 5:49:25 AM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-10-20"
+  "lastPipelineDate": "2026-10-21"
 }
