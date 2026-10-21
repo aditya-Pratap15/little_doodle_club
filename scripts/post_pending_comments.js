@@ -150,6 +150,33 @@ async function main() {
     await new Promise(r => setTimeout(r, 2000));
   }
 
+  // Also check state.history for any recent posts missing comments due to timing edge-cases
+  if (Array.isArray(state.history)) {
+    const cutoffTs = Date.now() - 48 * 3600 * 1000;
+    for (const h of state.history) {
+      if (!h.comment_posted && h.fb_post_id) {
+        const postDate = new Date(h.date || 0).getTime();
+        if (postDate >= cutoffTs) {
+          const inDoodles = doodles.find(d => d.fb_post_id === h.fb_post_id);
+          if (!inDoodles) {
+            const commentMsg = generateFollowComment(h.subject);
+            console.log(`💬 Posting backlog follow comment for "${h.subject}" (${h.fb_post_id})...`);
+            const res = await postComment(h.fb_post_id, PAGE_TOKEN, commentMsg);
+            if (res.status === 200 && res.body && res.body.id) {
+              console.log(`   ✅ Backlog comment posted! (ID: ${res.body.id})`);
+              h.comment_posted = true;
+              commentedCount++;
+              saveJson(STATE_PATH, state);
+            } else {
+              console.warn(`   ⚠️ Backlog comment failed:`, res.body || res.error);
+            }
+            await new Promise(r => setTimeout(r, 2000));
+          }
+        }
+      }
+    }
+  }
+
   console.log(`\n🎉 Finished checking pending comments. Dropped ${commentedCount} new comments.\n`);
 }
 

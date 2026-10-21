@@ -276,7 +276,8 @@ async function main() {
       });
 
       state.lastUpdated = new Date().toISOString();
-      state.lastPipelineDate = new Date().toISOString().slice(0, 10);
+      const edtFormatter = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York' });
+      state.lastPipelineDate = edtFormatter.format(new Date());
 
       saveJson(TODAY_DOODLES_PATH, todayData);
       saveJson(STATE_PATH, state);

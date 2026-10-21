@@ -1,4 +1,4 @@
-﻿name: Little Doodle Club - Daily Tutorial Automation
+name: Little Doodle Club - Daily Tutorial Automation
 
 on:
   schedule:
@@ -49,8 +49,11 @@ jobs:
               const fs = require("fs");
               try {
                 const state = JSON.parse(fs.readFileSync("state.json", "utf8"));
-                const today = new Date().toISOString().slice(0, 10);
-                if (state.lastPipelineDate !== today) {
+                const edtFormatter = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" });
+                const todayEdt = edtFormatter.format(new Date());
+                const nowHourUtc = new Date().getUTCHours();
+                // Morning pipeline should only run on a new EDT day when approaching or during morning slot (UTC >= 11)
+                if (state.lastPipelineDate !== todayEdt && nowHourUtc >= 11) {
                   console.log("pipeline");
                 } else {
                   console.log("comments");
