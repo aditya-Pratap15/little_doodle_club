@@ -1,26 +1,26 @@
 {
-  "fetchedAt": "2026-10-21T00:49:25.353Z",
+  "fetchedAt": "2026-10-22T18:13:05.467Z",
   "doodles": [
     {
-      "driveFileId": "1RgSr7gwkbiqutKeg5yXu7xjWkaB-xyW_",
-      "filename": "latte_art_2026-10-14.jpg",
-      "subject": "Latte Art",
-      "rawImagePath": "incoming_doodles/latte_art_2026-10-14.jpg",
-      "createdTime": "2026-10-14T01:10:44.677Z"
+      "driveFileId": "1kJhj13O-1FYmjQO7Q8W7kuxjZxZQo7qw",
+      "filename": "vintage_bicycle_2026-10-17.jpg",
+      "subject": "Vintage Bicycle",
+      "rawImagePath": "incoming_doodles/vintage_bicycle_2026-10-17.jpg",
+      "createdTime": "2026-10-17T01:31:44.106Z"
     },
     {
-      "driveFileId": "1tkaJzUqNLq_7mLH3DSA7LOvY79-rqBke",
-      "filename": "croissant_2026-10-14.jpg",
-      "subject": "Croissant",
-      "rawImagePath": "incoming_doodles/croissant_2026-10-14.jpg",
-      "createdTime": "2026-10-14T01:10:44.968Z"
+      "driveFileId": "1FJOinTTIcRksJPBTfBGgqvZfJxklFN9_",
+      "filename": "chibi_autumn_dragon_2026-10-18.jpg",
+      "subject": "Chibi Autumn Dragon",
+      "rawImagePath": "incoming_doodles/chibi_autumn_dragon_2026-10-18.jpg",
+      "createdTime": "2026-10-18T01:19:44.585Z"
     },
     {
-      "driveFileId": "1spj1Et_DsdvPrYpqVIofJx1w7INsksjc",
-      "filename": "vintage_typewriter_2026-10-17.jpg",
-      "subject": "Vintage Typewriter",
-      "rawImagePath": "incoming_doodles/vintage_typewriter_2026-10-17.jpg",
-      "createdTime": "2026-10-17T01:31:44.208Z"
+      "driveFileId": "15SzRk8nQbelsMyDiVdfUYkYfOwJpuRyR",
+      "filename": "dumbo_octopus_2026-10-16.jpg",
+      "subject": "Dumbo Octopus",
+      "rawImagePath": "incoming_doodles/dumbo_octopus_2026-10-16.jpg",
+      "createdTime": "2026-10-16T00:49:13.228Z"
     }
   ]
 }

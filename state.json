@@ -8,7 +8,10 @@
     "1fn_3jtF5IdtaynQYuecf4tAU6KW6Ydp9",
     "1RgSr7gwkbiqutKeg5yXu7xjWkaB-xyW_",
     "1tkaJzUqNLq_7mLH3DSA7LOvY79-rqBke",
-    "1spj1Et_DsdvPrYpqVIofJx1w7INsksjc"
+    "1spj1Et_DsdvPrYpqVIofJx1w7INsksjc",
+    "1kJhj13O-1FYmjQO7Q8W7kuxjZxZQo7qw",
+    "1FJOinTTIcRksJPBTfBGgqvZfJxklFN9_",
+    "15SzRk8nQbelsMyDiVdfUYkYfOwJpuRyR"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -18,9 +21,12 @@
     "pufferfish_2026-10-16.jpg",
     "latte_art_2026-10-14.jpg",
     "croissant_2026-10-14.jpg",
-    "vintage_typewriter_2026-10-17.jpg"
+    "vintage_typewriter_2026-10-17.jpg",
+    "vintage_bicycle_2026-10-17.jpg",
+    "chibi_autumn_dragon_2026-10-18.jpg",
+    "dumbo_octopus_2026-10-16.jpg"
   ],
-  "lastUpdated": "2026-10-21T00:49:44.327Z",
+  "lastUpdated": "2026-10-22T18:13:28.824Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -29,7 +35,10 @@
     "Pufferfish",
     "Latte Art",
     "Croissant",
-    "Vintage Typewriter"
+    "Vintage Typewriter",
+    "Vintage Bicycle",
+    "Chibi Autumn Dragon",
+    "Dumbo Octopus"
   ],
   "history": [
     {
@@ -102,7 +111,34 @@
       "fb_post_id": "122105828187508656",
       "scheduled_for": "10/21/2026, 5:49:25 AM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-10-22T18:13:18.551Z",
+      "subject": "Vintage Bicycle",
+      "filename": "vintage_bicycle_2026-10-17.jpg",
+      "driveFileId": "1kJhj13O-1FYmjQO7Q8W7kuxjZxZQo7qw",
+      "fb_post_id": "1298820806658884_122106775365508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-10-22T18:13:23.333Z",
+      "subject": "Chibi Autumn Dragon",
+      "filename": "chibi_autumn_dragon_2026-10-18.jpg",
+      "driveFileId": "1FJOinTTIcRksJPBTfBGgqvZfJxklFN9_",
+      "fb_post_id": "122106775539508656",
+      "scheduled_for": "10/22/2026, 8:13:05 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-10-22T18:13:28.824Z",
+      "subject": "Dumbo Octopus",
+      "filename": "dumbo_octopus_2026-10-16.jpg",
+      "driveFileId": "15SzRk8nQbelsMyDiVdfUYkYfOwJpuRyR",
+      "fb_post_id": "122106775623508656",
+      "scheduled_for": "10/22/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-10-21"
+  "lastPipelineDate": "2026-10-22"
 }
