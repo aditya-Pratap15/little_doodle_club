@@ -1,26 +1,26 @@
 {
-  "fetchedAt": "2026-10-22T18:13:05.467Z",
+  "fetchedAt": "2026-10-23T17:22:54.686Z",
   "doodles": [
     {
-      "driveFileId": "1kJhj13O-1FYmjQO7Q8W7kuxjZxZQo7qw",
-      "filename": "vintage_bicycle_2026-10-17.jpg",
-      "subject": "Vintage Bicycle",
-      "rawImagePath": "incoming_doodles/vintage_bicycle_2026-10-17.jpg",
-      "createdTime": "2026-10-17T01:31:44.106Z"
+      "driveFileId": "12QhZfTL-kzHkIGPrePCGqZezJRW95UtV",
+      "filename": "strawberry_cake_2026-10-14.jpg",
+      "subject": "Strawberry Cake",
+      "rawImagePath": "incoming_doodles/strawberry_cake_2026-10-14.jpg",
+      "createdTime": "2026-10-14T01:10:44.563Z"
     },
     {
-      "driveFileId": "1FJOinTTIcRksJPBTfBGgqvZfJxklFN9_",
-      "filename": "chibi_autumn_dragon_2026-10-18.jpg",
-      "subject": "Chibi Autumn Dragon",
-      "rawImagePath": "incoming_doodles/chibi_autumn_dragon_2026-10-18.jpg",
-      "createdTime": "2026-10-18T01:19:44.585Z"
+      "driveFileId": "1r3FOM5Cz4Cylk9Zjcvvckiewe-aHFgN2",
+      "filename": "beluga_whale_2026-10-16.jpg",
+      "subject": "Beluga Whale",
+      "rawImagePath": "incoming_doodles/beluga_whale_2026-10-16.jpg",
+      "createdTime": "2026-10-16T00:49:13.199Z"
     },
     {
-      "driveFileId": "15SzRk8nQbelsMyDiVdfUYkYfOwJpuRyR",
-      "filename": "dumbo_octopus_2026-10-16.jpg",
-      "subject": "Dumbo Octopus",
-      "rawImagePath": "incoming_doodles/dumbo_octopus_2026-10-16.jpg",
-      "createdTime": "2026-10-16T00:49:13.228Z"
+      "driveFileId": "18DgJEeoKKgDSAJ4894yz6sPWUekXINGe",
+      "filename": "origami_frog_2026-10-15.jpg",
+      "subject": "Origami Frog",
+      "rawImagePath": "incoming_doodles/origami_frog_2026-10-15.jpg",
+      "createdTime": "2026-10-15T01:02:42.130Z"
     }
   ]
 }

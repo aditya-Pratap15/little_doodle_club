@@ -11,7 +11,10 @@
     "1spj1Et_DsdvPrYpqVIofJx1w7INsksjc",
     "1kJhj13O-1FYmjQO7Q8W7kuxjZxZQo7qw",
     "1FJOinTTIcRksJPBTfBGgqvZfJxklFN9_",
-    "15SzRk8nQbelsMyDiVdfUYkYfOwJpuRyR"
+    "15SzRk8nQbelsMyDiVdfUYkYfOwJpuRyR",
+    "12QhZfTL-kzHkIGPrePCGqZezJRW95UtV",
+    "1r3FOM5Cz4Cylk9Zjcvvckiewe-aHFgN2",
+    "18DgJEeoKKgDSAJ4894yz6sPWUekXINGe"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -24,9 +27,12 @@
     "vintage_typewriter_2026-10-17.jpg",
     "vintage_bicycle_2026-10-17.jpg",
     "chibi_autumn_dragon_2026-10-18.jpg",
-    "dumbo_octopus_2026-10-16.jpg"
+    "dumbo_octopus_2026-10-16.jpg",
+    "strawberry_cake_2026-10-14.jpg",
+    "beluga_whale_2026-10-16.jpg",
+    "origami_frog_2026-10-15.jpg"
   ],
-  "lastUpdated": "2026-10-22T18:13:28.824Z",
+  "lastUpdated": "2026-10-23T17:23:15.609Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -38,7 +44,10 @@
     "Vintage Typewriter",
     "Vintage Bicycle",
     "Chibi Autumn Dragon",
-    "Dumbo Octopus"
+    "Dumbo Octopus",
+    "Strawberry Cake",
+    "Beluga Whale",
+    "Origami Frog"
   ],
   "history": [
     {
@@ -138,7 +147,34 @@
       "fb_post_id": "122106775623508656",
       "scheduled_for": "10/22/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-10-23T17:23:06.541Z",
+      "subject": "Strawberry Cake",
+      "filename": "strawberry_cake_2026-10-14.jpg",
+      "driveFileId": "12QhZfTL-kzHkIGPrePCGqZezJRW95UtV",
+      "fb_post_id": "1298820806658884_122107190961508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-10-23T17:23:11.078Z",
+      "subject": "Beluga Whale",
+      "filename": "beluga_whale_2026-10-16.jpg",
+      "driveFileId": "1r3FOM5Cz4Cylk9Zjcvvckiewe-aHFgN2",
+      "fb_post_id": "122107191129508656",
+      "scheduled_for": "10/23/2026, 7:22:55 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-10-23T17:23:15.609Z",
+      "subject": "Origami Frog",
+      "filename": "origami_frog_2026-10-15.jpg",
+      "driveFileId": "18DgJEeoKKgDSAJ4894yz6sPWUekXINGe",
+      "fb_post_id": "122107191183508656",
+      "scheduled_for": "10/23/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-10-22"
+  "lastPipelineDate": "2026-10-23"
 }
