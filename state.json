@@ -14,7 +14,10 @@
     "15SzRk8nQbelsMyDiVdfUYkYfOwJpuRyR",
     "12QhZfTL-kzHkIGPrePCGqZezJRW95UtV",
     "1r3FOM5Cz4Cylk9Zjcvvckiewe-aHFgN2",
-    "18DgJEeoKKgDSAJ4894yz6sPWUekXINGe"
+    "18DgJEeoKKgDSAJ4894yz6sPWUekXINGe",
+    "1XZ95l-CIspwunHKN4apJ06InwVeiViJ1",
+    "1OdTumu7LZFpLdR7dKkrK7QlFqoFTMVCg",
+    "1dLt33q7ll7sgj_ls49BztkamyHlh1wFL"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -30,9 +33,12 @@
     "dumbo_octopus_2026-10-16.jpg",
     "strawberry_cake_2026-10-14.jpg",
     "beluga_whale_2026-10-16.jpg",
-    "origami_frog_2026-10-15.jpg"
+    "origami_frog_2026-10-15.jpg",
+    "chibi_celestial_kitsune_2026-10-18.jpg",
+    "campfire_mason_jar_2026-10-22.jpg",
+    "origami_paper_fox_2026-10-22.jpg"
   ],
-  "lastUpdated": "2026-10-23T17:23:15.609Z",
+  "lastUpdated": "2026-10-24T16:11:33.988Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -47,7 +53,10 @@
     "Dumbo Octopus",
     "Strawberry Cake",
     "Beluga Whale",
-    "Origami Frog"
+    "Origami Frog",
+    "Chibi Celestial Kitsune",
+    "Campfire Mason Jar",
+    "Origami Paper Fox"
   ],
   "history": [
     {
@@ -174,7 +183,34 @@
       "fb_post_id": "122107191183508656",
       "scheduled_for": "10/23/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-10-24T16:11:24.408Z",
+      "subject": "Chibi Celestial Kitsune",
+      "filename": "chibi_celestial_kitsune_2026-10-18.jpg",
+      "driveFileId": "1XZ95l-CIspwunHKN4apJ06InwVeiViJ1",
+      "fb_post_id": "1298820806658884_122107561527508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-10-24T16:11:29.299Z",
+      "subject": "Campfire Mason Jar",
+      "filename": "campfire_mason_jar_2026-10-22.jpg",
+      "driveFileId": "1OdTumu7LZFpLdR7dKkrK7QlFqoFTMVCg",
+      "fb_post_id": "122107561647508656",
+      "scheduled_for": "10/24/2026, 5:30:00 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-10-24T16:11:33.988Z",
+      "subject": "Origami Paper Fox",
+      "filename": "origami_paper_fox_2026-10-22.jpg",
+      "driveFileId": "1dLt33q7ll7sgj_ls49BztkamyHlh1wFL",
+      "fb_post_id": "122107561707508656",
+      "scheduled_for": "10/24/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-10-23"
+  "lastPipelineDate": "2026-10-24"
 }

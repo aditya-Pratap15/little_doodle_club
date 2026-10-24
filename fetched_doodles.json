@@ -1,26 +1,26 @@
 {
-  "fetchedAt": "2026-10-23T17:22:54.686Z",
+  "fetchedAt": "2026-10-24T16:11:13.520Z",
   "doodles": [
     {
-      "driveFileId": "12QhZfTL-kzHkIGPrePCGqZezJRW95UtV",
-      "filename": "strawberry_cake_2026-10-14.jpg",
-      "subject": "Strawberry Cake",
-      "rawImagePath": "incoming_doodles/strawberry_cake_2026-10-14.jpg",
-      "createdTime": "2026-10-14T01:10:44.563Z"
+      "driveFileId": "1XZ95l-CIspwunHKN4apJ06InwVeiViJ1",
+      "filename": "chibi_celestial_kitsune_2026-10-18.jpg",
+      "subject": "Chibi Celestial Kitsune",
+      "rawImagePath": "incoming_doodles/chibi_celestial_kitsune_2026-10-18.jpg",
+      "createdTime": "2026-10-18T01:19:44.213Z"
     },
     {
-      "driveFileId": "1r3FOM5Cz4Cylk9Zjcvvckiewe-aHFgN2",
-      "filename": "beluga_whale_2026-10-16.jpg",
-      "subject": "Beluga Whale",
-      "rawImagePath": "incoming_doodles/beluga_whale_2026-10-16.jpg",
-      "createdTime": "2026-10-16T00:49:13.199Z"
+      "driveFileId": "1OdTumu7LZFpLdR7dKkrK7QlFqoFTMVCg",
+      "filename": "campfire_mason_jar_2026-10-22.jpg",
+      "subject": "Campfire Mason Jar",
+      "rawImagePath": "incoming_doodles/campfire_mason_jar_2026-10-22.jpg",
+      "createdTime": "2026-10-24T03:30:05.430Z"
     },
     {
-      "driveFileId": "18DgJEeoKKgDSAJ4894yz6sPWUekXINGe",
-      "filename": "origami_frog_2026-10-15.jpg",
-      "subject": "Origami Frog",
-      "rawImagePath": "incoming_doodles/origami_frog_2026-10-15.jpg",
-      "createdTime": "2026-10-15T01:02:42.130Z"
+      "driveFileId": "1dLt33q7ll7sgj_ls49BztkamyHlh1wFL",
+      "filename": "origami_paper_fox_2026-10-22.jpg",
+      "subject": "Origami Paper Fox",
+      "rawImagePath": "incoming_doodles/origami_paper_fox_2026-10-22.jpg",
+      "createdTime": "2026-10-24T03:30:05.359Z"
     }
   ]
 }
