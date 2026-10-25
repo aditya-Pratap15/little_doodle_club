@@ -17,7 +17,10 @@
     "18DgJEeoKKgDSAJ4894yz6sPWUekXINGe",
     "1XZ95l-CIspwunHKN4apJ06InwVeiViJ1",
     "1OdTumu7LZFpLdR7dKkrK7QlFqoFTMVCg",
-    "1dLt33q7ll7sgj_ls49BztkamyHlh1wFL"
+    "1dLt33q7ll7sgj_ls49BztkamyHlh1wFL",
+    "13F917v_thE5kfFdJF_mm0OybWKXwMcdH",
+    "1YPBIyq2WAZ0Zc_xjCv7MxBqPwGOepPw9",
+    "1ZTR-0UutJwc4AjzwLID-Ot1y3k3zMSxi"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -36,9 +39,12 @@
     "origami_frog_2026-10-15.jpg",
     "chibi_celestial_kitsune_2026-10-18.jpg",
     "campfire_mason_jar_2026-10-22.jpg",
-    "origami_paper_fox_2026-10-22.jpg"
+    "origami_paper_fox_2026-10-22.jpg",
+    "chibi_pegasus_foal_2026-10-25.jpg",
+    "ocean_wave_teacup_2026-10-22.jpg",
+    "vintage_tlr_camera_2026-10-24.jpg"
   ],
-  "lastUpdated": "2026-10-24T16:11:33.988Z",
+  "lastUpdated": "2026-10-25T16:43:32.529Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -56,7 +62,10 @@
     "Origami Frog",
     "Chibi Celestial Kitsune",
     "Campfire Mason Jar",
-    "Origami Paper Fox"
+    "Origami Paper Fox",
+    "Chibi Pegasus Foal",
+    "Ocean Wave Teacup",
+    "Vintage Tlr Camera"
   ],
   "history": [
     {
@@ -210,7 +219,34 @@
       "fb_post_id": "122107561707508656",
       "scheduled_for": "10/24/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-10-25T16:43:19.596Z",
+      "subject": "Chibi Pegasus Foal",
+      "filename": "chibi_pegasus_foal_2026-10-25.jpg",
+      "driveFileId": "13F917v_thE5kfFdJF_mm0OybWKXwMcdH",
+      "fb_post_id": "1298820806658884_122107910175508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-10-25T16:43:26.698Z",
+      "subject": "Ocean Wave Teacup",
+      "filename": "ocean_wave_teacup_2026-10-22.jpg",
+      "driveFileId": "1YPBIyq2WAZ0Zc_xjCv7MxBqPwGOepPw9",
+      "fb_post_id": "122107910307508656",
+      "scheduled_for": "10/25/2026, 5:30:00 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-10-25T16:43:32.529Z",
+      "subject": "Vintage Tlr Camera",
+      "filename": "vintage_tlr_camera_2026-10-24.jpg",
+      "driveFileId": "1ZTR-0UutJwc4AjzwLID-Ot1y3k3zMSxi",
+      "fb_post_id": "122107910373508656",
+      "scheduled_for": "10/25/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-10-24"
+  "lastPipelineDate": "2026-10-25"
 }
