@@ -2,9 +2,11 @@ name: Little Doodle Club - Daily Tutorial Automation
 
 on:
   schedule:
-    # RUN 1 (Morning Inspiration): 12:30 UTC = 08:30 AM EDT / 06:00 PM IST
+    # RUN 1 (Morning Inspiration): 12:18 UTC = 08:18 AM EDT / 05:48 PM IST
     # -> Uploads all 3 tutorials: Post 1 LIVE + comment, Posts 2 & 3 scheduled into Facebook Page Planner!
-    - cron: '30 12 * * *'
+    - cron: '18 12 * * *'
+    # Safety Net (If 12:18 experienced high GitHub queue congestion):
+    - cron: '42 13 * * *'
 
     # RUN 2 (Afternoon Comment Drop): 17:35 UTC = 01:35 PM EDT / 11:05 PM IST
     # -> Wakes up 5 mins after Post 2 goes live to drop Follow Comment 2! (Takes ~5 seconds)
