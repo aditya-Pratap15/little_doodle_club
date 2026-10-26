@@ -20,7 +20,9 @@
     "1dLt33q7ll7sgj_ls49BztkamyHlh1wFL",
     "13F917v_thE5kfFdJF_mm0OybWKXwMcdH",
     "1YPBIyq2WAZ0Zc_xjCv7MxBqPwGOepPw9",
-    "1ZTR-0UutJwc4AjzwLID-Ot1y3k3zMSxi"
+    "1ZTR-0UutJwc4AjzwLID-Ot1y3k3zMSxi",
+    "1uIJyPlDhsn3XlnoOe_rKxnwYdHN0hVzj",
+    "1Ou6RCSc27QEE9Pb89rhRRuDKmHBecVta"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -42,9 +44,11 @@
     "origami_paper_fox_2026-10-22.jpg",
     "chibi_pegasus_foal_2026-10-25.jpg",
     "ocean_wave_teacup_2026-10-22.jpg",
-    "vintage_tlr_camera_2026-10-24.jpg"
+    "vintage_tlr_camera_2026-10-24.jpg",
+    "chibi_sea_serpent_2026-10-25.jpg",
+    "chibi_moon_griffin_2026-10-25.jpg"
   ],
-  "lastUpdated": "2026-10-25T16:43:32.529Z",
+  "lastUpdated": "2026-10-26T21:47:45.244Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -65,7 +69,9 @@
     "Origami Paper Fox",
     "Chibi Pegasus Foal",
     "Ocean Wave Teacup",
-    "Vintage Tlr Camera"
+    "Vintage Tlr Camera",
+    "Chibi Sea Serpent",
+    "Chibi Moon Griffin"
   ],
   "history": [
     {
@@ -246,7 +252,25 @@
       "fb_post_id": "122107910373508656",
       "scheduled_for": "10/25/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-10-26T21:47:38.079Z",
+      "subject": "Chibi Sea Serpent",
+      "filename": "chibi_sea_serpent_2026-10-25.jpg",
+      "driveFileId": "1uIJyPlDhsn3XlnoOe_rKxnwYdHN0hVzj",
+      "fb_post_id": "122108356113508656",
+      "scheduled_for": "10/26/2026, 11:47:26 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-10-26T21:47:45.244Z",
+      "subject": "Chibi Moon Griffin",
+      "filename": "chibi_moon_griffin_2026-10-25.jpg",
+      "driveFileId": "1Ou6RCSc27QEE9Pb89rhRRuDKmHBecVta",
+      "fb_post_id": "122108356161508656",
+      "scheduled_for": "10/26/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-10-25"
+  "lastPipelineDate": "2026-10-26"
 }
