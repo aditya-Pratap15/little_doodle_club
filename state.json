@@ -22,7 +22,10 @@
     "1YPBIyq2WAZ0Zc_xjCv7MxBqPwGOepPw9",
     "1ZTR-0UutJwc4AjzwLID-Ot1y3k3zMSxi",
     "1uIJyPlDhsn3XlnoOe_rKxnwYdHN0hVzj",
-    "1Ou6RCSc27QEE9Pb89rhRRuDKmHBecVta"
+    "1Ou6RCSc27QEE9Pb89rhRRuDKmHBecVta",
+    "1j9DzTwwBxkAHSKHp9BjMLeYNAFiYpeEo",
+    "1fE-uZc3TGdCHT0l8sy6nUv5F9_7Ly1jS",
+    "1Gg16wRHeo99J_CS4mQicF6nsmLGruXVz"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -46,9 +49,12 @@
     "ocean_wave_teacup_2026-10-22.jpg",
     "vintage_tlr_camera_2026-10-24.jpg",
     "chibi_sea_serpent_2026-10-25.jpg",
-    "chibi_moon_griffin_2026-10-25.jpg"
+    "chibi_moon_griffin_2026-10-25.jpg",
+    "oceanic_manta_ray_2026-10-23.jpg",
+    "green_sea_turtle_2026-10-23.jpg",
+    "lined_seahorse_coral_2026-10-23.jpg"
   ],
-  "lastUpdated": "2026-10-26T21:47:45.244Z",
+  "lastUpdated": "2026-10-27T18:06:58.311Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -71,7 +77,10 @@
     "Ocean Wave Teacup",
     "Vintage Tlr Camera",
     "Chibi Sea Serpent",
-    "Chibi Moon Griffin"
+    "Chibi Moon Griffin",
+    "Oceanic Manta Ray",
+    "Green Sea Turtle",
+    "Lined Seahorse Coral"
   ],
   "history": [
     {
@@ -270,7 +279,34 @@
       "fb_post_id": "122108356161508656",
       "scheduled_for": "10/26/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-10-27T18:06:48.703Z",
+      "subject": "Oceanic Manta Ray",
+      "filename": "oceanic_manta_ray_2026-10-23.jpg",
+      "driveFileId": "1j9DzTwwBxkAHSKHp9BjMLeYNAFiYpeEo",
+      "fb_post_id": "1298820806658884_122108649087508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-10-27T18:06:53.333Z",
+      "subject": "Green Sea Turtle",
+      "filename": "green_sea_turtle_2026-10-23.jpg",
+      "driveFileId": "1fE-uZc3TGdCHT0l8sy6nUv5F9_7Ly1jS",
+      "fb_post_id": "122108649231508656",
+      "scheduled_for": "10/27/2026, 8:06:38 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-10-27T18:06:58.311Z",
+      "subject": "Lined Seahorse Coral",
+      "filename": "lined_seahorse_coral_2026-10-23.jpg",
+      "driveFileId": "1Gg16wRHeo99J_CS4mQicF6nsmLGruXVz",
+      "fb_post_id": "122108649309508656",
+      "scheduled_for": "10/27/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-10-26"
+  "lastPipelineDate": "2026-10-27"
 }
