@@ -28,7 +28,10 @@
     "1Gg16wRHeo99J_CS4mQicF6nsmLGruXVz",
     "1JknCWsaSXSaLw0OUEG5JJtea_Jbz9LBd",
     "11CSYHeR0DYg4AmRIBzqUTIrGL677-IKH",
-    "1Riz5LCn1oiSl479unN9HT_TRjWnYt02y"
+    "1Riz5LCn1oiSl479unN9HT_TRjWnYt02y",
+    "1Wyx-vLrnv0QwKYbKlpad1sOgfpTFyUed",
+    "1o33StV1DjN8ybel_oMaiaZJ6Ctqh--1j",
+    "1ZOgnaFkSSz-xWbPhefQehInLRNkhhfYm"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -58,9 +61,12 @@
     "lined_seahorse_coral_2026-10-23.jpg",
     "woodland_morel_mushrooms_2026-10-27.jpg",
     "souffle_pancakes_stack_2026-10-28.jpg",
-    "french_onion_soup_2026-10-28.jpg"
+    "french_onion_soup_2026-10-28.jpg",
+    "autumn_maple_bonsai_2026-10-27.jpg",
+    "cozy_capybara_2026-10-26.jpg",
+    "origami_paper_crane_2026-10-29.jpg"
   ],
-  "lastUpdated": "2026-10-28T18:22:32.057Z",
+  "lastUpdated": "2026-10-29T18:30:28.300Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -89,7 +95,10 @@
     "Lined Seahorse Coral",
     "Woodland Morel Mushrooms",
     "Souffle Pancakes Stack",
-    "French Onion Soup"
+    "French Onion Soup",
+    "Autumn Maple Bonsai",
+    "Cozy Capybara",
+    "Origami Paper Crane"
   ],
   "history": [
     {
@@ -342,7 +351,34 @@
       "fb_post_id": "122109078039508656",
       "scheduled_for": "10/28/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-10-29T18:30:20.116Z",
+      "subject": "Autumn Maple Bonsai",
+      "filename": "autumn_maple_bonsai_2026-10-27.jpg",
+      "driveFileId": "1Wyx-vLrnv0QwKYbKlpad1sOgfpTFyUed",
+      "fb_post_id": "1298820806658884_122109385587508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-10-29T18:30:24.288Z",
+      "subject": "Cozy Capybara",
+      "filename": "cozy_capybara_2026-10-26.jpg",
+      "driveFileId": "1o33StV1DjN8ybel_oMaiaZJ6Ctqh--1j",
+      "fb_post_id": "122109385707508656",
+      "scheduled_for": "10/29/2026, 8:30:11 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-10-29T18:30:28.300Z",
+      "subject": "Origami Paper Crane",
+      "filename": "origami_paper_crane_2026-10-29.jpg",
+      "driveFileId": "1ZOgnaFkSSz-xWbPhefQehInLRNkhhfYm",
+      "fb_post_id": "122109385767508656",
+      "scheduled_for": "10/29/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-10-28"
+  "lastPipelineDate": "2026-10-29"
 }
