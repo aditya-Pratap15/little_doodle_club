@@ -31,7 +31,10 @@
     "1Riz5LCn1oiSl479unN9HT_TRjWnYt02y",
     "1Wyx-vLrnv0QwKYbKlpad1sOgfpTFyUed",
     "1o33StV1DjN8ybel_oMaiaZJ6Ctqh--1j",
-    "1ZOgnaFkSSz-xWbPhefQehInLRNkhhfYm"
+    "1ZOgnaFkSSz-xWbPhefQehInLRNkhhfYm",
+    "11JmYmPJasOeum99RUEg0w8PFg363_Zr1",
+    "190RTyvE-jmVpzOdr7txTtmw-HgzGTzXY",
+    "1tJXdJjmkbWYynPW-dIiPajHW4j5eZtFb"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -64,9 +67,12 @@
     "french_onion_soup_2026-10-28.jpg",
     "autumn_maple_bonsai_2026-10-27.jpg",
     "cozy_capybara_2026-10-26.jpg",
-    "origami_paper_crane_2026-10-29.jpg"
+    "origami_paper_crane_2026-10-29.jpg",
+    "autumn_hourglass_landscape_2026-10-29.jpg",
+    "autumn_hedgehog_2026-10-26.jpg",
+    "bottlenose_dolphin_2026-10-30.jpg"
   ],
-  "lastUpdated": "2026-10-29T18:30:28.300Z",
+  "lastUpdated": "2026-10-30T18:02:48.292Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -98,7 +104,10 @@
     "French Onion Soup",
     "Autumn Maple Bonsai",
     "Cozy Capybara",
-    "Origami Paper Crane"
+    "Origami Paper Crane",
+    "Autumn Hourglass Landscape",
+    "Autumn Hedgehog",
+    "Bottlenose Dolphin"
   ],
   "history": [
     {
@@ -378,7 +387,34 @@
       "fb_post_id": "122109385767508656",
       "scheduled_for": "10/29/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-10-30T18:02:38.963Z",
+      "subject": "Autumn Hourglass Landscape",
+      "filename": "autumn_hourglass_landscape_2026-10-29.jpg",
+      "driveFileId": "11JmYmPJasOeum99RUEg0w8PFg363_Zr1",
+      "fb_post_id": "1298820806658884_122109729915508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-10-30T18:02:43.833Z",
+      "subject": "Autumn Hedgehog",
+      "filename": "autumn_hedgehog_2026-10-26.jpg",
+      "driveFileId": "190RTyvE-jmVpzOdr7txTtmw-HgzGTzXY",
+      "fb_post_id": "122109730047508656",
+      "scheduled_for": "10/30/2026, 8:02:29 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-10-30T18:02:48.292Z",
+      "subject": "Bottlenose Dolphin",
+      "filename": "bottlenose_dolphin_2026-10-30.jpg",
+      "driveFileId": "1tJXdJjmkbWYynPW-dIiPajHW4j5eZtFb",
+      "fb_post_id": "122109730143508656",
+      "scheduled_for": "10/30/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-10-29"
+  "lastPipelineDate": "2026-10-30"
 }
