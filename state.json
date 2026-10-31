@@ -34,7 +34,10 @@
     "1ZOgnaFkSSz-xWbPhefQehInLRNkhhfYm",
     "11JmYmPJasOeum99RUEg0w8PFg363_Zr1",
     "190RTyvE-jmVpzOdr7txTtmw-HgzGTzXY",
-    "1tJXdJjmkbWYynPW-dIiPajHW4j5eZtFb"
+    "1tJXdJjmkbWYynPW-dIiPajHW4j5eZtFb",
+    "1dlGHHsyfX9wHhuS6cm33keP2t5V4VGX9",
+    "16-r5qKV6GWhDLWnAnaO1N7IyaT-F-oJn",
+    "1KzlSu3SclvNYiArgM--oVDXUBc7kIYfQ"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -70,9 +73,12 @@
     "origami_paper_crane_2026-10-29.jpg",
     "autumn_hourglass_landscape_2026-10-29.jpg",
     "autumn_hedgehog_2026-10-26.jpg",
-    "bottlenose_dolphin_2026-10-30.jpg"
+    "bottlenose_dolphin_2026-10-30.jpg",
+    "terrarium_bottle_lighthouse_2026-10-29.jpg",
+    "antique_pocket_watch_2026-10-31.jpg",
+    "pumpkin_spice_cupcake_2026-10-28.jpg"
   ],
-  "lastUpdated": "2026-10-30T18:02:48.292Z",
+  "lastUpdated": "2026-10-31T17:16:09.675Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -107,7 +113,10 @@
     "Origami Paper Crane",
     "Autumn Hourglass Landscape",
     "Autumn Hedgehog",
-    "Bottlenose Dolphin"
+    "Bottlenose Dolphin",
+    "Terrarium Bottle Lighthouse",
+    "Antique Pocket Watch",
+    "Pumpkin Spice Cupcake"
   ],
   "history": [
     {
@@ -414,7 +423,34 @@
       "fb_post_id": "122109730143508656",
       "scheduled_for": "10/30/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-10-31T17:16:00.530Z",
+      "subject": "Terrarium Bottle Lighthouse",
+      "filename": "terrarium_bottle_lighthouse_2026-10-29.jpg",
+      "driveFileId": "1dlGHHsyfX9wHhuS6cm33keP2t5V4VGX9",
+      "fb_post_id": "1298820806658884_122110042785508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-10-31T17:16:05.211Z",
+      "subject": "Antique Pocket Watch",
+      "filename": "antique_pocket_watch_2026-10-31.jpg",
+      "driveFileId": "16-r5qKV6GWhDLWnAnaO1N7IyaT-F-oJn",
+      "fb_post_id": "122110042899508656",
+      "scheduled_for": "10/31/2026, 5:30:00 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-10-31T17:16:09.675Z",
+      "subject": "Pumpkin Spice Cupcake",
+      "filename": "pumpkin_spice_cupcake_2026-10-28.jpg",
+      "driveFileId": "1KzlSu3SclvNYiArgM--oVDXUBc7kIYfQ",
+      "fb_post_id": "122110042959508656",
+      "scheduled_for": "10/31/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-10-30"
+  "lastPipelineDate": "2026-10-31"
 }
