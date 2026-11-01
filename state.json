@@ -37,7 +37,10 @@
     "1tJXdJjmkbWYynPW-dIiPajHW4j5eZtFb",
     "1dlGHHsyfX9wHhuS6cm33keP2t5V4VGX9",
     "16-r5qKV6GWhDLWnAnaO1N7IyaT-F-oJn",
-    "1KzlSu3SclvNYiArgM--oVDXUBc7kIYfQ"
+    "1KzlSu3SclvNYiArgM--oVDXUBc7kIYfQ",
+    "1r_8f8Bl_TesbVUYyzsE8eGd4Orpj0b15",
+    "1JKAAN-x9iERJowyxSyPneJOwtqWlOkzH",
+    "1zkYuVx_5Appe-fD2sa7QYvMou-GaqT13"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -76,9 +79,12 @@
     "bottlenose_dolphin_2026-10-30.jpg",
     "terrarium_bottle_lighthouse_2026-10-29.jpg",
     "antique_pocket_watch_2026-10-31.jpg",
-    "pumpkin_spice_cupcake_2026-10-28.jpg"
+    "pumpkin_spice_cupcake_2026-10-28.jpg",
+    "chibi_starlight_unicorn_2026-11-01.jpg",
+    "blue_ringed_octopus_2026-10-30.jpg",
+    "classic_retro_scooter_2026-10-31.jpg"
   ],
-  "lastUpdated": "2026-10-31T17:16:09.675Z",
+  "lastUpdated": "2026-11-01T17:57:14.130Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -116,7 +122,10 @@
     "Bottlenose Dolphin",
     "Terrarium Bottle Lighthouse",
     "Antique Pocket Watch",
-    "Pumpkin Spice Cupcake"
+    "Pumpkin Spice Cupcake",
+    "Chibi Starlight Unicorn",
+    "Blue Ringed Octopus",
+    "Classic Retro Scooter"
   ],
   "history": [
     {
@@ -450,7 +459,34 @@
       "fb_post_id": "122110042959508656",
       "scheduled_for": "10/31/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-01T17:57:05.115Z",
+      "subject": "Chibi Starlight Unicorn",
+      "filename": "chibi_starlight_unicorn_2026-11-01.jpg",
+      "driveFileId": "1r_8f8Bl_TesbVUYyzsE8eGd4Orpj0b15",
+      "fb_post_id": "1298820806658884_122110413639508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-01T17:57:09.728Z",
+      "subject": "Blue Ringed Octopus",
+      "filename": "blue_ringed_octopus_2026-10-30.jpg",
+      "driveFileId": "1JKAAN-x9iERJowyxSyPneJOwtqWlOkzH",
+      "fb_post_id": "122110413783508656",
+      "scheduled_for": "11/1/2026, 7:56:57 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-01T17:57:14.130Z",
+      "subject": "Classic Retro Scooter",
+      "filename": "classic_retro_scooter_2026-10-31.jpg",
+      "driveFileId": "1zkYuVx_5Appe-fD2sa7QYvMou-GaqT13",
+      "fb_post_id": "122110413843508656",
+      "scheduled_for": "11/1/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-10-31"
+  "lastPipelineDate": "2026-11-01"
 }
