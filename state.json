@@ -40,7 +40,10 @@
     "1KzlSu3SclvNYiArgM--oVDXUBc7kIYfQ",
     "1r_8f8Bl_TesbVUYyzsE8eGd4Orpj0b15",
     "1JKAAN-x9iERJowyxSyPneJOwtqWlOkzH",
-    "1zkYuVx_5Appe-fD2sa7QYvMou-GaqT13"
+    "1zkYuVx_5Appe-fD2sa7QYvMou-GaqT13",
+    "1wD2VrGLsFEUGMs9M8MdOC40mxbxcxZS9",
+    "12Q3ODO84FY_Qc2aFrGZczikk0A6TCIHm",
+    "1TgereeBfjNkAVuBdGxAEqACA-lhZYaDa"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -82,9 +85,12 @@
     "pumpkin_spice_cupcake_2026-10-28.jpg",
     "chibi_starlight_unicorn_2026-11-01.jpg",
     "blue_ringed_octopus_2026-10-30.jpg",
-    "classic_retro_scooter_2026-10-31.jpg"
+    "classic_retro_scooter_2026-10-31.jpg",
+    "vintage_hot_air_balloon_2026-10-31.jpg",
+    "floating_sea_otter_2026-11-02.jpg",
+    "fluffy_arctic_fox_2026-11-02.jpg"
   ],
-  "lastUpdated": "2026-11-01T17:57:14.130Z",
+  "lastUpdated": "2026-11-02T21:44:25.385Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -125,7 +131,10 @@
     "Pumpkin Spice Cupcake",
     "Chibi Starlight Unicorn",
     "Blue Ringed Octopus",
-    "Classic Retro Scooter"
+    "Classic Retro Scooter",
+    "Vintage Hot Air Balloon",
+    "Floating Sea Otter",
+    "Fluffy Arctic Fox"
   ],
   "history": [
     {
@@ -486,7 +495,34 @@
       "fb_post_id": "122110413843508656",
       "scheduled_for": "11/1/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-02T21:44:15.837Z",
+      "subject": "Vintage Hot Air Balloon",
+      "filename": "vintage_hot_air_balloon_2026-10-31.jpg",
+      "driveFileId": "1wD2VrGLsFEUGMs9M8MdOC40mxbxcxZS9",
+      "fb_post_id": "1298820806658884_122110750569508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-02T21:44:20.678Z",
+      "subject": "Floating Sea Otter",
+      "filename": "floating_sea_otter_2026-11-02.jpg",
+      "driveFileId": "12Q3ODO84FY_Qc2aFrGZczikk0A6TCIHm",
+      "fb_post_id": "122110750689508656",
+      "scheduled_for": "11/2/2026, 11:44:05 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-02T21:44:25.385Z",
+      "subject": "Fluffy Arctic Fox",
+      "filename": "fluffy_arctic_fox_2026-11-02.jpg",
+      "driveFileId": "1TgereeBfjNkAVuBdGxAEqACA-lhZYaDa",
+      "fb_post_id": "122110750749508656",
+      "scheduled_for": "11/2/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-01"
+  "lastPipelineDate": "2026-11-02"
 }
