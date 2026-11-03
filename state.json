@@ -43,7 +43,10 @@
     "1zkYuVx_5Appe-fD2sa7QYvMou-GaqT13",
     "1wD2VrGLsFEUGMs9M8MdOC40mxbxcxZS9",
     "12Q3ODO84FY_Qc2aFrGZczikk0A6TCIHm",
-    "1TgereeBfjNkAVuBdGxAEqACA-lhZYaDa"
+    "1TgereeBfjNkAVuBdGxAEqACA-lhZYaDa",
+    "1LfThdiwDgBsaJK0g54et01ptqsbhERdk",
+    "1cFi9YkECDTZWPxDE-Fo8ZXauO5e6Lo18",
+    "1F4SVvk9BR8l4u4sfLRS6zXisUY_gR1vJ"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -88,9 +91,12 @@
     "classic_retro_scooter_2026-10-31.jpg",
     "vintage_hot_air_balloon_2026-10-31.jpg",
     "floating_sea_otter_2026-11-02.jpg",
-    "fluffy_arctic_fox_2026-11-02.jpg"
+    "fluffy_arctic_fox_2026-11-02.jpg",
+    "fennec_fox_kit_2026-11-02.jpg",
+    "blooming_christmas_cactus_2026-11-03.jpg",
+    "chibi_jackalope_kit_2026-11-01.jpg"
   ],
-  "lastUpdated": "2026-11-02T21:44:25.385Z",
+  "lastUpdated": "2026-11-03T19:31:15.528Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -134,7 +140,10 @@
     "Classic Retro Scooter",
     "Vintage Hot Air Balloon",
     "Floating Sea Otter",
-    "Fluffy Arctic Fox"
+    "Fluffy Arctic Fox",
+    "Fennec Fox Kit",
+    "Blooming Christmas Cactus",
+    "Chibi Jackalope Kit"
   ],
   "history": [
     {
@@ -522,7 +531,34 @@
       "fb_post_id": "122110750749508656",
       "scheduled_for": "11/2/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-03T19:31:05.112Z",
+      "subject": "Fennec Fox Kit",
+      "filename": "fennec_fox_kit_2026-11-02.jpg",
+      "driveFileId": "1LfThdiwDgBsaJK0g54et01ptqsbhERdk",
+      "fb_post_id": "1298820806658884_122111013681508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-03T19:31:10.207Z",
+      "subject": "Blooming Christmas Cactus",
+      "filename": "blooming_christmas_cactus_2026-11-03.jpg",
+      "driveFileId": "1cFi9YkECDTZWPxDE-Fo8ZXauO5e6Lo18",
+      "fb_post_id": "122111013801508656",
+      "scheduled_for": "11/3/2026, 9:30:52 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-03T19:31:15.528Z",
+      "subject": "Chibi Jackalope Kit",
+      "filename": "chibi_jackalope_kit_2026-11-01.jpg",
+      "driveFileId": "1F4SVvk9BR8l4u4sfLRS6zXisUY_gR1vJ",
+      "fb_post_id": "122111013897508656",
+      "scheduled_for": "11/3/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-02"
+  "lastPipelineDate": "2026-11-03"
 }
