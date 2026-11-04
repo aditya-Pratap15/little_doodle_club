@@ -46,7 +46,10 @@
     "1TgereeBfjNkAVuBdGxAEqACA-lhZYaDa",
     "1LfThdiwDgBsaJK0g54et01ptqsbhERdk",
     "1cFi9YkECDTZWPxDE-Fo8ZXauO5e6Lo18",
-    "1F4SVvk9BR8l4u4sfLRS6zXisUY_gR1vJ"
+    "1F4SVvk9BR8l4u4sfLRS6zXisUY_gR1vJ",
+    "1ac3zgj-W4y2-y8IuN-vh6Q6Bj7KUhcaR",
+    "1Bhg5pUM2dLxBcqH3CMC5QtFqpA4lw2p7",
+    "1vjZ-7hF3ii1CrdAbEae5-bab6AiW5C65"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -94,9 +97,12 @@
     "fluffy_arctic_fox_2026-11-02.jpg",
     "fennec_fox_kit_2026-11-02.jpg",
     "blooming_christmas_cactus_2026-11-03.jpg",
-    "chibi_jackalope_kit_2026-11-01.jpg"
+    "chibi_jackalope_kit_2026-11-01.jpg",
+    "flaky_butter_croissant_2026-11-04.jpg",
+    "golden_chanterelle_cluster_2026-11-03.jpg",
+    "cozy_matcha_latte_bowl_2026-11-04.jpg"
   ],
-  "lastUpdated": "2026-11-03T19:31:15.528Z",
+  "lastUpdated": "2026-11-04T19:48:01.241Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -143,7 +149,10 @@
     "Fluffy Arctic Fox",
     "Fennec Fox Kit",
     "Blooming Christmas Cactus",
-    "Chibi Jackalope Kit"
+    "Chibi Jackalope Kit",
+    "Flaky Butter Croissant",
+    "Golden Chanterelle Cluster",
+    "Cozy Matcha Latte Bowl"
   ],
   "history": [
     {
@@ -558,7 +567,34 @@
       "fb_post_id": "122111013897508656",
       "scheduled_for": "11/3/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-04T19:47:52.362Z",
+      "subject": "Flaky Butter Croissant",
+      "filename": "flaky_butter_croissant_2026-11-04.jpg",
+      "driveFileId": "1ac3zgj-W4y2-y8IuN-vh6Q6Bj7KUhcaR",
+      "fb_post_id": "1298820806658884_122111299611508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-04T19:47:56.774Z",
+      "subject": "Golden Chanterelle Cluster",
+      "filename": "golden_chanterelle_cluster_2026-11-03.jpg",
+      "driveFileId": "1Bhg5pUM2dLxBcqH3CMC5QtFqpA4lw2p7",
+      "fb_post_id": "122111299725508656",
+      "scheduled_for": "11/4/2026, 9:47:43 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-04T19:48:01.241Z",
+      "subject": "Cozy Matcha Latte Bowl",
+      "filename": "cozy_matcha_latte_bowl_2026-11-04.jpg",
+      "driveFileId": "1vjZ-7hF3ii1CrdAbEae5-bab6AiW5C65",
+      "fb_post_id": "122111299839508656",
+      "scheduled_for": "11/4/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-03"
+  "lastPipelineDate": "2026-11-04"
 }
