@@ -1,26 +1,26 @@
 {
-  "fetchedAt": "2026-11-04T19:47:43.541Z",
+  "fetchedAt": "2026-11-05T19:58:57.143Z",
   "doodles": [
     {
-      "driveFileId": "1ac3zgj-W4y2-y8IuN-vh6Q6Bj7KUhcaR",
-      "filename": "flaky_butter_croissant_2026-11-04.jpg",
-      "subject": "Flaky Butter Croissant",
-      "rawImagePath": "incoming_doodles/flaky_butter_croissant_2026-11-04.jpg",
-      "createdTime": "2026-11-04T00:38:53.975Z"
+      "driveFileId": "1WDfZ0da2AAH5LyymQokFPgL8bHiwoCBZ",
+      "filename": "string_of_pearls_succulent_2026-11-03.jpg",
+      "subject": "String Of Pearls Succulent",
+      "rawImagePath": "incoming_doodles/string_of_pearls_succulent_2026-11-03.jpg",
+      "createdTime": "2026-11-03T00:42:41.923Z"
     },
     {
-      "driveFileId": "1Bhg5pUM2dLxBcqH3CMC5QtFqpA4lw2p7",
-      "filename": "golden_chanterelle_cluster_2026-11-03.jpg",
-      "subject": "Golden Chanterelle Cluster",
-      "rawImagePath": "incoming_doodles/golden_chanterelle_cluster_2026-11-03.jpg",
-      "createdTime": "2026-11-03T00:42:42.316Z"
+      "driveFileId": "1C6zNZU2BVGOlBQghsjx6Y8zHmVNJt1Oh",
+      "filename": "miniature_clock_library_2026-11-05.jpg",
+      "subject": "Miniature Clock Library",
+      "rawImagePath": "incoming_doodles/miniature_clock_library_2026-11-05.jpg",
+      "createdTime": "2026-11-05T00:55:37.573Z"
     },
     {
-      "driveFileId": "1vjZ-7hF3ii1CrdAbEae5-bab6AiW5C65",
-      "filename": "cozy_matcha_latte_bowl_2026-11-04.jpg",
-      "subject": "Cozy Matcha Latte Bowl",
-      "rawImagePath": "incoming_doodles/cozy_matcha_latte_bowl_2026-11-04.jpg",
-      "createdTime": "2026-11-04T00:38:53.389Z"
+      "driveFileId": "105DqMgjnOx6miFO9_KweNEIPN0koOrRk",
+      "filename": "origami_paper_dragon_2026-11-05.jpg",
+      "subject": "Origami Paper Dragon",
+      "rawImagePath": "incoming_doodles/origami_paper_dragon_2026-11-05.jpg",
+      "createdTime": "2026-11-05T00:55:37.715Z"
     }
   ]
 }
