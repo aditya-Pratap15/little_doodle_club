@@ -52,7 +52,10 @@
     "1vjZ-7hF3ii1CrdAbEae5-bab6AiW5C65",
     "1WDfZ0da2AAH5LyymQokFPgL8bHiwoCBZ",
     "1C6zNZU2BVGOlBQghsjx6Y8zHmVNJt1Oh",
-    "105DqMgjnOx6miFO9_KweNEIPN0koOrRk"
+    "105DqMgjnOx6miFO9_KweNEIPN0koOrRk",
+    "1IVTegGOY2LNX-bWWiCdtHzN5I7wmAtzt",
+    "15MUWQh28XG4D-i4TQ68DkqUSTaCjcN4R",
+    "10X93mr6K0Qz8revhB9d1X3frNu1h1UuE"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -106,9 +109,12 @@
     "cozy_matcha_latte_bowl_2026-11-04.jpg",
     "string_of_pearls_succulent_2026-11-03.jpg",
     "miniature_clock_library_2026-11-05.jpg",
-    "origami_paper_dragon_2026-11-05.jpg"
+    "origami_paper_dragon_2026-11-05.jpg",
+    "flamboyant_cuttlefish_2026-11-06.jpg",
+    "lightbulb_winter_forest_2026-11-05.jpg",
+    "apple_crumble_tart_2026-11-04.jpg"
   ],
-  "lastUpdated": "2026-11-05T19:59:18.109Z",
+  "lastUpdated": "2026-11-06T19:27:57.582Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -161,7 +167,10 @@
     "Cozy Matcha Latte Bowl",
     "String Of Pearls Succulent",
     "Miniature Clock Library",
-    "Origami Paper Dragon"
+    "Origami Paper Dragon",
+    "Flamboyant Cuttlefish",
+    "Lightbulb Winter Forest",
+    "Apple Crumble Tart"
   ],
   "history": [
     {
@@ -630,7 +639,34 @@
       "fb_post_id": "122111604663508656",
       "scheduled_for": "11/5/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-06T19:27:47.958Z",
+      "subject": "Flamboyant Cuttlefish",
+      "filename": "flamboyant_cuttlefish_2026-11-06.jpg",
+      "driveFileId": "1IVTegGOY2LNX-bWWiCdtHzN5I7wmAtzt",
+      "fb_post_id": "1298820806658884_122111867025508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-06T19:27:53.024Z",
+      "subject": "Lightbulb Winter Forest",
+      "filename": "lightbulb_winter_forest_2026-11-05.jpg",
+      "driveFileId": "15MUWQh28XG4D-i4TQ68DkqUSTaCjcN4R",
+      "fb_post_id": "122111867121508656",
+      "scheduled_for": "11/6/2026, 9:27:39 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-06T19:27:57.582Z",
+      "subject": "Apple Crumble Tart",
+      "filename": "apple_crumble_tart_2026-11-04.jpg",
+      "driveFileId": "10X93mr6K0Qz8revhB9d1X3frNu1h1UuE",
+      "fb_post_id": "122111867169508656",
+      "scheduled_for": "11/6/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-05"
+  "lastPipelineDate": "2026-11-06"
 }

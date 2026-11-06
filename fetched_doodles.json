@@ -1,26 +1,26 @@
 {
-  "fetchedAt": "2026-11-05T19:58:57.143Z",
+  "fetchedAt": "2026-11-06T19:27:38.786Z",
   "doodles": [
     {
-      "driveFileId": "1WDfZ0da2AAH5LyymQokFPgL8bHiwoCBZ",
-      "filename": "string_of_pearls_succulent_2026-11-03.jpg",
-      "subject": "String Of Pearls Succulent",
-      "rawImagePath": "incoming_doodles/string_of_pearls_succulent_2026-11-03.jpg",
-      "createdTime": "2026-11-03T00:42:41.923Z"
+      "driveFileId": "1IVTegGOY2LNX-bWWiCdtHzN5I7wmAtzt",
+      "filename": "flamboyant_cuttlefish_2026-11-06.jpg",
+      "subject": "Flamboyant Cuttlefish",
+      "rawImagePath": "incoming_doodles/flamboyant_cuttlefish_2026-11-06.jpg",
+      "createdTime": "2026-11-06T00:40:00.588Z"
     },
     {
-      "driveFileId": "1C6zNZU2BVGOlBQghsjx6Y8zHmVNJt1Oh",
-      "filename": "miniature_clock_library_2026-11-05.jpg",
-      "subject": "Miniature Clock Library",
-      "rawImagePath": "incoming_doodles/miniature_clock_library_2026-11-05.jpg",
-      "createdTime": "2026-11-05T00:55:37.573Z"
+      "driveFileId": "15MUWQh28XG4D-i4TQ68DkqUSTaCjcN4R",
+      "filename": "lightbulb_winter_forest_2026-11-05.jpg",
+      "subject": "Lightbulb Winter Forest",
+      "rawImagePath": "incoming_doodles/lightbulb_winter_forest_2026-11-05.jpg",
+      "createdTime": "2026-11-05T00:55:38.005Z"
     },
     {
-      "driveFileId": "105DqMgjnOx6miFO9_KweNEIPN0koOrRk",
-      "filename": "origami_paper_dragon_2026-11-05.jpg",
-      "subject": "Origami Paper Dragon",
-      "rawImagePath": "incoming_doodles/origami_paper_dragon_2026-11-05.jpg",
-      "createdTime": "2026-11-05T00:55:37.715Z"
+      "driveFileId": "10X93mr6K0Qz8revhB9d1X3frNu1h1UuE",
+      "filename": "apple_crumble_tart_2026-11-04.jpg",
+      "subject": "Apple Crumble Tart",
+      "rawImagePath": "incoming_doodles/apple_crumble_tart_2026-11-04.jpg",
+      "createdTime": "2026-11-04T00:38:53.381Z"
     }
   ]
 }
