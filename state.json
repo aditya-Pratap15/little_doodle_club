@@ -55,7 +55,10 @@
     "105DqMgjnOx6miFO9_KweNEIPN0koOrRk",
     "1IVTegGOY2LNX-bWWiCdtHzN5I7wmAtzt",
     "15MUWQh28XG4D-i4TQ68DkqUSTaCjcN4R",
-    "10X93mr6K0Qz8revhB9d1X3frNu1h1UuE"
+    "10X93mr6K0Qz8revhB9d1X3frNu1h1UuE",
+    "1GHPKDRDLIbhpby2o0rn8xGuhIHyLERnn",
+    "12SELtAAcWzffVrsc3j-QFc6uPgGkIzFl",
+    "1ZRyg82obUzZJxO4DbtyCuA7tYxHUuHiz"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -112,9 +115,12 @@
     "origami_paper_dragon_2026-11-05.jpg",
     "flamboyant_cuttlefish_2026-11-06.jpg",
     "lightbulb_winter_forest_2026-11-05.jpg",
-    "apple_crumble_tart_2026-11-04.jpg"
+    "apple_crumble_tart_2026-11-04.jpg",
+    "vintage_gramophone_2026-11-07.jpg",
+    "chambered_nautilus_2026-11-06.jpg",
+    "clownfish_sea_anemone_2026-11-06.jpg"
   ],
-  "lastUpdated": "2026-11-06T19:27:57.582Z",
+  "lastUpdated": "2026-11-07T17:46:01.164Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -170,7 +176,10 @@
     "Origami Paper Dragon",
     "Flamboyant Cuttlefish",
     "Lightbulb Winter Forest",
-    "Apple Crumble Tart"
+    "Apple Crumble Tart",
+    "Vintage Gramophone",
+    "Chambered Nautilus",
+    "Clownfish Sea Anemone"
   ],
   "history": [
     {
@@ -666,7 +675,34 @@
       "fb_post_id": "122111867169508656",
       "scheduled_for": "11/6/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-07T17:45:51.847Z",
+      "subject": "Vintage Gramophone",
+      "filename": "vintage_gramophone_2026-11-07.jpg",
+      "driveFileId": "1GHPKDRDLIbhpby2o0rn8xGuhIHyLERnn",
+      "fb_post_id": "1298820806658884_122112112023508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-07T17:45:56.498Z",
+      "subject": "Chambered Nautilus",
+      "filename": "chambered_nautilus_2026-11-06.jpg",
+      "driveFileId": "12SELtAAcWzffVrsc3j-QFc6uPgGkIzFl",
+      "fb_post_id": "122112112149508656",
+      "scheduled_for": "11/7/2026, 7:45:41 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-07T17:46:01.163Z",
+      "subject": "Clownfish Sea Anemone",
+      "filename": "clownfish_sea_anemone_2026-11-06.jpg",
+      "driveFileId": "1ZRyg82obUzZJxO4DbtyCuA7tYxHUuHiz",
+      "fb_post_id": "122112112209508656",
+      "scheduled_for": "11/7/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-06"
+  "lastPipelineDate": "2026-11-07"
 }
