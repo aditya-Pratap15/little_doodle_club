@@ -58,7 +58,10 @@
     "10X93mr6K0Qz8revhB9d1X3frNu1h1UuE",
     "1GHPKDRDLIbhpby2o0rn8xGuhIHyLERnn",
     "12SELtAAcWzffVrsc3j-QFc6uPgGkIzFl",
-    "1ZRyg82obUzZJxO4DbtyCuA7tYxHUuHiz"
+    "1ZRyg82obUzZJxO4DbtyCuA7tYxHUuHiz",
+    "1rtywF04ZXPrkU0dInFZviKACExaeGTKC",
+    "1ze-_JBTyUkxL_dGkGT2D34ivChMB76ju",
+    "1CjPZJFOXAwDse4LA91FQnKRAua3fhSeO"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -118,9 +121,12 @@
     "apple_crumble_tart_2026-11-04.jpg",
     "vintage_gramophone_2026-11-07.jpg",
     "chambered_nautilus_2026-11-06.jpg",
-    "clownfish_sea_anemone_2026-11-06.jpg"
+    "clownfish_sea_anemone_2026-11-06.jpg",
+    "antique_brass_telescope_2026-11-07.jpg",
+    "chibi_celestial_cloud_sheep_2026-11-08.jpg",
+    "classic_steam_locomotive_2026-11-07.jpg"
   ],
-  "lastUpdated": "2026-11-07T17:46:01.164Z",
+  "lastUpdated": "2026-11-08T17:57:32.895Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -179,7 +185,10 @@
     "Apple Crumble Tart",
     "Vintage Gramophone",
     "Chambered Nautilus",
-    "Clownfish Sea Anemone"
+    "Clownfish Sea Anemone",
+    "Antique Brass Telescope",
+    "Chibi Celestial Cloud Sheep",
+    "Classic Steam Locomotive"
   ],
   "history": [
     {
@@ -702,7 +711,34 @@
       "fb_post_id": "122112112209508656",
       "scheduled_for": "11/7/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-08T17:57:21.375Z",
+      "subject": "Antique Brass Telescope",
+      "filename": "antique_brass_telescope_2026-11-07.jpg",
+      "driveFileId": "1rtywF04ZXPrkU0dInFZviKACExaeGTKC",
+      "fb_post_id": "1298820806658884_122112371859508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-08T17:57:27.190Z",
+      "subject": "Chibi Celestial Cloud Sheep",
+      "filename": "chibi_celestial_cloud_sheep_2026-11-08.jpg",
+      "driveFileId": "1ze-_JBTyUkxL_dGkGT2D34ivChMB76ju",
+      "fb_post_id": "122112371979508656",
+      "scheduled_for": "11/8/2026, 7:57:08 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-08T17:57:32.895Z",
+      "subject": "Classic Steam Locomotive",
+      "filename": "classic_steam_locomotive_2026-11-07.jpg",
+      "driveFileId": "1CjPZJFOXAwDse4LA91FQnKRAua3fhSeO",
+      "fb_post_id": "122112372033508656",
+      "scheduled_for": "11/8/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-07"
+  "lastPipelineDate": "2026-11-08"
 }

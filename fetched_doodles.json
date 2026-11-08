@@ -1,26 +1,26 @@
 {
-  "fetchedAt": "2026-11-07T17:45:40.691Z",
+  "fetchedAt": "2026-11-08T17:57:08.606Z",
   "doodles": [
     {
-      "driveFileId": "1GHPKDRDLIbhpby2o0rn8xGuhIHyLERnn",
-      "filename": "vintage_gramophone_2026-11-07.jpg",
-      "subject": "Vintage Gramophone",
-      "rawImagePath": "incoming_doodles/vintage_gramophone_2026-11-07.jpg",
+      "driveFileId": "1rtywF04ZXPrkU0dInFZviKACExaeGTKC",
+      "filename": "antique_brass_telescope_2026-11-07.jpg",
+      "subject": "Antique Brass Telescope",
+      "rawImagePath": "incoming_doodles/antique_brass_telescope_2026-11-07.jpg",
       "createdTime": "2026-11-07T01:30:02.910Z"
     },
     {
-      "driveFileId": "12SELtAAcWzffVrsc3j-QFc6uPgGkIzFl",
-      "filename": "chambered_nautilus_2026-11-06.jpg",
-      "subject": "Chambered Nautilus",
-      "rawImagePath": "incoming_doodles/chambered_nautilus_2026-11-06.jpg",
-      "createdTime": "2026-11-06T00:40:00.171Z"
+      "driveFileId": "1ze-_JBTyUkxL_dGkGT2D34ivChMB76ju",
+      "filename": "chibi_celestial_cloud_sheep_2026-11-08.jpg",
+      "subject": "Chibi Celestial Cloud Sheep",
+      "rawImagePath": "incoming_doodles/chibi_celestial_cloud_sheep_2026-11-08.jpg",
+      "createdTime": "2026-11-08T01:25:58.136Z"
     },
     {
-      "driveFileId": "1ZRyg82obUzZJxO4DbtyCuA7tYxHUuHiz",
-      "filename": "clownfish_sea_anemone_2026-11-06.jpg",
-      "subject": "Clownfish Sea Anemone",
-      "rawImagePath": "incoming_doodles/clownfish_sea_anemone_2026-11-06.jpg",
-      "createdTime": "2026-11-06T00:39:59.800Z"
+      "driveFileId": "1CjPZJFOXAwDse4LA91FQnKRAua3fhSeO",
+      "filename": "classic_steam_locomotive_2026-11-07.jpg",
+      "subject": "Classic Steam Locomotive",
+      "rawImagePath": "incoming_doodles/classic_steam_locomotive_2026-11-07.jpg",
+      "createdTime": "2026-11-07T01:30:02.930Z"
     }
   ]
 }
