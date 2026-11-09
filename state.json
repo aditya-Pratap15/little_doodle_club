@@ -61,7 +61,10 @@
     "1ZRyg82obUzZJxO4DbtyCuA7tYxHUuHiz",
     "1rtywF04ZXPrkU0dInFZviKACExaeGTKC",
     "1ze-_JBTyUkxL_dGkGT2D34ivChMB76ju",
-    "1CjPZJFOXAwDse4LA91FQnKRAua3fhSeO"
+    "1CjPZJFOXAwDse4LA91FQnKRAua3fhSeO",
+    "1Av7sjZ2UAi2nzVYU_X9OOtk5PTXVf63n",
+    "1UD9tBDVE0qcCB858TaaYs7Z5ZGJ2muzL",
+    "12ZaOQUnS2mmNH6AqYk3ERq_rJ24wwEuV"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -124,9 +127,12 @@
     "clownfish_sea_anemone_2026-11-06.jpg",
     "antique_brass_telescope_2026-11-07.jpg",
     "chibi_celestial_cloud_sheep_2026-11-08.jpg",
-    "classic_steam_locomotive_2026-11-07.jpg"
+    "classic_steam_locomotive_2026-11-07.jpg",
+    "fluffy_pallas_cat_2026-11-09.jpg",
+    "chibi_mandrake_baby_2026-11-08.jpg",
+    "harvest_mouse_wheat_2026-11-09.jpg"
   ],
-  "lastUpdated": "2026-11-08T17:57:32.895Z",
+  "lastUpdated": "2026-11-09T22:25:36.780Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -188,7 +194,10 @@
     "Clownfish Sea Anemone",
     "Antique Brass Telescope",
     "Chibi Celestial Cloud Sheep",
-    "Classic Steam Locomotive"
+    "Classic Steam Locomotive",
+    "Fluffy Pallas Cat",
+    "Chibi Mandrake Baby",
+    "Harvest Mouse Wheat"
   ],
   "history": [
     {
@@ -738,7 +747,34 @@
       "fb_post_id": "122112372033508656",
       "scheduled_for": "11/8/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-09T22:25:27.100Z",
+      "subject": "Fluffy Pallas Cat",
+      "filename": "fluffy_pallas_cat_2026-11-09.jpg",
+      "driveFileId": "1Av7sjZ2UAi2nzVYU_X9OOtk5PTXVf63n",
+      "fb_post_id": "1298820806658884_122112686925508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-09T22:25:31.852Z",
+      "subject": "Chibi Mandrake Baby",
+      "filename": "chibi_mandrake_baby_2026-11-08.jpg",
+      "driveFileId": "1UD9tBDVE0qcCB858TaaYs7Z5ZGJ2muzL",
+      "fb_post_id": "122112687021508656",
+      "scheduled_for": "11/10/2026, 12:25:18 AM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-09T22:25:36.780Z",
+      "subject": "Harvest Mouse Wheat",
+      "filename": "harvest_mouse_wheat_2026-11-09.jpg",
+      "driveFileId": "12ZaOQUnS2mmNH6AqYk3ERq_rJ24wwEuV",
+      "fb_post_id": "122112687087508656",
+      "scheduled_for": "11/10/2026, 3:25:18 AM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-08"
+  "lastPipelineDate": "2026-11-09"
 }
