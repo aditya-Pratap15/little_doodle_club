@@ -64,7 +64,10 @@
     "1CjPZJFOXAwDse4LA91FQnKRAua3fhSeO",
     "1Av7sjZ2UAi2nzVYU_X9OOtk5PTXVf63n",
     "1UD9tBDVE0qcCB858TaaYs7Z5ZGJ2muzL",
-    "12ZaOQUnS2mmNH6AqYk3ERq_rJ24wwEuV"
+    "12ZaOQUnS2mmNH6AqYk3ERq_rJ24wwEuV",
+    "19cazZzlb7xFvOtJ49Tker-9l7yGkaeYp",
+    "1tnM5gRJa6dmo6Py4CtwRJ9hqXmE_yC7M",
+    "11--9a1gPTK4eS0445a4NNv323p2BeCSx"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -130,9 +133,12 @@
     "classic_steam_locomotive_2026-11-07.jpg",
     "fluffy_pallas_cat_2026-11-09.jpg",
     "chibi_mandrake_baby_2026-11-08.jpg",
-    "harvest_mouse_wheat_2026-11-09.jpg"
+    "harvest_mouse_wheat_2026-11-09.jpg",
+    "amethyst_deceiver_mushrooms_2026-11-10.jpg",
+    "pygmy_hippo_calf_2026-11-09.jpg",
+    "bird_of_paradise_flower_2026-11-10.jpg"
   ],
-  "lastUpdated": "2026-11-09T22:25:36.780Z",
+  "lastUpdated": "2026-11-10T19:46:40.686Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -197,7 +203,10 @@
     "Classic Steam Locomotive",
     "Fluffy Pallas Cat",
     "Chibi Mandrake Baby",
-    "Harvest Mouse Wheat"
+    "Harvest Mouse Wheat",
+    "Amethyst Deceiver Mushrooms",
+    "Pygmy Hippo Calf",
+    "Bird Of Paradise Flower"
   ],
   "history": [
     {
@@ -774,7 +783,34 @@
       "fb_post_id": "122112687087508656",
       "scheduled_for": "11/10/2026, 3:25:18 AM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-10T19:46:29.983Z",
+      "subject": "Amethyst Deceiver Mushrooms",
+      "filename": "amethyst_deceiver_mushrooms_2026-11-10.jpg",
+      "driveFileId": "19cazZzlb7xFvOtJ49Tker-9l7yGkaeYp",
+      "fb_post_id": "1298820806658884_122112947067508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-10T19:46:35.127Z",
+      "subject": "Pygmy Hippo Calf",
+      "filename": "pygmy_hippo_calf_2026-11-09.jpg",
+      "driveFileId": "1tnM5gRJa6dmo6Py4CtwRJ9hqXmE_yC7M",
+      "fb_post_id": "122112947175508656",
+      "scheduled_for": "11/10/2026, 9:46:13 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-10T19:46:40.686Z",
+      "subject": "Bird Of Paradise Flower",
+      "filename": "bird_of_paradise_flower_2026-11-10.jpg",
+      "driveFileId": "11--9a1gPTK4eS0445a4NNv323p2BeCSx",
+      "fb_post_id": "122112947277508656",
+      "scheduled_for": "11/10/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-09"
+  "lastPipelineDate": "2026-11-10"
 }
