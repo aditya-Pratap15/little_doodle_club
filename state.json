@@ -800,7 +800,7 @@
       "driveFileId": "1tnM5gRJa6dmo6Py4CtwRJ9hqXmE_yC7M",
       "fb_post_id": "122112947175508656",
       "scheduled_for": "11/10/2026, 9:46:13 PM",
-      "comment_posted": false
+      "comment_posted": true
     },
     {
       "date": "2026-11-10T19:46:40.686Z",
@@ -809,7 +809,7 @@
       "driveFileId": "11--9a1gPTK4eS0445a4NNv323p2BeCSx",
       "fb_post_id": "122112947277508656",
       "scheduled_for": "11/10/2026, 10:30:00 PM",
-      "comment_posted": false
+      "comment_posted": true
     }
   ],
   "lastPipelineDate": "2026-11-10"
