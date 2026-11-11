@@ -67,7 +67,10 @@
     "12ZaOQUnS2mmNH6AqYk3ERq_rJ24wwEuV",
     "19cazZzlb7xFvOtJ49Tker-9l7yGkaeYp",
     "1tnM5gRJa6dmo6Py4CtwRJ9hqXmE_yC7M",
-    "11--9a1gPTK4eS0445a4NNv323p2BeCSx"
+    "11--9a1gPTK4eS0445a4NNv323p2BeCSx",
+    "1KyWiRqb7NzSsqNvo8LKxNqRscwh3UHmU",
+    "1yRWjSBWPmoaU0shIU-7ajooGPu2_EvtZ",
+    "1OyLhtdjUG6SA7o4j6UgiBl2jmxOwPugy"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -136,9 +139,12 @@
     "harvest_mouse_wheat_2026-11-09.jpg",
     "amethyst_deceiver_mushrooms_2026-11-10.jpg",
     "pygmy_hippo_calf_2026-11-09.jpg",
-    "bird_of_paradise_flower_2026-11-10.jpg"
+    "bird_of_paradise_flower_2026-11-10.jpg",
+    "belgian_waffles_stack_2026-11-11.jpg",
+    "zebra_haworthia_succulent_2026-11-10.jpg",
+    "spiced_apple_cider_mug_2026-11-11.jpg"
   ],
-  "lastUpdated": "2026-11-10T19:46:40.686Z",
+  "lastUpdated": "2026-11-11T19:38:45.558Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -206,7 +212,10 @@
     "Harvest Mouse Wheat",
     "Amethyst Deceiver Mushrooms",
     "Pygmy Hippo Calf",
-    "Bird Of Paradise Flower"
+    "Bird Of Paradise Flower",
+    "Belgian Waffles Stack",
+    "Zebra Haworthia Succulent",
+    "Spiced Apple Cider Mug"
   ],
   "history": [
     {
@@ -810,7 +819,34 @@
       "fb_post_id": "122112947277508656",
       "scheduled_for": "11/10/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-11T19:38:36.310Z",
+      "subject": "Belgian Waffles Stack",
+      "filename": "belgian_waffles_stack_2026-11-11.jpg",
+      "driveFileId": "1KyWiRqb7NzSsqNvo8LKxNqRscwh3UHmU",
+      "fb_post_id": "1298820806658884_122113218549508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-11T19:38:41.121Z",
+      "subject": "Zebra Haworthia Succulent",
+      "filename": "zebra_haworthia_succulent_2026-11-10.jpg",
+      "driveFileId": "1yRWjSBWPmoaU0shIU-7ajooGPu2_EvtZ",
+      "fb_post_id": "122113218681508656",
+      "scheduled_for": "11/11/2026, 9:38:27 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-11T19:38:45.558Z",
+      "subject": "Spiced Apple Cider Mug",
+      "filename": "spiced_apple_cider_mug_2026-11-11.jpg",
+      "driveFileId": "1OyLhtdjUG6SA7o4j6UgiBl2jmxOwPugy",
+      "fb_post_id": "122113218747508656",
+      "scheduled_for": "11/11/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-10"
+  "lastPipelineDate": "2026-11-11"
 }
