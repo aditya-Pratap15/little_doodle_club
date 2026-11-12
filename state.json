@@ -70,7 +70,10 @@
     "11--9a1gPTK4eS0445a4NNv323p2BeCSx",
     "1KyWiRqb7NzSsqNvo8LKxNqRscwh3UHmU",
     "1yRWjSBWPmoaU0shIU-7ajooGPu2_EvtZ",
-    "1OyLhtdjUG6SA7o4j6UgiBl2jmxOwPugy"
+    "1OyLhtdjUG6SA7o4j6UgiBl2jmxOwPugy",
+    "1GIknl2ln2401vjXofvfexW9d8Ht808Qa",
+    "1biKAB_hhy5tcJ822Nc6VGcoxzTljEbt-",
+    "1Np-oGqUgzeiRzb86VO2x-37Cml3t1oz6"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -142,9 +145,12 @@
     "bird_of_paradise_flower_2026-11-10.jpg",
     "belgian_waffles_stack_2026-11-11.jpg",
     "zebra_haworthia_succulent_2026-11-10.jpg",
-    "spiced_apple_cider_mug_2026-11-11.jpg"
+    "spiced_apple_cider_mug_2026-11-11.jpg",
+    "vintage_snowglobe_pond_2026-11-12.jpg",
+    "miniature_compass_observatory_2026-11-12.jpg",
+    "origami_paper_owl_2026-11-12.jpg"
   ],
-  "lastUpdated": "2026-11-11T19:38:45.558Z",
+  "lastUpdated": "2026-11-12T19:57:19.903Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -215,7 +221,10 @@
     "Bird Of Paradise Flower",
     "Belgian Waffles Stack",
     "Zebra Haworthia Succulent",
-    "Spiced Apple Cider Mug"
+    "Spiced Apple Cider Mug",
+    "Vintage Snowglobe Pond",
+    "Miniature Compass Observatory",
+    "Origami Paper Owl"
   ],
   "history": [
     {
@@ -846,7 +855,34 @@
       "fb_post_id": "122113218747508656",
       "scheduled_for": "11/11/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-12T19:57:07.371Z",
+      "subject": "Vintage Snowglobe Pond",
+      "filename": "vintage_snowglobe_pond_2026-11-12.jpg",
+      "driveFileId": "1GIknl2ln2401vjXofvfexW9d8Ht808Qa",
+      "fb_post_id": "1298820806658884_122113483971508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-12T19:57:13.718Z",
+      "subject": "Miniature Compass Observatory",
+      "filename": "miniature_compass_observatory_2026-11-12.jpg",
+      "driveFileId": "1biKAB_hhy5tcJ822Nc6VGcoxzTljEbt-",
+      "fb_post_id": "122113484091508656",
+      "scheduled_for": "11/12/2026, 9:56:43 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-12T19:57:19.903Z",
+      "subject": "Origami Paper Owl",
+      "filename": "origami_paper_owl_2026-11-12.jpg",
+      "driveFileId": "1Np-oGqUgzeiRzb86VO2x-37Cml3t1oz6",
+      "fb_post_id": "122113484139508656",
+      "scheduled_for": "11/12/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-11"
+  "lastPipelineDate": "2026-11-12"
 }
