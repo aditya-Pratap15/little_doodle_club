@@ -73,7 +73,10 @@
     "1OyLhtdjUG6SA7o4j6UgiBl2jmxOwPugy",
     "1GIknl2ln2401vjXofvfexW9d8Ht808Qa",
     "1biKAB_hhy5tcJ822Nc6VGcoxzTljEbt-",
-    "1Np-oGqUgzeiRzb86VO2x-37Cml3t1oz6"
+    "1Np-oGqUgzeiRzb86VO2x-37Cml3t1oz6",
+    "1XRAz0ayf2O93WY4_lDd6QXv2g92K1mh7",
+    "1BCFkng5GVGvvNY0keDoz-eabztx4ugGP",
+    "1eY1wv4RwbrP-s5S_38cI9zHGgISDEFWp"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -148,9 +151,12 @@
     "spiced_apple_cider_mug_2026-11-11.jpg",
     "vintage_snowglobe_pond_2026-11-12.jpg",
     "miniature_compass_observatory_2026-11-12.jpg",
-    "origami_paper_owl_2026-11-12.jpg"
+    "origami_paper_owl_2026-11-12.jpg",
+    "longhorn_cowfish_2026-11-13.jpg",
+    "classic_tiramisu_slice_2026-11-11.jpg",
+    "peacock_mantis_shrimp_2026-11-13.jpg"
   ],
-  "lastUpdated": "2026-11-12T19:57:19.903Z",
+  "lastUpdated": "2026-11-13T19:45:18.105Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -224,7 +230,10 @@
     "Spiced Apple Cider Mug",
     "Vintage Snowglobe Pond",
     "Miniature Compass Observatory",
-    "Origami Paper Owl"
+    "Origami Paper Owl",
+    "Longhorn Cowfish",
+    "Classic Tiramisu Slice",
+    "Peacock Mantis Shrimp"
   ],
   "history": [
     {
@@ -882,7 +891,34 @@
       "fb_post_id": "122113484139508656",
       "scheduled_for": "11/12/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-13T19:45:08.441Z",
+      "subject": "Longhorn Cowfish",
+      "filename": "longhorn_cowfish_2026-11-13.jpg",
+      "driveFileId": "1XRAz0ayf2O93WY4_lDd6QXv2g92K1mh7",
+      "fb_post_id": "1298820806658884_122113838391508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-13T19:45:13.201Z",
+      "subject": "Classic Tiramisu Slice",
+      "filename": "classic_tiramisu_slice_2026-11-11.jpg",
+      "driveFileId": "1BCFkng5GVGvvNY0keDoz-eabztx4ugGP",
+      "fb_post_id": "122113838523508656",
+      "scheduled_for": "11/13/2026, 9:44:58 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-13T19:45:18.105Z",
+      "subject": "Peacock Mantis Shrimp",
+      "filename": "peacock_mantis_shrimp_2026-11-13.jpg",
+      "driveFileId": "1eY1wv4RwbrP-s5S_38cI9zHGgISDEFWp",
+      "fb_post_id": "122113838583508656",
+      "scheduled_for": "11/13/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-12"
+  "lastPipelineDate": "2026-11-13"
 }
