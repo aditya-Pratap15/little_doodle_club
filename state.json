@@ -76,7 +76,10 @@
     "1Np-oGqUgzeiRzb86VO2x-37Cml3t1oz6",
     "1XRAz0ayf2O93WY4_lDd6QXv2g92K1mh7",
     "1BCFkng5GVGvvNY0keDoz-eabztx4ugGP",
-    "1eY1wv4RwbrP-s5S_38cI9zHGgISDEFWp"
+    "1eY1wv4RwbrP-s5S_38cI9zHGgISDEFWp",
+    "1NVbnL7xhUMSIO0b7Q87uI_8cKL7sr9t6",
+    "1R2FcKIfEE8T8fRcRdgY9iEtohQYwtkGX",
+    "1IV2Wls4lFCQ9ggQ4e4ZAZw78GSdzfmjr"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -154,9 +157,12 @@
     "origami_paper_owl_2026-11-12.jpg",
     "longhorn_cowfish_2026-11-13.jpg",
     "classic_tiramisu_slice_2026-11-11.jpg",
-    "peacock_mantis_shrimp_2026-11-13.jpg"
+    "peacock_mantis_shrimp_2026-11-13.jpg",
+    "antique_rotary_telephone_2026-11-14.jpg",
+    "spotted_eagle_ray_2026-11-13.jpg",
+    "wooden_rowboat_lantern_2026-11-14.jpg"
   ],
-  "lastUpdated": "2026-11-13T19:45:18.105Z",
+  "lastUpdated": "2026-11-14T18:07:13.299Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -233,7 +239,10 @@
     "Origami Paper Owl",
     "Longhorn Cowfish",
     "Classic Tiramisu Slice",
-    "Peacock Mantis Shrimp"
+    "Peacock Mantis Shrimp",
+    "Antique Rotary Telephone",
+    "Spotted Eagle Ray",
+    "Wooden Rowboat Lantern"
   ],
   "history": [
     {
@@ -918,7 +927,34 @@
       "fb_post_id": "122113838583508656",
       "scheduled_for": "11/13/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-14T18:07:04.294Z",
+      "subject": "Antique Rotary Telephone",
+      "filename": "antique_rotary_telephone_2026-11-14.jpg",
+      "driveFileId": "1NVbnL7xhUMSIO0b7Q87uI_8cKL7sr9t6",
+      "fb_post_id": "1298820806658884_122114068707508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-14T18:07:08.715Z",
+      "subject": "Spotted Eagle Ray",
+      "filename": "spotted_eagle_ray_2026-11-13.jpg",
+      "driveFileId": "1R2FcKIfEE8T8fRcRdgY9iEtohQYwtkGX",
+      "fb_post_id": "122114068899508656",
+      "scheduled_for": "11/14/2026, 8:06:54 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-14T18:07:13.299Z",
+      "subject": "Wooden Rowboat Lantern",
+      "filename": "wooden_rowboat_lantern_2026-11-14.jpg",
+      "driveFileId": "1IV2Wls4lFCQ9ggQ4e4ZAZw78GSdzfmjr",
+      "fb_post_id": "122114068965508656",
+      "scheduled_for": "11/14/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-13"
+  "lastPipelineDate": "2026-11-14"
 }
