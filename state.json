@@ -79,7 +79,10 @@
     "1eY1wv4RwbrP-s5S_38cI9zHGgISDEFWp",
     "1NVbnL7xhUMSIO0b7Q87uI_8cKL7sr9t6",
     "1R2FcKIfEE8T8fRcRdgY9iEtohQYwtkGX",
-    "1IV2Wls4lFCQ9ggQ4e4ZAZw78GSdzfmjr"
+    "1IV2Wls4lFCQ9ggQ4e4ZAZw78GSdzfmjr",
+    "1vs1Oa1Axs4chxE3QBaeYDyBzY6Vv8UJW",
+    "1ShOAtkm5N8YxHblE7VG81FT3Nw9aXrv5",
+    "1IrhyRkheLHmQ6hHY4fzfW_W0e1xkRufL"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -160,9 +163,12 @@
     "peacock_mantis_shrimp_2026-11-13.jpg",
     "antique_rotary_telephone_2026-11-14.jpg",
     "spotted_eagle_ray_2026-11-13.jpg",
-    "wooden_rowboat_lantern_2026-11-14.jpg"
+    "wooden_rowboat_lantern_2026-11-14.jpg",
+    "chibi_ember_salamander_2026-11-15.jpg",
+    "chibi_moss_turtle_spirit_2026-11-15.jpg",
+    "chibi_starlight_axolotl_2026-11-15.jpg"
   ],
-  "lastUpdated": "2026-11-14T18:07:13.299Z",
+  "lastUpdated": "2026-11-15T18:53:57.620Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -242,7 +248,10 @@
     "Peacock Mantis Shrimp",
     "Antique Rotary Telephone",
     "Spotted Eagle Ray",
-    "Wooden Rowboat Lantern"
+    "Wooden Rowboat Lantern",
+    "Chibi Ember Salamander",
+    "Chibi Moss Turtle Spirit",
+    "Chibi Starlight Axolotl"
   ],
   "history": [
     {
@@ -954,7 +963,34 @@
       "fb_post_id": "122114068965508656",
       "scheduled_for": "11/14/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-15T18:53:48.082Z",
+      "subject": "Chibi Ember Salamander",
+      "filename": "chibi_ember_salamander_2026-11-15.jpg",
+      "driveFileId": "1vs1Oa1Axs4chxE3QBaeYDyBzY6Vv8UJW",
+      "fb_post_id": "1298820806658884_122114322555508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-15T18:53:53.004Z",
+      "subject": "Chibi Moss Turtle Spirit",
+      "filename": "chibi_moss_turtle_spirit_2026-11-15.jpg",
+      "driveFileId": "1ShOAtkm5N8YxHblE7VG81FT3Nw9aXrv5",
+      "fb_post_id": "122114322651508656",
+      "scheduled_for": "11/15/2026, 8:53:38 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-15T18:53:57.620Z",
+      "subject": "Chibi Starlight Axolotl",
+      "filename": "chibi_starlight_axolotl_2026-11-15.jpg",
+      "driveFileId": "1IrhyRkheLHmQ6hHY4fzfW_W0e1xkRufL",
+      "fb_post_id": "122114322771508656",
+      "scheduled_for": "11/15/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-14"
+  "lastPipelineDate": "2026-11-15"
 }
