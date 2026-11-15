@@ -38,7 +38,8 @@
       "fb_post_id": "122114068965508656",
       "photo_id": "122114068965508656",
       "scheduled_publish_time": 1794695400,
-      "comment_posted": false
+      "comment_posted": true,
+      "comment_id": "122114068965508656_2665681847233386"
     }
   ]
 }
