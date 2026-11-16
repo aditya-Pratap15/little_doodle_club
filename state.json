@@ -82,7 +82,10 @@
     "1IV2Wls4lFCQ9ggQ4e4ZAZw78GSdzfmjr",
     "1vs1Oa1Axs4chxE3QBaeYDyBzY6Vv8UJW",
     "1ShOAtkm5N8YxHblE7VG81FT3Nw9aXrv5",
-    "1IrhyRkheLHmQ6hHY4fzfW_W0e1xkRufL"
+    "1IrhyRkheLHmQ6hHY4fzfW_W0e1xkRufL",
+    "1tIeshDTkZozmAgCjrpgWbHhx4RQArZXy",
+    "1COcDci9IPymyN7kpmsXGltV4xUw9xYMR",
+    "1RsSCTEbc0rTaw2eItzRGvZdFlyhdluZ1"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -166,9 +169,12 @@
     "wooden_rowboat_lantern_2026-11-14.jpg",
     "chibi_ember_salamander_2026-11-15.jpg",
     "chibi_moss_turtle_spirit_2026-11-15.jpg",
-    "chibi_starlight_axolotl_2026-11-15.jpg"
+    "chibi_starlight_axolotl_2026-11-15.jpg",
+    "japanese_tanuki_pup_2026-11-16.jpg",
+    "happy_quokka_leaf_2026-11-16.jpg",
+    "ring_tailed_lemur_2026-11-16.jpg"
   ],
-  "lastUpdated": "2026-11-15T18:53:57.620Z",
+  "lastUpdated": "2026-11-16T22:06:59.073Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -251,7 +257,10 @@
     "Wooden Rowboat Lantern",
     "Chibi Ember Salamander",
     "Chibi Moss Turtle Spirit",
-    "Chibi Starlight Axolotl"
+    "Chibi Starlight Axolotl",
+    "Japanese Tanuki Pup",
+    "Happy Quokka Leaf",
+    "Ring Tailed Lemur"
   ],
   "history": [
     {
@@ -990,7 +999,34 @@
       "fb_post_id": "122114322771508656",
       "scheduled_for": "11/15/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-16T22:06:49.318Z",
+      "subject": "Japanese Tanuki Pup",
+      "filename": "japanese_tanuki_pup_2026-11-16.jpg",
+      "driveFileId": "1tIeshDTkZozmAgCjrpgWbHhx4RQArZXy",
+      "fb_post_id": "1298820806658884_122114592885508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-16T22:06:54.505Z",
+      "subject": "Happy Quokka Leaf",
+      "filename": "happy_quokka_leaf_2026-11-16.jpg",
+      "driveFileId": "1COcDci9IPymyN7kpmsXGltV4xUw9xYMR",
+      "fb_post_id": "122114592957508656",
+      "scheduled_for": "11/17/2026, 12:06:40 AM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-16T22:06:59.073Z",
+      "subject": "Ring Tailed Lemur",
+      "filename": "ring_tailed_lemur_2026-11-16.jpg",
+      "driveFileId": "1RsSCTEbc0rTaw2eItzRGvZdFlyhdluZ1",
+      "fb_post_id": "122114593053508656",
+      "scheduled_for": "11/16/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-15"
+  "lastPipelineDate": "2026-11-16"
 }
