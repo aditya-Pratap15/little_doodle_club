@@ -85,7 +85,10 @@
     "1IrhyRkheLHmQ6hHY4fzfW_W0e1xkRufL",
     "1tIeshDTkZozmAgCjrpgWbHhx4RQArZXy",
     "1COcDci9IPymyN7kpmsXGltV4xUw9xYMR",
-    "1RsSCTEbc0rTaw2eItzRGvZdFlyhdluZ1"
+    "1RsSCTEbc0rTaw2eItzRGvZdFlyhdluZ1",
+    "1olRGa6lquLaf3e-k4e11LPkqNpHJOXpO",
+    "1VP8WRWRCmh6rCebjMbQFyIosIU_y3Axh",
+    "1pcdcLd_gYJdn8NO51H4sAIv1mNc_UvpK"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -172,9 +175,12 @@
     "chibi_starlight_axolotl_2026-11-15.jpg",
     "japanese_tanuki_pup_2026-11-16.jpg",
     "happy_quokka_leaf_2026-11-16.jpg",
-    "ring_tailed_lemur_2026-11-16.jpg"
+    "ring_tailed_lemur_2026-11-16.jpg",
+    "vintage_coffee_grinder_2026-11-14.jpg",
+    "autumn_chrysanthemum_bloom_2026-11-17.jpg",
+    "fairy_bonnet_mushrooms_2026-11-17.jpg"
   ],
-  "lastUpdated": "2026-11-16T22:06:59.073Z",
+  "lastUpdated": "2026-11-17T20:58:58.379Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -260,7 +266,10 @@
     "Chibi Starlight Axolotl",
     "Japanese Tanuki Pup",
     "Happy Quokka Leaf",
-    "Ring Tailed Lemur"
+    "Ring Tailed Lemur",
+    "Vintage Coffee Grinder",
+    "Autumn Chrysanthemum Bloom",
+    "Fairy Bonnet Mushrooms"
   ],
   "history": [
     {
@@ -1026,7 +1035,34 @@
       "fb_post_id": "122114593053508656",
       "scheduled_for": "11/16/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-17T20:58:47.337Z",
+      "subject": "Vintage Coffee Grinder",
+      "filename": "vintage_coffee_grinder_2026-11-14.jpg",
+      "driveFileId": "1olRGa6lquLaf3e-k4e11LPkqNpHJOXpO",
+      "fb_post_id": "1298820806658884_122114828289508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-17T20:58:53.063Z",
+      "subject": "Autumn Chrysanthemum Bloom",
+      "filename": "autumn_chrysanthemum_bloom_2026-11-17.jpg",
+      "driveFileId": "1VP8WRWRCmh6rCebjMbQFyIosIU_y3Axh",
+      "fb_post_id": "122114828391508656",
+      "scheduled_for": "11/17/2026, 10:58:36 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-17T20:58:58.379Z",
+      "subject": "Fairy Bonnet Mushrooms",
+      "filename": "fairy_bonnet_mushrooms_2026-11-17.jpg",
+      "driveFileId": "1pcdcLd_gYJdn8NO51H4sAIv1mNc_UvpK",
+      "fb_post_id": "122114828439508656",
+      "scheduled_for": "11/17/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-16"
+  "lastPipelineDate": "2026-11-17"
 }
