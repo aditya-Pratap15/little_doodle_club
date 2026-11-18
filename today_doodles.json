@@ -25,7 +25,8 @@
       "fb_post_id": "122115071217508656",
       "photo_id": "122115071217508656",
       "scheduled_publish_time": 1795042264,
-      "comment_posted": false
+      "comment_posted": true,
+      "comment_id": "122115071217508656_1637197540710062"
     },
     {
       "driveFileId": "1eCkLJZZ6BUBS8mtbF6leV_HwEF8WLIa1",
@@ -37,7 +38,8 @@
       "fb_post_id": "122115071271508656",
       "photo_id": "122115071271508656",
       "scheduled_publish_time": 1795041000,
-      "comment_posted": false
+      "comment_posted": true,
+      "comment_id": "122115071271508656_2971638939836125"
     }
   ]
 }
