@@ -88,7 +88,10 @@
     "1RsSCTEbc0rTaw2eItzRGvZdFlyhdluZ1",
     "1olRGa6lquLaf3e-k4e11LPkqNpHJOXpO",
     "1VP8WRWRCmh6rCebjMbQFyIosIU_y3Axh",
-    "1pcdcLd_gYJdn8NO51H4sAIv1mNc_UvpK"
+    "1pcdcLd_gYJdn8NO51H4sAIv1mNc_UvpK",
+    "1wK-W8GDCpOuqAXh66vHuVv0PrcfY9jg9",
+    "1tjfl-kkfPpTG94Gt2QFnVpo55p3mHrDI",
+    "1eCkLJZZ6BUBS8mtbF6leV_HwEF8WLIa1"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -178,9 +181,12 @@
     "ring_tailed_lemur_2026-11-16.jpg",
     "vintage_coffee_grinder_2026-11-14.jpg",
     "autumn_chrysanthemum_bloom_2026-11-17.jpg",
-    "fairy_bonnet_mushrooms_2026-11-17.jpg"
+    "fairy_bonnet_mushrooms_2026-11-17.jpg",
+    "skillet_cookie_icecream_2026-11-18.jpg",
+    "pumpkin_pie_slice_2026-11-18.jpg",
+    "moonstones_succulent_pot_2026-11-17.jpg"
   ],
-  "lastUpdated": "2026-11-17T20:58:58.379Z",
+  "lastUpdated": "2026-11-18T20:51:26.125Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -269,7 +275,10 @@
     "Ring Tailed Lemur",
     "Vintage Coffee Grinder",
     "Autumn Chrysanthemum Bloom",
-    "Fairy Bonnet Mushrooms"
+    "Fairy Bonnet Mushrooms",
+    "Skillet Cookie Icecream",
+    "Pumpkin Pie Slice",
+    "Moonstones Succulent Pot"
   ],
   "history": [
     {
@@ -1062,7 +1071,34 @@
       "fb_post_id": "122114828439508656",
       "scheduled_for": "11/17/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-18T20:51:16.344Z",
+      "subject": "Skillet Cookie Icecream",
+      "filename": "skillet_cookie_icecream_2026-11-18.jpg",
+      "driveFileId": "1wK-W8GDCpOuqAXh66vHuVv0PrcfY9jg9",
+      "fb_post_id": "1298820806658884_122115071133508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-18T20:51:21.057Z",
+      "subject": "Pumpkin Pie Slice",
+      "filename": "pumpkin_pie_slice_2026-11-18.jpg",
+      "driveFileId": "1tjfl-kkfPpTG94Gt2QFnVpo55p3mHrDI",
+      "fb_post_id": "122115071217508656",
+      "scheduled_for": "11/18/2026, 10:51:04 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-18T20:51:26.125Z",
+      "subject": "Moonstones Succulent Pot",
+      "filename": "moonstones_succulent_pot_2026-11-17.jpg",
+      "driveFileId": "1eCkLJZZ6BUBS8mtbF6leV_HwEF8WLIa1",
+      "fb_post_id": "122115071271508656",
+      "scheduled_for": "11/18/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-17"
+  "lastPipelineDate": "2026-11-18"
 }
