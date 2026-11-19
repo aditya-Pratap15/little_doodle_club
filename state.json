@@ -91,7 +91,10 @@
     "1pcdcLd_gYJdn8NO51H4sAIv1mNc_UvpK",
     "1wK-W8GDCpOuqAXh66vHuVv0PrcfY9jg9",
     "1tjfl-kkfPpTG94Gt2QFnVpo55p3mHrDI",
-    "1eCkLJZZ6BUBS8mtbF6leV_HwEF8WLIa1"
+    "1eCkLJZZ6BUBS8mtbF6leV_HwEF8WLIa1",
+    "1mNAApVMHrh-SYMVgPrTpoztZQOlHGfDU",
+    "1N9rfh9LWjHzohlwYXhSOfkYKh1ogJeyp",
+    "1rkIr6x_QudI9cGzdzl1LGJvrTej3ispJ"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -184,9 +187,12 @@
     "fairy_bonnet_mushrooms_2026-11-17.jpg",
     "skillet_cookie_icecream_2026-11-18.jpg",
     "pumpkin_pie_slice_2026-11-18.jpg",
-    "moonstones_succulent_pot_2026-11-17.jpg"
+    "moonstones_succulent_pot_2026-11-17.jpg",
+    "hot_chocolate_marshmallows_2026-11-18.jpg",
+    "suitcase_bakery_diorama_2026-11-19.jpg",
+    "acorn_woodland_cottage_2026-11-19.jpg"
   ],
-  "lastUpdated": "2026-11-18T20:51:26.125Z",
+  "lastUpdated": "2026-11-19T20:40:35.784Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -278,7 +284,10 @@
     "Fairy Bonnet Mushrooms",
     "Skillet Cookie Icecream",
     "Pumpkin Pie Slice",
-    "Moonstones Succulent Pot"
+    "Moonstones Succulent Pot",
+    "Hot Chocolate Marshmallows",
+    "Suitcase Bakery Diorama",
+    "Acorn Woodland Cottage"
   ],
   "history": [
     {
@@ -1098,7 +1107,34 @@
       "fb_post_id": "122115071271508656",
       "scheduled_for": "11/18/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-19T20:40:26.694Z",
+      "subject": "Hot Chocolate Marshmallows",
+      "filename": "hot_chocolate_marshmallows_2026-11-18.jpg",
+      "driveFileId": "1mNAApVMHrh-SYMVgPrTpoztZQOlHGfDU",
+      "fb_post_id": "1298820806658884_122115376425508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-19T20:40:31.350Z",
+      "subject": "Suitcase Bakery Diorama",
+      "filename": "suitcase_bakery_diorama_2026-11-19.jpg",
+      "driveFileId": "1N9rfh9LWjHzohlwYXhSOfkYKh1ogJeyp",
+      "fb_post_id": "122115376803508656",
+      "scheduled_for": "11/19/2026, 10:40:18 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-19T20:40:35.784Z",
+      "subject": "Acorn Woodland Cottage",
+      "filename": "acorn_woodland_cottage_2026-11-19.jpg",
+      "driveFileId": "1rkIr6x_QudI9cGzdzl1LGJvrTej3ispJ",
+      "fb_post_id": "122115377199508656",
+      "scheduled_for": "11/19/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-18"
+  "lastPipelineDate": "2026-11-19"
 }
