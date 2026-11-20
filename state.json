@@ -94,7 +94,10 @@
     "1eCkLJZZ6BUBS8mtbF6leV_HwEF8WLIa1",
     "1mNAApVMHrh-SYMVgPrTpoztZQOlHGfDU",
     "1N9rfh9LWjHzohlwYXhSOfkYKh1ogJeyp",
-    "1rkIr6x_QudI9cGzdzl1LGJvrTej3ispJ"
+    "1rkIr6x_QudI9cGzdzl1LGJvrTej3ispJ",
+    "1zHz2KCN2wvIqP9DzRz1eURXNnJ9CN6su",
+    "14NiVgpHoXx3SUnpGqyVecsLxo_5V7bEd",
+    "1jhHqGFJTRLU61zEaVyeFaQwReByy1lzz"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -190,9 +193,12 @@
     "moonstones_succulent_pot_2026-11-17.jpg",
     "hot_chocolate_marshmallows_2026-11-18.jpg",
     "suitcase_bakery_diorama_2026-11-19.jpg",
-    "acorn_woodland_cottage_2026-11-19.jpg"
+    "acorn_woodland_cottage_2026-11-19.jpg",
+    "beluga_whale_calf_2026-11-20.jpg",
+    "origami_paper_koi_2026-11-19.jpg",
+    "mandarin_dragonet_fish_2026-11-20.jpg"
   ],
-  "lastUpdated": "2026-11-19T20:40:35.784Z",
+  "lastUpdated": "2026-11-20T20:25:34.198Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -287,7 +293,10 @@
     "Moonstones Succulent Pot",
     "Hot Chocolate Marshmallows",
     "Suitcase Bakery Diorama",
-    "Acorn Woodland Cottage"
+    "Acorn Woodland Cottage",
+    "Beluga Whale Calf",
+    "Origami Paper Koi",
+    "Mandarin Dragonet Fish"
   ],
   "history": [
     {
@@ -1134,7 +1143,34 @@
       "fb_post_id": "122115377199508656",
       "scheduled_for": "11/19/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-20T20:25:24.577Z",
+      "subject": "Beluga Whale Calf",
+      "filename": "beluga_whale_calf_2026-11-20.jpg",
+      "driveFileId": "1zHz2KCN2wvIqP9DzRz1eURXNnJ9CN6su",
+      "fb_post_id": "1298820806658884_122115745437508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-20T20:25:29.607Z",
+      "subject": "Origami Paper Koi",
+      "filename": "origami_paper_koi_2026-11-19.jpg",
+      "driveFileId": "14NiVgpHoXx3SUnpGqyVecsLxo_5V7bEd",
+      "fb_post_id": "122115745629508656",
+      "scheduled_for": "11/20/2026, 10:25:14 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-20T20:25:34.198Z",
+      "subject": "Mandarin Dragonet Fish",
+      "filename": "mandarin_dragonet_fish_2026-11-20.jpg",
+      "driveFileId": "1jhHqGFJTRLU61zEaVyeFaQwReByy1lzz",
+      "fb_post_id": "122115745755508656",
+      "scheduled_for": "11/20/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-19"
+  "lastPipelineDate": "2026-11-20"
 }
