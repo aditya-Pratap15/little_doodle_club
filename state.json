@@ -1160,7 +1160,7 @@
       "driveFileId": "14NiVgpHoXx3SUnpGqyVecsLxo_5V7bEd",
       "fb_post_id": "122115745629508656",
       "scheduled_for": "11/20/2026, 10:25:14 PM",
-      "comment_posted": false
+      "comment_posted": true
     },
     {
       "date": "2026-11-20T20:25:34.198Z",
@@ -1169,7 +1169,7 @@
       "driveFileId": "1jhHqGFJTRLU61zEaVyeFaQwReByy1lzz",
       "fb_post_id": "122115745755508656",
       "scheduled_for": "11/20/2026, 10:30:00 PM",
-      "comment_posted": false
+      "comment_posted": true
     }
   ],
   "lastPipelineDate": "2026-11-20"
