@@ -97,7 +97,10 @@
     "1rkIr6x_QudI9cGzdzl1LGJvrTej3ispJ",
     "1zHz2KCN2wvIqP9DzRz1eURXNnJ9CN6su",
     "14NiVgpHoXx3SUnpGqyVecsLxo_5V7bEd",
-    "1jhHqGFJTRLU61zEaVyeFaQwReByy1lzz"
+    "1jhHqGFJTRLU61zEaVyeFaQwReByy1lzz",
+    "1UhhcTMel6mstLse3LPwuzcRqkZ61M_ow",
+    "1b9Lfi-vBGQzTTlmehfGKoUxFS89OpKLa",
+    "1f3-dq1jVQr-zS-ZSGJ67JBS8xiI-18KC"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -196,9 +199,12 @@
     "acorn_woodland_cottage_2026-11-19.jpg",
     "beluga_whale_calf_2026-11-20.jpg",
     "origami_paper_koi_2026-11-19.jpg",
-    "mandarin_dragonet_fish_2026-11-20.jpg"
+    "mandarin_dragonet_fish_2026-11-20.jpg",
+    "retro_harvest_pickup_truck_2026-11-21.jpg",
+    "fluffy_harp_seal_pup_2026-11-20.jpg",
+    "vintage_moka_pot_2026-11-21.jpg"
   ],
-  "lastUpdated": "2026-11-20T20:25:34.198Z",
+  "lastUpdated": "2026-11-21T19:19:52.576Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -296,7 +302,10 @@
     "Acorn Woodland Cottage",
     "Beluga Whale Calf",
     "Origami Paper Koi",
-    "Mandarin Dragonet Fish"
+    "Mandarin Dragonet Fish",
+    "Retro Harvest Pickup Truck",
+    "Fluffy Harp Seal Pup",
+    "Vintage Moka Pot"
   ],
   "history": [
     {
@@ -1170,7 +1179,34 @@
       "fb_post_id": "122115745755508656",
       "scheduled_for": "11/20/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-21T19:19:43.077Z",
+      "subject": "Retro Harvest Pickup Truck",
+      "filename": "retro_harvest_pickup_truck_2026-11-21.jpg",
+      "driveFileId": "1UhhcTMel6mstLse3LPwuzcRqkZ61M_ow",
+      "fb_post_id": "1298820806658884_122115986445508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-21T19:19:47.883Z",
+      "subject": "Fluffy Harp Seal Pup",
+      "filename": "fluffy_harp_seal_pup_2026-11-20.jpg",
+      "driveFileId": "1b9Lfi-vBGQzTTlmehfGKoUxFS89OpKLa",
+      "fb_post_id": "122115986529508656",
+      "scheduled_for": "11/21/2026, 9:19:33 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-21T19:19:52.576Z",
+      "subject": "Vintage Moka Pot",
+      "filename": "vintage_moka_pot_2026-11-21.jpg",
+      "driveFileId": "1f3-dq1jVQr-zS-ZSGJ67JBS8xiI-18KC",
+      "fb_post_id": "122115986583508656",
+      "scheduled_for": "11/21/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-20"
+  "lastPipelineDate": "2026-11-21"
 }
