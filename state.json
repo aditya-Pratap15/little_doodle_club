@@ -100,7 +100,10 @@
     "1jhHqGFJTRLU61zEaVyeFaQwReByy1lzz",
     "1UhhcTMel6mstLse3LPwuzcRqkZ61M_ow",
     "1b9Lfi-vBGQzTTlmehfGKoUxFS89OpKLa",
-    "1f3-dq1jVQr-zS-ZSGJ67JBS8xiI-18KC"
+    "1f3-dq1jVQr-zS-ZSGJ67JBS8xiI-18KC",
+    "1fR2BJDuUbTnID-SvQq_lA3FtZVXlSvtZ",
+    "1M-K5qykVNyzA3Y8EyNHHXRHUU2pnqzUh",
+    "11mTxEIjGxji-vLKUT3W-l7GUv1ZDScUz"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -202,9 +205,12 @@
     "mandarin_dragonet_fish_2026-11-20.jpg",
     "retro_harvest_pickup_truck_2026-11-21.jpg",
     "fluffy_harp_seal_pup_2026-11-20.jpg",
-    "vintage_moka_pot_2026-11-21.jpg"
+    "vintage_moka_pot_2026-11-21.jpg",
+    "chibi_gargoyle_pup_2026-11-22.jpg",
+    "vintage_sewing_machine_2026-11-21.jpg",
+    "chibi_owlbear_cub_2026-11-22.jpg"
   ],
-  "lastUpdated": "2026-11-21T19:19:52.576Z",
+  "lastUpdated": "2026-11-22T19:43:42.685Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -305,7 +311,10 @@
     "Mandarin Dragonet Fish",
     "Retro Harvest Pickup Truck",
     "Fluffy Harp Seal Pup",
-    "Vintage Moka Pot"
+    "Vintage Moka Pot",
+    "Chibi Gargoyle Pup",
+    "Vintage Sewing Machine",
+    "Chibi Owlbear Cub"
   ],
   "history": [
     {
@@ -1206,7 +1215,34 @@
       "fb_post_id": "122115986583508656",
       "scheduled_for": "11/21/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-22T19:43:33.385Z",
+      "subject": "Chibi Gargoyle Pup",
+      "filename": "chibi_gargoyle_pup_2026-11-22.jpg",
+      "driveFileId": "1fR2BJDuUbTnID-SvQq_lA3FtZVXlSvtZ",
+      "fb_post_id": "1298820806658884_122116254639508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-22T19:43:37.890Z",
+      "subject": "Vintage Sewing Machine",
+      "filename": "vintage_sewing_machine_2026-11-21.jpg",
+      "driveFileId": "1M-K5qykVNyzA3Y8EyNHHXRHUU2pnqzUh",
+      "fb_post_id": "122116254735508656",
+      "scheduled_for": "11/22/2026, 9:43:23 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-22T19:43:42.685Z",
+      "subject": "Chibi Owlbear Cub",
+      "filename": "chibi_owlbear_cub_2026-11-22.jpg",
+      "driveFileId": "11mTxEIjGxji-vLKUT3W-l7GUv1ZDScUz",
+      "fb_post_id": "122116254795508656",
+      "scheduled_for": "11/22/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-21"
+  "lastPipelineDate": "2026-11-22"
 }
