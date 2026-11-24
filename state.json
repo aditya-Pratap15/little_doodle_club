@@ -106,7 +106,10 @@
     "11mTxEIjGxji-vLKUT3W-l7GUv1ZDScUz",
     "1aZS52ycyP4t0rAo7VPxRxO-tgI7S40w8",
     "1N7deRy5Cnvn_DtP683UhlzLLleW3KQIS",
-    "1dFKsk5il5YHFL-hH6MR7HgX306QWWpuV"
+    "1dFKsk5il5YHFL-hH6MR7HgX306QWWpuV",
+    "1J-RhysdA9dui_hiLdUHlDaVXZEKUM3TG",
+    "1te8ZojRBBudg0rNAbjZeZ9zvW6T6vFmp",
+    "1TklzV20lxqpznKiTDrpWaqo03PiS81wV"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -214,9 +217,12 @@
     "chibi_owlbear_cub_2026-11-22.jpg",
     "pine_marten_berries_2026-11-23.jpg",
     "chibi_autumn_kirin_fawn_2026-11-22.jpg",
-    "koala_joey_branch_2026-11-23.jpg"
+    "koala_joey_branch_2026-11-23.jpg",
+    "welsh_corgi_puppy_2026-11-23.jpg",
+    "white_hellebore_bloom_2026-11-24.jpg",
+    "ruby_glow_peperomia_2026-11-24.jpg"
   ],
-  "lastUpdated": "2026-11-23T23:56:37.175Z",
+  "lastUpdated": "2026-11-24T22:29:32.201Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -323,7 +329,10 @@
     "Chibi Owlbear Cub",
     "Pine Marten Berries",
     "Chibi Autumn Kirin Fawn",
-    "Koala Joey Branch"
+    "Koala Joey Branch",
+    "Welsh Corgi Puppy",
+    "White Hellebore Bloom",
+    "Ruby Glow Peperomia"
   ],
   "history": [
     {
@@ -1278,7 +1287,34 @@
       "fb_post_id": "122116508097508656",
       "scheduled_for": "11/24/2026, 4:56:17 AM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-24T22:29:24.029Z",
+      "subject": "Welsh Corgi Puppy",
+      "filename": "welsh_corgi_puppy_2026-11-23.jpg",
+      "driveFileId": "1J-RhysdA9dui_hiLdUHlDaVXZEKUM3TG",
+      "fb_post_id": "1298820806658884_122116735089508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-24T22:29:28.189Z",
+      "subject": "White Hellebore Bloom",
+      "filename": "white_hellebore_bloom_2026-11-24.jpg",
+      "driveFileId": "1te8ZojRBBudg0rNAbjZeZ9zvW6T6vFmp",
+      "fb_post_id": "122116735155508656",
+      "scheduled_for": "11/25/2026, 12:29:17 AM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-24T22:29:32.201Z",
+      "subject": "Ruby Glow Peperomia",
+      "filename": "ruby_glow_peperomia_2026-11-24.jpg",
+      "driveFileId": "1TklzV20lxqpznKiTDrpWaqo03PiS81wV",
+      "fb_post_id": "122116735215508656",
+      "scheduled_for": "11/25/2026, 3:29:17 AM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-23"
+  "lastPipelineDate": "2026-11-24"
 }
