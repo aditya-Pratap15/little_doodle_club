@@ -109,7 +109,10 @@
     "1dFKsk5il5YHFL-hH6MR7HgX306QWWpuV",
     "1J-RhysdA9dui_hiLdUHlDaVXZEKUM3TG",
     "1te8ZojRBBudg0rNAbjZeZ9zvW6T6vFmp",
-    "1TklzV20lxqpznKiTDrpWaqo03PiS81wV"
+    "1TklzV20lxqpznKiTDrpWaqo03PiS81wV",
+    "16w3MdkUWI4H04PKgxK07VyemdTCzN8R9",
+    "1pZ5eWnQ9JamVjaFtOCLfTybj8fYztC6-",
+    "1dTvYbxw7Y43JqVydHxPTS-HsCTWSughF"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -220,9 +223,12 @@
     "koala_joey_branch_2026-11-23.jpg",
     "welsh_corgi_puppy_2026-11-23.jpg",
     "white_hellebore_bloom_2026-11-24.jpg",
-    "ruby_glow_peperomia_2026-11-24.jpg"
+    "ruby_glow_peperomia_2026-11-24.jpg",
+    "velvet_foot_mushrooms_2026-11-24.jpg",
+    "tempura_udon_bowl_2026-11-25.jpg",
+    "spiced_chai_biscotti_2026-11-25.jpg"
   ],
-  "lastUpdated": "2026-11-24T22:29:32.201Z",
+  "lastUpdated": "2026-11-25T21:44:40.209Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -332,7 +338,10 @@
     "Koala Joey Branch",
     "Welsh Corgi Puppy",
     "White Hellebore Bloom",
-    "Ruby Glow Peperomia"
+    "Ruby Glow Peperomia",
+    "Velvet Foot Mushrooms",
+    "Tempura Udon Bowl",
+    "Spiced Chai Biscotti"
   ],
   "history": [
     {
@@ -1314,7 +1323,34 @@
       "fb_post_id": "122116735215508656",
       "scheduled_for": "11/25/2026, 3:29:17 AM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-25T21:44:30.308Z",
+      "subject": "Velvet Foot Mushrooms",
+      "filename": "velvet_foot_mushrooms_2026-11-24.jpg",
+      "driveFileId": "16w3MdkUWI4H04PKgxK07VyemdTCzN8R9",
+      "fb_post_id": "1298820806658884_122116958115508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-25T21:44:35.274Z",
+      "subject": "Tempura Udon Bowl",
+      "filename": "tempura_udon_bowl_2026-11-25.jpg",
+      "driveFileId": "1pZ5eWnQ9JamVjaFtOCLfTybj8fYztC6-",
+      "fb_post_id": "122116958223508656",
+      "scheduled_for": "11/25/2026, 11:44:20 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-25T21:44:40.208Z",
+      "subject": "Spiced Chai Biscotti",
+      "filename": "spiced_chai_biscotti_2026-11-25.jpg",
+      "driveFileId": "1dTvYbxw7Y43JqVydHxPTS-HsCTWSughF",
+      "fb_post_id": "122116958271508656",
+      "scheduled_for": "11/25/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-24"
+  "lastPipelineDate": "2026-11-25"
 }
