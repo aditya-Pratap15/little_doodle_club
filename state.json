@@ -112,7 +112,10 @@
     "1TklzV20lxqpznKiTDrpWaqo03PiS81wV",
     "16w3MdkUWI4H04PKgxK07VyemdTCzN8R9",
     "1pZ5eWnQ9JamVjaFtOCLfTybj8fYztC6-",
-    "1dTvYbxw7Y43JqVydHxPTS-HsCTWSughF"
+    "1dTvYbxw7Y43JqVydHxPTS-HsCTWSughF",
+    "1K5mdcMouQqeudXlDyIyCBjOjgkG8xzS5",
+    "1_C6f0OTx57uy9SFuX9Q2R9-n2etXrNZS",
+    "1UL2sAbCbDdxdKF9LY4GCnSBjF1vJb5vG"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -226,9 +229,12 @@
     "ruby_glow_peperomia_2026-11-24.jpg",
     "velvet_foot_mushrooms_2026-11-24.jpg",
     "tempura_udon_bowl_2026-11-25.jpg",
-    "spiced_chai_biscotti_2026-11-25.jpg"
+    "spiced_chai_biscotti_2026-11-25.jpg",
+    "origami_paper_stag_2026-11-26.jpg",
+    "waterfall_apothecary_bottle_2026-11-26.jpg",
+    "book_fireplace_nook_2026-11-26.jpg"
   ],
-  "lastUpdated": "2026-11-25T21:44:40.209Z",
+  "lastUpdated": "2026-11-26T21:36:33.216Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -341,7 +347,10 @@
     "Ruby Glow Peperomia",
     "Velvet Foot Mushrooms",
     "Tempura Udon Bowl",
-    "Spiced Chai Biscotti"
+    "Spiced Chai Biscotti",
+    "Origami Paper Stag",
+    "Waterfall Apothecary Bottle",
+    "Book Fireplace Nook"
   ],
   "history": [
     {
@@ -1350,7 +1359,34 @@
       "fb_post_id": "122116958271508656",
       "scheduled_for": "11/25/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-26T21:36:23.554Z",
+      "subject": "Origami Paper Stag",
+      "filename": "origami_paper_stag_2026-11-26.jpg",
+      "driveFileId": "1K5mdcMouQqeudXlDyIyCBjOjgkG8xzS5",
+      "fb_post_id": "1298820806658884_122117173107508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-26T21:36:28.611Z",
+      "subject": "Waterfall Apothecary Bottle",
+      "filename": "waterfall_apothecary_bottle_2026-11-26.jpg",
+      "driveFileId": "1_C6f0OTx57uy9SFuX9Q2R9-n2etXrNZS",
+      "fb_post_id": "122117173221508656",
+      "scheduled_for": "11/26/2026, 11:36:15 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-26T21:36:33.216Z",
+      "subject": "Book Fireplace Nook",
+      "filename": "book_fireplace_nook_2026-11-26.jpg",
+      "driveFileId": "1UL2sAbCbDdxdKF9LY4GCnSBjF1vJb5vG",
+      "fb_post_id": "122117173287508656",
+      "scheduled_for": "11/26/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-25"
+  "lastPipelineDate": "2026-11-26"
 }
