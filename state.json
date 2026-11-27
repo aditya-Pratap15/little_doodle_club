@@ -115,7 +115,10 @@
     "1dTvYbxw7Y43JqVydHxPTS-HsCTWSughF",
     "1K5mdcMouQqeudXlDyIyCBjOjgkG8xzS5",
     "1_C6f0OTx57uy9SFuX9Q2R9-n2etXrNZS",
-    "1UL2sAbCbDdxdKF9LY4GCnSBjF1vJb5vG"
+    "1UL2sAbCbDdxdKF9LY4GCnSBjF1vJb5vG",
+    "1FRvvEQqTezZRHXWNof63Sh1PNJHgZBor",
+    "19dyVrdeyFAyouW6l0T3ODvbbP08xN-wz",
+    "18ZS3d1DW8zYy5AGAgItwXwkFNNaqaD5C"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -232,9 +235,12 @@
     "spiced_chai_biscotti_2026-11-25.jpg",
     "origami_paper_stag_2026-11-26.jpg",
     "waterfall_apothecary_bottle_2026-11-26.jpg",
-    "book_fireplace_nook_2026-11-26.jpg"
+    "book_fireplace_nook_2026-11-26.jpg",
+    "tidepool_hermit_crab_2026-11-27.jpg",
+    "moon_jellyfish_drift_2026-11-27.jpg",
+    "pecan_pie_tartlet_2026-11-25.jpg"
   ],
-  "lastUpdated": "2026-11-26T21:36:33.216Z",
+  "lastUpdated": "2026-11-27T21:20:41.397Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -350,7 +356,10 @@
     "Spiced Chai Biscotti",
     "Origami Paper Stag",
     "Waterfall Apothecary Bottle",
-    "Book Fireplace Nook"
+    "Book Fireplace Nook",
+    "Tidepool Hermit Crab",
+    "Moon Jellyfish Drift",
+    "Pecan Pie Tartlet"
   ],
   "history": [
     {
@@ -1386,7 +1395,34 @@
       "fb_post_id": "122117173287508656",
       "scheduled_for": "11/26/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-27T21:20:33.087Z",
+      "subject": "Tidepool Hermit Crab",
+      "filename": "tidepool_hermit_crab_2026-11-27.jpg",
+      "driveFileId": "1FRvvEQqTezZRHXWNof63Sh1PNJHgZBor",
+      "fb_post_id": "1298820806658884_122117375415508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-27T21:20:37.405Z",
+      "subject": "Moon Jellyfish Drift",
+      "filename": "moon_jellyfish_drift_2026-11-27.jpg",
+      "driveFileId": "19dyVrdeyFAyouW6l0T3ODvbbP08xN-wz",
+      "fb_post_id": "122117375523508656",
+      "scheduled_for": "11/27/2026, 11:20:25 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-27T21:20:41.396Z",
+      "subject": "Pecan Pie Tartlet",
+      "filename": "pecan_pie_tartlet_2026-11-25.jpg",
+      "driveFileId": "18ZS3d1DW8zYy5AGAgItwXwkFNNaqaD5C",
+      "fb_post_id": "122117375679508656",
+      "scheduled_for": "11/27/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-26"
+  "lastPipelineDate": "2026-11-27"
 }
