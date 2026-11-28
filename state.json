@@ -118,7 +118,10 @@
     "1UL2sAbCbDdxdKF9LY4GCnSBjF1vJb5vG",
     "1FRvvEQqTezZRHXWNof63Sh1PNJHgZBor",
     "19dyVrdeyFAyouW6l0T3ODvbbP08xN-wz",
-    "18ZS3d1DW8zYy5AGAgItwXwkFNNaqaD5C"
+    "18ZS3d1DW8zYy5AGAgItwXwkFNNaqaD5C",
+    "1F1N_y6hy_ZUtKtmnpNRHk10nxXNxzg0m",
+    "18un8DL4yor2iNQpQBvW8m0XE3UwHzNYN",
+    "122piP3JxkmjE0Brs4T-PzzLIpRBgVBBI"
   ],
   "postedFilenames": [
     "sunflower_2026-10-13.jpg",
@@ -238,9 +241,12 @@
     "book_fireplace_nook_2026-11-26.jpg",
     "tidepool_hermit_crab_2026-11-27.jpg",
     "moon_jellyfish_drift_2026-11-27.jpg",
-    "pecan_pie_tartlet_2026-11-25.jpg"
+    "pecan_pie_tartlet_2026-11-25.jpg",
+    "arctic_narwhal_tusk_2026-11-27.jpg",
+    "vintage_double_decker_bus_2026-11-28.jpg",
+    "ceramic_teapot_still_life_2026-11-28.jpg"
   ],
-  "lastUpdated": "2026-11-27T21:20:41.397Z",
+  "lastUpdated": "2026-11-28T20:08:19.112Z",
   "postedSubjects": [
     "Sunflower",
     "Kitten",
@@ -359,7 +365,10 @@
     "Book Fireplace Nook",
     "Tidepool Hermit Crab",
     "Moon Jellyfish Drift",
-    "Pecan Pie Tartlet"
+    "Pecan Pie Tartlet",
+    "Arctic Narwhal Tusk",
+    "Vintage Double Decker Bus",
+    "Ceramic Teapot Still Life"
   ],
   "history": [
     {
@@ -1422,7 +1431,34 @@
       "fb_post_id": "122117375679508656",
       "scheduled_for": "11/27/2026, 10:30:00 PM",
       "comment_posted": true
+    },
+    {
+      "date": "2026-11-28T20:08:09.542Z",
+      "subject": "Arctic Narwhal Tusk",
+      "filename": "arctic_narwhal_tusk_2026-11-27.jpg",
+      "driveFileId": "1F1N_y6hy_ZUtKtmnpNRHk10nxXNxzg0m",
+      "fb_post_id": "1298820806658884_122117571597508656",
+      "scheduled_for": "LIVE (Morning)",
+      "comment_posted": true
+    },
+    {
+      "date": "2026-11-28T20:08:14.108Z",
+      "subject": "Vintage Double Decker Bus",
+      "filename": "vintage_double_decker_bus_2026-11-28.jpg",
+      "driveFileId": "18un8DL4yor2iNQpQBvW8m0XE3UwHzNYN",
+      "fb_post_id": "122117571711508656",
+      "scheduled_for": "11/28/2026, 10:08:01 PM",
+      "comment_posted": false
+    },
+    {
+      "date": "2026-11-28T20:08:19.112Z",
+      "subject": "Ceramic Teapot Still Life",
+      "filename": "ceramic_teapot_still_life_2026-11-28.jpg",
+      "driveFileId": "122piP3JxkmjE0Brs4T-PzzLIpRBgVBBI",
+      "fb_post_id": "122117571771508656",
+      "scheduled_for": "11/28/2026, 10:30:00 PM",
+      "comment_posted": false
     }
   ],
-  "lastPipelineDate": "2026-11-27"
+  "lastPipelineDate": "2026-11-28"
 }
